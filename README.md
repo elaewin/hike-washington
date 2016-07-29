@@ -3,9 +3,20 @@ Hike Washington CodeFellows 301 Final Project
 
 ### Group Process
 
-Use Waffle.io for tracking issues.
-* MVP issues start with 'M'
-* In GitHub, branch names start with M#(issue number)-description
+##### Use Waffle.io for tracking issues:
 
-Merge party at 5 Pull Requests
-Merge party at start and end of each day.
+* Put an 'M' at start of issue when creating; add 'MVP' label.
+* Stretch goals get the 'enhancement' label
+
+##### Github/Git Flow:
+
+* Branch names should include M if MVP issue, the issue number, and descriptive name, eg. 'M#13-add-database' or 'cleanup#15'.
+* After 5 pull requests, all work stops. Merge Party!
+* Merge Party at the start (after standup meeting) and end of every day (5pm).
+* Never merge your own branch!
+
+##### General Stuff:
+
+* Clear comments on all code so others can tell what it does. (We'll clean them off before deployment)
+
+* If you see a variable name, etc., that is not self-explanatory, ask about it!
