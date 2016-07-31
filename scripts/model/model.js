@@ -5,20 +5,23 @@ var authKey = 'KLpWSysVJTmshDzPyETfAf7t3KLhp1enYfsjsnb8fX4wPIx2Wd';
 var acceptType = 'text/plain';
 var placeholder = [];
 
-$.ajax({
-  url: baseUrl + '?q[state_cont]=Washington' + '&limit=25',
-  type: 'GET',
-  headers: {
-    'X-Mashape-Key': authKey,
-    'Accept' : acceptType
-  },
-  success: function(data, message, xhr) {
-    data.map(getPlace(data));
-    //console.log(data);
-  }
-}).done(function(data){
-  // pass
-});
+function lookupPlace(lat, lng){
+  var dynamicUrl = baseUrl + '?lat=' + lat + '&lon=' + lng + '&q[activities_activity_type_name_eq]=hiking&limit=25&radius=25';
+  $.ajax({
+    url: dynamicUrl,
+    type: 'GET',
+    headers: {
+      'X-Mashape-Key': authKey,
+      'Accept' : acceptType
+    },
+    success: function(data, message, xhr) {
+      data.map(getPlace(data));
+      //console.log(data);
+    }
+  }).done(function(data){
+    // pass
+  });
+}
 
 function getPlace(data) {
   // loop places array
@@ -34,10 +37,10 @@ var getPlaceInfo = function (currentPlace) {
     var activity_type = currentActivity.activity_type_name;
     var description = currentActivity.description;
     var activityLength = currentActivity['length']; // use bracket b/c 'length' is reserved
-    console.log(activityLength);
+    //console.log(activityLength);
     console.log(description);
-    console.log(activity_type);
-    console.log(currentActivity);
+    //console.log(activity_type);
+    //console.log(currentActivity);
   }
   //console.log(currentPlace);
   /*
@@ -63,3 +66,20 @@ var getActivities = function (currentActivity) {
     description: currentActivity.description
   };
 };
+
+function getLatLng(zipCode) {
+  $.ajax({
+    url: 'http://maps.googleapis.com/maps/api/geocode/json?address=' + zipCode,
+    type: 'GET',
+  }).always(function(data){
+    if (data.status == 'OK') {
+      var results = data.results;
+      if (results.length >= 1) {
+        var geoResult = results[0];
+        lookupPlace(geoResult.geometry.location.lat, geoResult.geometry.location.lng);
+      }
+    }
+  });
+}
+
+getLatLng('98104');
