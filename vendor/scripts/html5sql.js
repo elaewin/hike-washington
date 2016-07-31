@@ -47,7 +47,7 @@ var html5sql = (function () {
           var i, max, rowsArray = [];
 
           if(html5sql.logInfo){
-            console.log('Success processing: ' + sqlObjects[sequenceNumber].sql);
+            //console.log('Success processing: ' + sqlObjects[sequenceNumber].sql);
           }
 
         	//Process the results of a select puting them in a much more manageable array form.

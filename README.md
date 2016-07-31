@@ -20,3 +20,8 @@ Hike Washington CodeFellows 301 Final Project
 * Clear comments on all code so others can tell what it does. (We'll clean them off before deployment)
 
 * If you see a variable name, etc., that is not self-explanatory, ask about it!
+
+###Steps to renter to Browser:   (doug 7/31)
+modelHikes.callTrailAPI();  // wait for console log to return
+sqlDB.toHTML() // wait like 5 seconds
+viewHikes.generateList()
