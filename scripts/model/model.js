@@ -39,5 +39,39 @@
     });
   };
 
+  function lookupPlace(lat, lng){
+    var dynamicUrl = baseUrl + '?lat=' + lat + '&lon=' + lng + '&q[activities_activity_type_name_eq]=hiking&limit=25&radius=25';
+    $.ajax({
+      url: dynamicUrl,
+      type: 'GET',
+      headers: {
+        'X-Mashape-Key': authKey,
+        'Accept' : acceptType
+      },
+      success: function(data, message, xhr) {
+        data.map(getPlace(data));
+        //console.log(data);
+      }
+    }).done(function(data){
+    });
+  }
+
+  function getLatLng(zipCode) {
+    $.ajax({
+      url: 'http://maps.googleapis.com/maps/api/geocode/json?address=' + zipCode,
+      type: 'GET',
+    }).always(function(data){
+      if (data.status == 'OK') {
+        var results = data.results;
+        if (results.length >= 1) {
+          var geoResult = results[0];
+          lookupPlace(geoResult.geometry.location.lat, geoResult.geometry.location.lng);
+        }
+      }
+    });
+  }
+
+  getLatLng('98104');
+
   module.modelHikes = modelHikes;
 })(window);
