@@ -44,7 +44,7 @@
     webDB.execute(
       [
         {
-          'sql': 'DROP TABLE allHikesDB;'
+          'sql': 'DELETE FROM allHikesDB;'
         }
       ]
     );

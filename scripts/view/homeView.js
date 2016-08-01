@@ -1,5 +1,7 @@
 (function(module) {
+
   var homeView = {};
+
   homeView.loadHome = function() {
     $('main').append('<section></section>');
     $('section').append('<form id="formData"></form>');
@@ -13,5 +15,8 @@
   redirect = function() {
     page.redirect('/filters');
   };
+
+  modelHikes.loadAPIData();
+
   module.homeView = homeView;
 })(window);
