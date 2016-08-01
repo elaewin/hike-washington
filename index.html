@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="styles/module.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiri|Architects+Daughter">
     <!-- Distance Template -->
-    <script id="distance-template" type="text/x-handlebars-template">
-      <li><a href="{{url}}" class="{{icons}}"></a></li>
+    <script id="filter-template" type="text/x-handlebars-template">
+      <h2>{{category}}</h2>
+      <ul>
+        <li><img src="{{icons}}"></li>
+      </ul>
     </script>
     <!--  -->
   </head>
@@ -20,19 +23,11 @@
     <main>
       <header>
         <h1>HIKE WA</h1>
-        <form id="zipCode-input">
+        <!-- <form id="zipCode-input">
           <input id="autocomplete" placeholder="Enter address">
-        </form>
+        </form> -->
       </header>
-      <section class="distance">
-        <h2>Distance</h2>
-      </section>
-      <section class="scenery">
-        <h2>Scenery</h2>
-      </section>
-      <section class="activity">
-        <h2>Activity</h2>
-      </section>
+      <div class="filters"></div>
     </main>
     <script src="vendor/scripts/page.js"></script>
     <script src="vendor/scripts/jquery-1.12.4.min.js"></script>
@@ -40,17 +35,16 @@
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/webdb.js"></script>
     <script src="vendor/assets/findDistance.js"></script>
-    <script src="data/distance.json"></script>
+    <script src="data/filter.json"></script>
     <!--Model Files  -->
     <script src="scripts/model/model.js"></script>
     <script src="scripts/model/sqlDB.js"></script>
     <!--View Files -->
+    <script src="scripts/view/CreateFilterView.js"></script>
     <script src="scripts/view/homeView.js"></script>
     <script src="scripts/view/filtersView.js"></script>
     <script src="scripts/view/resultsView.js"></script>
     <!--Control Files  -->
     <script src="scripts/controller/routes.js"></script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap" async defer></script>
   </body>
 </html>

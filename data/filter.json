@@ -1,0 +1,12 @@
+[
+  {
+    "category": "Distance",
+    "icons": "img/hiking.png",
+  },
+  {
+    "category": "Activity"
+  },
+  {
+    "category": "Scenery"
+  }
+]

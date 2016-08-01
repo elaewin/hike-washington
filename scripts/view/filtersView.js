@@ -2,7 +2,7 @@
   var filtersView = {};
 
   filtersView.clearData = function() {
-    $('main').html('');
+    $('section').html('');
   };
 
   filtersView.loadFilters = function() {
@@ -22,7 +22,7 @@
 
   filtersView.render = function() {
     filtersView.clearData();
-    filtersView.loadFilters();
+    CreateFilters.fetchAll();
   };
 
   module.filtersView = filtersView;
