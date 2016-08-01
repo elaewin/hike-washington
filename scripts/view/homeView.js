@@ -18,7 +18,6 @@
   };
 
   redirect = function() {
-    console.log('this ran');
     page.redirect('/filters');
   };
 

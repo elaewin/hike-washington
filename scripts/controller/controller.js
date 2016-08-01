@@ -9,7 +9,6 @@ function home() {
 }
 
 function filters() {
-  console.log('controller');
   filtersView.render();
 }
 

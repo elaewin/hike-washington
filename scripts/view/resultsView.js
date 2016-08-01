@@ -4,7 +4,7 @@
   resultsView.render = function() {
     $('main').html('');
     $('main').append('<section>Results</section>');
-    resultsView.generateList();
+    sqlDB.toHTML(5,resultsView.generateList);
   };
 
   resultsView.generateList = function() {
