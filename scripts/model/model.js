@@ -40,6 +40,7 @@
   };
 
   function lookupPlace(lat, lng){
+    var baseUrl = 'https://trailapi-trailapi.p.mashape.com/';
     var dynamicUrl = baseUrl + '?lat=' + lat + '&lon=' + lng + '&q[activities_activity_type_name_eq]=hiking&limit=25&radius=25';
     $.ajax({
       url: dynamicUrl,
@@ -50,7 +51,7 @@
       },
       success: function(data, message, xhr) {
         data.map(getPlace(data));
-        //console.log(data);
+        console.log(data);
       }
     }).done(function(data){
     });
