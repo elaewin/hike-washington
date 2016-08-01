@@ -39,8 +39,16 @@
     });
   };
 
+  function getPlace(data) {
+    for (var i = 0; i < data.places.length; i++) {
+      modelHikes.placeholder(data.places[i]);
+    }
+  };
+
   function lookupPlace(lat, lng){
     var baseUrl = 'https://trailapi-trailapi.p.mashape.com/';
+    var authKey = 'KLpWSysVJTmshDzPyETfAf7t3KLhp1enYfsjsnb8fX4wPIx2Wd';
+    var acceptType = 'text/plain';
     var dynamicUrl = baseUrl + '?lat=' + lat + '&lon=' + lng + '&q[activities_activity_type_name_eq]=hiking&limit=25&radius=25';
     $.ajax({
       url: dynamicUrl,
