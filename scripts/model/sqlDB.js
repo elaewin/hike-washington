@@ -33,10 +33,11 @@
   };
 
 //populates the array that we want to render to the browser (doug)
-  sqlDB.toHTML = function(callback) {
-    webDB.execute('SELECT * FROM allHikesDB', function(rows) {
+  sqlDB.toHTML = function(num, callback) {
+    webDB.execute('SELECT * FROM allHikesDB WHERE length >' + num, function(rows) {
       sqlDB.displayHikes.push(rows);
     });
+    callback();
   };
 
   sqlDB.deleteEverything = function(){
