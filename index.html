@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="styles/module.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiri|Architects+Daughter">
     <!-- Distance Template -->
-    <script id="filter-template" type="text/x-handlebars-template">
-      <h2>{{category}}</h2>
-      <ul>
-        <li><img src="{{icons}}"></li>
-      </ul>
-    </script>
+    <!-- <script id="filter-template" type="text/x-handlebars-template">
+      <div data-category="{{category}}">
+        <h2>{{category}}</h2>
+        <ul>-->
+          <!-- <li><img src="{{icons}}"></li> -->
+        <!-- </ul>
+      </div>
+    </script> -->
     <!--  -->
   </head>
   <body>
@@ -27,7 +29,13 @@
           <input id="autocomplete" placeholder="Enter address">
         </form> -->
       </header>
-      <div class="filters"></div>
+      <div class="filters">
+        <div data-category="distance">
+          <h2>Distance</h2>
+          <ul>
+          </ul>
+        </div>
+      </div>
     </main>
     <script src="vendor/scripts/page.js"></script>
     <script src="vendor/scripts/jquery-1.12.4.min.js"></script>
