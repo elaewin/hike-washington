@@ -73,5 +73,6 @@
 
   getLatLng('98104');
 
+
   module.modelHikes = modelHikes;
 })(window);
