@@ -1,7 +1,7 @@
 (function(module) {
   var modelHikes = {};
 // Make variable names more self-explainatory!
-  modelHikes.placeholder = []; //array used to store Hikes as objects
+  modelHikes.hikesArray = []; //array used to store Hikes as objects
 
   modelHikes.callTrailAPI = function() {
     $.ajax({
@@ -30,57 +30,32 @@
               return activityInfo;
             })
           };
-          modelHikes.placeholder.push(place);
+          modelHikes.hikesArray.push(place);
         });
       }
     }).done(function(){
-      console.log(modelHikes.placeholder);
+      console.log(modelHikes.hikesArray);
       sqlDB.createTable(sqlDB.insertRecord);
     });
   };
 
-  function getPlace(data) {
-    for (var i = 0; i < data.places.length; i++) {
-      modelHikes.placeholder(data.places[i]);
-    }
+  modelHikes.getLatLng = function(zipCode) {
+    var authKey = '';
+
+    $.ajax({
+      url: 'http://maps.googleapis.com/maps/api/geocode/json?address=' + zipCode + '?key=' + authKey,
+      method: 'POST',
+      success: function(data){
+        var results = data.results;
+        var geoResult = results[0];
+        console.log(geoResult);
+        return [geoResult.geometry.location.lat, geoResult.geometry.location.lng];
+      }
+    });
   };
 
-  function lookupPlace(lat, lng){
-    var baseUrl = 'https://trailapi-trailapi.p.mashape.com/';
-    var authKey = 'KLpWSysVJTmshDzPyETfAf7t3KLhp1enYfsjsnb8fX4wPIx2Wd';
-    var acceptType = 'text/plain';
-    var dynamicUrl = baseUrl + '?lat=' + lat + '&lon=' + lng + '&q[activities_activity_type_name_eq]=hiking&limit=25&radius=25';
-    $.ajax({
-      url: dynamicUrl,
-      type: 'GET',
-      headers: {
-        'X-Mashape-Key': authKey,
-        'Accept' : acceptType
-      },
-      success: function(data, message, xhr) {
-        data.map(getPlace(data));
-        console.log(data);
-      }
-    }).done(function(data){
-    });
-  }
+  modelHikes.getLatLng('98104');
 
-  function getLatLng(zipCode) {
-    $.ajax({
-      url: 'http://maps.googleapis.com/maps/api/geocode/json?address=' + zipCode,
-      type: 'GET',
-    }).always(function(data){
-      if (data.status == 'OK') {
-        var results = data.results;
-        if (results.length >= 1) {
-          var geoResult = results[0];
-          lookupPlace(geoResult.geometry.location.lat, geoResult.geometry.location.lng);
-        }
-      }
-    });
-  }
-
-  getLatLng('98104');
 
   module.modelHikes = modelHikes;
 })(window);
