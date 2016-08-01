@@ -14,7 +14,7 @@ function lookupPlace(lat, lng){
     },
     success: function(data, message, xhr) {
       data.map(getPlace(data));
-      //console.log(data);
+      console.log(data);
     }
   }).done(function(data){
   });
