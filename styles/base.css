@@ -1,0 +1,25 @@
+body {
+  background-image: url('../img/cascades.jpg');
+  color: #efefef;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 75%;
+  border: 8px solid #efefef;
+  padding: 5em 3em 5em 3em;
+}
+
+h1 {
+  font-size: 4em;
+  font-family: 'Architects Daughter', cursive;
+}
+
+@media screen and (min-width: 760px) {
+  main {
+    margin-top: 15%;
+    border: 3px solid #efefef;
+  }
+}

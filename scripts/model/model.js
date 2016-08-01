@@ -41,6 +41,7 @@
 
   modelHikes.getLatLng = function(zipCode) {
     var authKey = '';
+
     $.ajax({
       url: 'http://maps.googleapis.com/maps/api/geocode/json?address=' + zipCode + '?key=' + authKey,
       method: 'POST',
@@ -54,7 +55,6 @@
   };
 
   modelHikes.getLatLng('98104');
-
 
   module.modelHikes = modelHikes;
 })(window);
