@@ -2,6 +2,7 @@
   var modelHikes = {};
 // Make variable names more self-explainatory!
   modelHikes.hikesArray = []; //array used to store Hikes as objects
+  modelHikes.zipResults = [];
 
   modelHikes.loadAPIData = function() {
     if(!localStorage.visited) {
@@ -37,7 +38,11 @@
               return activityInfo;
             })
           };
-          modelHikes.hikesArray.push(place);
+          place.activities.forEach(function(element) {
+            if(element['activity'] === 'hiking') {
+              modelHikes.hikesArray.push(place);
+            };
+          });
         });
       }
     }).done(function(){
@@ -54,7 +59,8 @@
       success: function(data){
         var results = data.results;
         var geoResult = results[0];
-        console.log(geoResult);
+        modelHikes.zipResults.push(geoResult.geometry.location.lat);
+        modelHikes.zipResults.push(geoResult.geometry.location.lng);
         return [geoResult.geometry.location.lat, geoResult.geometry.location.lng];
       }
     });
