@@ -4,7 +4,6 @@
   //sqlDB.displayHikes = []; //array used to render hikes to the DOM
 
   sqlDistances.createTable = function(callback, zipCode) {
-    sqlDistances.deleteEverything();
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS distanceDB (' +
       'id INTEGER PRIMARY KEY, ' +
@@ -14,7 +13,9 @@
   };
 
   sqlDistances.insertRecord = function(zipCode) {
+    // sqlDistances.deleteEverything();
     var zipLocation = modelHikes.getLatLng(zipCode);
+    console.log(zipLocation);
     modelHikes.hikesArray.forEach(function(element) {
       var lat1 = element['location'].lat;
       var lon1 = element['location'].lon;
@@ -42,5 +43,5 @@
     );
   };
 
-  module.sqlDB = sqlDB;
+  module.sqlDistances = sqlDistances;
 })(window);

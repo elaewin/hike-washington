@@ -1,7 +1,6 @@
 (function(module) {
+
   var homeView = {};
-
-
 
   homeView.loadHome = function() {
     $('main').append('<section>HOME</section>');
@@ -14,12 +13,13 @@
     });
 
     $('#button').click(function(){redirect(); return false;});
-
   };
 
   redirect = function() {
     page.redirect('/filters');
   };
+
+  modelHikes.loadAPIData();
 
   module.homeView = homeView;
 })(window);

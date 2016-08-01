@@ -3,12 +3,19 @@
 // Make variable names more self-explainatory!
   modelHikes.hikesArray = []; //array used to store Hikes as objects
 
+  modelHikes.loadAPIData = function() {
+    if(!localStorage.visited) {
+      modelHikes.callTrailAPI();
+      localStorage.setItem('visited', true);
+    }
+  };
+
   modelHikes.callTrailAPI = function() {
     $.ajax({
       url: 'https://trailapi-trailapi.p.mashape.com/?limit=800&q[state_cont]=Washington',
       method: 'GET',
       headers: {
-        'X-Mashape-Key': 'nHipBFct8wmshrLdCiMjoNG1plAEp1WmBAqjsnP2SiB5C9Vcmp',
+        'X-Mashape-Key': MashapeAPIKey,
         'Accept': 'text/plain'
       },
       success: function(data, message, xhr) {
@@ -40,7 +47,7 @@
   };
 
   modelHikes.getLatLng = function(zipCode) {
-    var authKey = '';
+    var authKey = googleAPIKey;
     $.ajax({
       url: 'http://maps.googleapis.com/maps/api/geocode/json?address=' + zipCode + '?key=' + authKey,
       method: 'POST',
@@ -52,9 +59,6 @@
       }
     });
   };
-
-  modelHikes.getLatLng('98104');
-
 
   module.modelHikes = modelHikes;
 })(window);
