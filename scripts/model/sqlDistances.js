@@ -39,10 +39,8 @@
   };
 
   sqlDistances.latLonQuery = function() {
-    webDB.execute('SELECT lon, lat, name FROM allHikesDB ORDER BY id DESC;',
-    function(rows) {
-      console.log(rows);
-    });
+    var results = webDB.execute('SELECT lon, lat, name FROM allHikesDB ORDER BY id DESC;');
+    return results;
   };
 
   sqlDistances.deleteEverything = function(){
