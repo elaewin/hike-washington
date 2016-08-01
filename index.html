@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/module.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiri|Architects+Daughter">
+    <!-- Distance Template -->
+    <script id="distance-template" type="text/x-handlebars-template">
+      <li><a href="{{url}}" class="{{icons}}"></a></li>
+    </script>
+    <!--  -->
   </head>
   <body>
     <main>
@@ -21,11 +26,9 @@
       </header>
       <section class="distance">
         <h2>Distance</h2>
-        <div class="icons">{{icons}}</div>
       </section>
       <section class="scenery">
         <h2>Scenery</h2>
-        <div class="icons">{{icons}}</div>
       </section>
       <section class="activity">
         <h2>Activity</h2>
