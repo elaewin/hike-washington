@@ -20,7 +20,7 @@
 
   sqlDB.insertRecord = function() {
 
-    modelHikes.placeholder.forEach( function(element) {
+    modelHikes.hikesArray.forEach( function(element) {
       webDB.execute(
         [
           {

@@ -6,7 +6,7 @@
   homeView.loadHome = function() {
     $('main').append('<section>HOME</section>');
     $('section').append('<form id="formData"></form>');
-    $('form').append('<input type="text" placeholder="Enter ZIP">');
+    $('form').append('<input type="text" hikesArray="Enter ZIP">');
     $('form').append('<button id="button" type="button">GO HIKE</button>');
 
     $('#formData').submit(function(event) {
