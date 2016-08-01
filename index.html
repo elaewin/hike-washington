@@ -9,14 +9,28 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/module.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiri|Architects+Daughter">
   </head>
   <body>
     <main>
       <header>
         <h1>HIKE WA</h1>
+        <form id="zipCode-input">
+          <input id="autocomplete" placeholder="Enter address">
+        </form>
       </header>
-    </main>
-    <main>
+      <section class="filterContent">
+        <h2>{{category}}</h2>
+        <div class="icons">{{icons}}</div>
+      </section>
+      <!-- <section class="scenery">
+        <h2>Scenery</h2>
+        <div class="icons">{{icons}}</div>
+      </section>
+      <section class="activity">
+        <h2>Activity</h2>
+        <div class="icons">{{icons}}</div>
+      </section> -->
     </main>
     <script src="vendor/scripts/page.js"></script>
     <script src="vendor/scripts/jquery-1.12.4.min.js"></script>
@@ -24,11 +38,17 @@
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/webdb.js"></script>
     <script src="vendor/assets/findDistance.js"></script>
+    <script src="data/distance.json"></script>
+    <!--Model Files  -->
     <script src="scripts/model/model.js"></script>
     <script src="scripts/model/sqlDB.js"></script>
+    <!--View Files -->
     <script src="scripts/view/homeView.js"></script>
     <script src="scripts/view/filtersView.js"></script>
     <script src="scripts/view/resultsView.js"></script>
+    <!--Control Files  -->
     <script src="scripts/controller/routes.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap" async defer></script>
   </body>
 </html>

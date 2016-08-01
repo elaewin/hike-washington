@@ -1,17 +1,14 @@
-(function(module) {
-  var homeView = {};
-  homeView.loadHome = function() {
-    $('main').append('<section>HOME</section>');
-    $('section').append('<form id="formData"></form>');
-    $('form').append('<input type="text" hikesArray="Enter ZIP">');
-    $('form').append('<button id="button" type="button">GO HIKE</button>');
-    $('#formData').submit(function(event) {
-      event.preventDefault();
-    });
-    $('#button').click(function(){redirect(); return false;});
-  };
-  redirect = function() {
-    page.redirect('/filters');
-  };
-  module.homeView = homeView;
-})(window);
+// var autoComplete;
+//
+// function initAutoComplete() {
+//   autoComplete = new google.maps.places.Autocomplete(
+//     $('#autoComplete'),
+//     {types: ['establishment']});
+//
+//   autocomplete.addListener('place_changed', fillInAddress);
+// }
+//
+// function fillInAddress() {
+//   var place = autocomplete.getPlace();
+//   $('#rest_name')
+// }
