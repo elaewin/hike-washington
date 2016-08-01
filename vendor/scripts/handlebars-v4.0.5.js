@@ -4095,7 +4095,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var index = this.matchExistingProgram(child);
 
 	      if (index == null) {
-	        this.context.programs.push(''); // Placeholder to prevent name conflicts for nested children
+	        this.context.programs.push(''); // hikesArray to prevent name conflicts for nested children
 	        index = this.context.programs.length;
 	        child.index = index;
 	        child.name = 'program' + index;
