@@ -4,6 +4,7 @@
   "description": "Hike Washington CodeFellows 301 Final Project",
   "main": "server.js",
   "dependencies": {
+    "async": "^2.0.1",
     "express": "^4.14.0"
   },
   "devDependencies": {},

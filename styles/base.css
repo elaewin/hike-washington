@@ -15,7 +15,18 @@ main {
   background: rgba(0, 0, 0, 0.3);
 }
 
+@media only screen and (min-width: 760px) {
+  main {
+    margin-top: 5rem;
+    border: 3px solid #efefef;
+}
+
 /* TEXT STYLES */
+
+h1, h2, h3, h4 {
+  font-family: "Architects Daughter", cursive;
+}
+
 h1 {
   font-size: 6em;
 }
@@ -23,14 +34,13 @@ h1 {
 h2 {
   margin-top: 2em;
   font-size: 4em;
-  font-family: "Architects Daughter", cursive;
+}
+
+p {
+  line-height: 1.2em;
 }
 
 @media only screen and (min-width: 760px) {
-  main {
-    margin-top: 4rem;
-    border: 3px solid #efefef;
-  }
   ul {
     margin: 1.5em;
   }
