@@ -12,13 +12,13 @@
     );
   };
 
-  sqlDistances.insertRecord = function() {
+  sqlDistances.populateDistancesDB = function() {
     sqlDistances.deleteEverything();
     var allLatLon = sqlDistances.latLonQuery();
     latLonQueryArray.forEach(function(element) {
-      var lat1 = element.lat;
+      var lat1 = element['lat'];
       console.log(lat1);
-      var lon1 = element.lon;
+      var lon1 = element['lon'];
       console.log(lon1);
       var lat2 = modelHikes.zipResults[0];
       var lon2 = modelHikes.zipResults[1];
@@ -39,7 +39,6 @@
     webDB.execute('SELECT lon, lat, name FROM allHikesDB ORDER BY id DESC;',
     function(rows) {
       latLonQueryArray = rows;
-      console.log(latLonQueryArray);
     });
   };
 
