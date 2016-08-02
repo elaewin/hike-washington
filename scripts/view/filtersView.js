@@ -18,10 +18,10 @@
   };
 
   filtersView.loadActivityFilters = function() {
-    $('#filters').append('<div class="activity" data-category="activity"></div>');
-    $('div.activity').append('<h2>Other Activities</h2>');
+    $('#filters').append('<div id="activity" data-category="activity"></div>');
+    $('div#activity').append('<h2>Other Activities</h2>');
     var distancesClass = ['flaticon-bicycle-rider', 'flaticon-night-camping', 'flaticon-snowflake'];
-    $('div.activity').append('<ul></ul>');
+    $('div#activity').append('<ul></ul>');
     distancesClass.forEach(function(element){
       $('div[data-category="activity"] ul').append('<li class="' + element + ' black"></li>');
     });
@@ -37,9 +37,20 @@
     });
   };
 
-  filtersView.handleSelections = function() {
-    $('li').on('click', function(event){
+  filtersView.handleDistanceSelections = function() {
+    $('#distance li').on('click', function(event) {
       console.log('click');
+      var $selection = $(event.target);
+      if($selection.hasClass('active')) {
+        $selection.removeClass('active');
+      } else {
+        $selection.addClass('active').siblings($selection).removeClass('active');
+      }
+    });
+  };
+
+  filtersView.handleActivitySelections = function() {
+    $('#activity li').on('click', function(event){
       var $selection = $(event.target);
       if($selection.hasClass('active')){
         $selection.removeClass('active');
@@ -65,11 +76,12 @@
 
   filtersView.render = function() {
     filtersView.clearData();
-    CreateFilters.fetchAll();
+    // CreateFilters.fetchAll();
     filtersView.loadDistanceFilters();
     filtersView.loadActivityFilters();
     filtersView.loadSceneryFilters();
-    filtersView.handleSelections();
+    filtersView.handleDistanceSelections();
+    filtersView.handleActivitySelections();
   };
 
   module.filtersView = filtersView;
