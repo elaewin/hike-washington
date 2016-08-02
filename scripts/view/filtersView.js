@@ -13,8 +13,8 @@
     $('#filters').append('<div id="distance" data-category="distance"></div>');
     $('#distance').append('<h2>Distance</h2>');
     var distancesClass = [
-      { color: 'green', 'miles': '0,3' },
-      { color: 'yellow', 'miles': '4,7' },
+      { 'color': 'green', 'miles': '0,3' },
+      { 'color': 'yellow', 'miles': '4,7' },
       { 'color': 'orange', 'miles': '8,11' },
       { 'color': 'red', 'miles': '12,800' }
     ];
@@ -79,6 +79,32 @@
         $selection.addClass('active');
       }
     });
+  };
+
+  $('#filters-form').submit(function(event) {
+    event.preventDefault();
+    // call function to populate resultsDB here.
+  });
+
+  filtersView.createResultsTable = function() {
+    webDB.execute(
+      'CREATE TABLE IF NOT EXISTS resultsDB (' +
+      'id INTEGER PRIMARY KEY, ' +
+      'name VARCHAR(255) NOT NULL, ' +
+      'activities VARCHAR(255), ' +
+      'length FLOAT, ' +
+      'lon FLOAT, ' +
+      'lat FLOAT, ' +
+      'directions VARCHAR (255)' +
+      'distanceFromUser FLOAT' +
+      'scenery VARCHAR' +
+      'description TEXT);'
+    );
+  };
+
+  filtersView.populateResultsDB = function() {
+    webDB.execute('SELECT * FROM allHikesDB WHERE distance BETWEEN ' +
+    distanceChoice[0] + ' AND ' + distanceChoice[1] + ';');
   };
 
   filtersView.Run = function() {

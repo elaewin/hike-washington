@@ -2,6 +2,8 @@
 
   var homeView = {};
   homeView.render = function() {
+    $('.page-content').hide();
+    $('#search').fadeIn();
     console.log('homeView.render running');
     homeView.zipCode = 0;
     $('#zipCode-input').submit(function(event) {
