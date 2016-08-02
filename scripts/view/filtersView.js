@@ -8,10 +8,10 @@
   filtersView.loadDistanceFilters = function() {
     $('div.filters').append('<div class="distance" data-category="distance"></div>');
     $('div.distance').append('<h2>Distance</h2>');
-    var distancesClass = ['hiking-green.svg', 'hiking-yellow.svg', 'hiking-orange.svg', 'hiking-red.svg'];
+    var distancesClass = ['green', 'yellow', 'orange', 'red'];
     $('div.distance').append('<ul></ul>');
-    distancesClass.forEach(function(element){
-      $('div[data-category="distance"] ul').append('<li><img class="filterIcons" src="vendor/assets/' + element + '"></li>');
+    distancesClass.forEach(function(color){
+      $('div[data-category="distance"] ul').append('<li class="flaticon-hiking ' + color + '"></li>');
     });
   };
 
