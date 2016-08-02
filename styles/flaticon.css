@@ -1,0 +1,70 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 02/08/2016 06:24
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./fonts/Flaticon.eot");
+  src: url("./fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./fonts/Flaticon.woff") format("woff"),
+       url("./fonts/Flaticon.ttf") format("truetype"),
+       url("./fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-animals:before { content: "\f100"; }
+.flaticon-bicycle-rider:before { content: "\f101"; }
+.flaticon-butterfly-catcher:before { content: "\f102"; }
+.flaticon-camper-caravan:before { content: "\f103"; }
+.flaticon-climbing:before { content: "\f104"; }
+.flaticon-climbing-sport:before { content: "\f105"; }
+.flaticon-climbing-with-rope:before { content: "\f106"; }
+.flaticon-closed-barbacue:before { content: "\f107"; }
+.flaticon-digital-camera:before { content: "\f108"; }
+.flaticon-dog:before { content: "\f109"; }
+.flaticon-fishing-man:before { content: "\f10a"; }
+.flaticon-food-on-branch:before { content: "\f10b"; }
+.flaticon-hiking:before { content: "\f10c"; }
+.flaticon-horse-riding:before { content: "\f10d"; }
+.flaticon-jumping-to-the-water:before { content: "\f10e"; }
+.flaticon-kayak:before { content: "\f10f"; }
+.flaticon-man-flying-a-kite:before { content: "\f110"; }
+.flaticon-man-in-canoe:before { content: "\f111"; }
+.flaticon-man-on-a-boat:before { content: "\f112"; }
+.flaticon-man-swimming:before { content: "\f113"; }
+.flaticon-mountain-cycling:before { content: "\f114"; }
+.flaticon-mountain-cycling-cyclist-silhouette:before { content: "\f115"; }
+.flaticon-night-camping:before { content: "\f116"; }
+.flaticon-outdoors-map:before { content: "\f117"; }
+.flaticon-picnic-desk:before { content: "\f118"; }
+.flaticon-quad-bike:before { content: "\f119"; }
+.flaticon-running-man:before { content: "\f11a"; }
+.flaticon-sailing-boat-sailing:before { content: "\f11b"; }
+.flaticon-ski-lift:before { content: "\f11c"; }
+.flaticon-snowed-mountains:before { content: "\f11d"; }
+.flaticon-snowflake:before { content: "\f11e"; }
+.flaticon-spyglass:before { content: "\f11f"; }
+.flaticon-sun-and-lake:before { content: "\f120"; }
+.flaticon-sunny-park:before { content: "\f121"; }
+.flaticon-swings:before { content: "\f122"; }
+.flaticon-trees:before { content: "\f123"; }
+.flaticon-two-pines:before { content: "\f124"; }
+.flaticon-wild-deer:before { content: "\f125"; }
+.flaticon-wind-rose-compass:before { content: "\f126"; }
