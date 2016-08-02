@@ -9,6 +9,21 @@
       modelHikes.callTrailAPI();
       localStorage.setItem('visited', true);
     }
+    else {
+      modelHikes.checkForData();
+      localStorage.setItem('visited', true);
+    }
+  };
+
+  modelHikes.checkForData = function() {
+    webDB.execute('SELECT * FROM allHikesDB;',
+    function(rows) {
+      allRowsCheck = rows;
+      console.log(allRowsCheck);
+      if(allRowsCheck.length === 0) {
+        modelHikes.callTrailAPI();
+      }
+    });
   };
 
   modelHikes.callTrailAPI = function() {
