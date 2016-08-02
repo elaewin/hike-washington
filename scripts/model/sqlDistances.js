@@ -1,5 +1,6 @@
 (function(module) {
   var sqlDistances = {};
+  var latLonQueryArray = [];
 
   //sqlDB.displayHikes = []; //array used to render hikes to the DOM
 
@@ -13,20 +14,16 @@
 
   sqlDistances.insertRecord = function() {
     sqlDistances.deleteEverything();
-    modelHikes.hikesArray.forEach(function(element) {
-      var lat1 = element['location'].lat;
-      var lon1 = element['location'].lon;
+    var allLatLon = sqlDistances.latLonQuery();
+    latLonQueryArray.forEach(function(element) {
+      var lat1 = element.lat;
+      console.log(lat1);
+      var lon1 = element.lon;
+      console.log(lon1);
       var lat2 = modelHikes.zipResults[0];
       var lon2 = modelHikes.zipResults[1];
       var newDistance = distanceCalc.getDistance(lat1, lon1, lat2, lon2);
       var name = element.name;
-      webDB.execute(
-        [
-          {
-            'sql': 'SELECT * FROM allHikesDB ORDER BY id;'
-          }
-        ]
-      );
       webDB.execute(
         [
           {
@@ -39,8 +36,11 @@
   };
 
   sqlDistances.latLonQuery = function() {
-    var results = webDB.execute('SELECT lon, lat, name FROM allHikesDB ORDER BY id DESC;');
-    return results;
+    webDB.execute('SELECT lon, lat, name FROM allHikesDB ORDER BY id DESC;',
+    function(rows) {
+      latLonQueryArray = rows;
+      console.log(latLonQueryArray);
+    });
   };
 
   sqlDistances.deleteEverything = function(){
