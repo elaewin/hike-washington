@@ -98,18 +98,29 @@
     );
   };
 
-  filtersView.populateResultsDB = function() {
-    webDB.execute('SELECT * FROM allHikesDB WHERE length BETWEEN ' +
+  filtersView.selectFromAllHikesDB = function() {
+    webDB.execute('SELECT * FROM allHikesDB ' +
+    'INNER JOIN distanceDB ON allHikesDB.name=distanceDB.name ' +
+    'WHERE allHikesDB.length BETWEEN ' +
     filtersView.distanceChoice[0] + ' AND ' + filtersView.distanceChoice[1] + ';',
     function(rows) {
       filtersView.resultsArray = rows;
-      console.log(filtersView.resultsArray);
+      filtersView.populateResultsDB();
     });
   };
 
-  // filtersView.populateResultsDB = function() {
-  //   webDB.execute('INSERT INTO resultsDB ');
-  // };
+  filtersView.populateResultsDB = function() {
+    filtersView.resultsArray.forEach(function(resultsObj) {
+      webDB.execute(
+        [
+          {
+            'sql': 'INSERT INTO resultsDB (name, activities, length, lon, lat, directions, distanceFromUser, scenery, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);',
+            'data': [resultsObj.name, resultsObj.activities, resultsObj.length, resultsObj.lon, resultsObj.lat, resultsObj.directions, resultsObj.distance, 'scenery goes here!', 'description goes here!']
+          }
+        ]
+      );
+    });
+  };
 
   filtersView.Run = function() {
     async.series([
@@ -140,7 +151,7 @@
     event.preventDefault();
     async.series([
       filtersView.createResultsDB(),
-      filtersView.populateResultsDB()
+      filtersView.selectFromAllHikesDB()
     ]);
   });
 
