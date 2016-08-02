@@ -1,6 +1,7 @@
 body {
   background-image: url('../img/cascades.jpg');
   color: #efefef;
+  font-family: 'Architects Daughter', cursive;
 }
 
 main {
@@ -14,8 +15,16 @@ main {
 }
 
 h1 {
+  font-size: 6em;
+}
+
+h2 {
+  margin-top: 2em;
   font-size: 4em;
-  font-family: 'Architects Daughter', cursive;
+}
+
+ul {
+  margin: 1.5em;
 }
 
 @media only screen and (min-width: 760px) {

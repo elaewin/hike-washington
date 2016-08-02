@@ -1,6 +1,7 @@
 img.filterIcons{
-  height: 4em;
-  width: 4em;
+  height: 6em;
+  width: 6em;
+  margin: 1.25em;
 }
 
 .filters li{
