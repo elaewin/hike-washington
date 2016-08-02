@@ -1,0 +1,8 @@
+img.filterIcons{
+  height: 4em;
+  width: 4em;
+}
+
+.filters li{
+  display: inline;
+}

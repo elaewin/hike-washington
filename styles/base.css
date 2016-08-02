@@ -10,6 +10,7 @@ main {
   margin-top: 75%;
   border: 8px solid #efefef;
   padding: 5em 3em 5em 3em;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 h1 {
@@ -17,7 +18,7 @@ h1 {
   font-family: 'Architects Daughter', cursive;
 }
 
-@media screen and (min-width: 760px) {
+@media only screen and (min-width: 760px) {
   main {
     margin-top: 15%;
     border: 3px solid #efefef;
