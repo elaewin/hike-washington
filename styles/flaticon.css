@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 02/08/2016 06:10
+  	Creation date: 02/08/2016 06:24
   	*/
 
 @font-face {
@@ -29,39 +29,42 @@ font-style: normal;
 margin-left: 20px;
 }
 
-.flaticon-bicycle-rider:before { content: "\f100"; }
-.flaticon-butterfly-catcher:before { content: "\f101"; }
-.flaticon-camper-caravan:before { content: "\f102"; }
-.flaticon-climbing:before { content: "\f103"; }
-.flaticon-climbing-sport:before { content: "\f104"; }
-.flaticon-climbing-with-rope:before { content: "\f105"; }
-.flaticon-closed-barbacue:before { content: "\f106"; }
-.flaticon-digital-camera:before { content: "\f107"; }
-.flaticon-fishing-man:before { content: "\f108"; }
-.flaticon-food-on-branch:before { content: "\f109"; }
-.flaticon-hiking:before { content: "\f10a"; }
-.flaticon-horse-riding:before { content: "\f10b"; }
-.flaticon-jumping-to-the-water:before { content: "\f10c"; }
-.flaticon-kayak:before { content: "\f10d"; }
-.flaticon-man-flying-a-kite:before { content: "\f10e"; }
-.flaticon-man-in-canoe:before { content: "\f10f"; }
-.flaticon-man-on-a-boat:before { content: "\f110"; }
-.flaticon-man-swimming:before { content: "\f111"; }
-.flaticon-mountain-cycling:before { content: "\f112"; }
-.flaticon-mountain-cycling-cyclist-silhouette:before { content: "\f113"; }
-.flaticon-nature:before { content: "\f114"; }
-.flaticon-night-camping:before { content: "\f115"; }
-.flaticon-outdoors-map:before { content: "\f116"; }
-.flaticon-picnic-desk:before { content: "\f117"; }
-.flaticon-quad-bike:before { content: "\f118"; }
-.flaticon-running-man:before { content: "\f119"; }
-.flaticon-sailing-boat-sailing:before { content: "\f11a"; }
-.flaticon-ski-lift:before { content: "\f11b"; }
-.flaticon-snowed-mountains:before { content: "\f11c"; }
-.flaticon-spyglass:before { content: "\f11d"; }
-.flaticon-sunny-park:before { content: "\f11e"; }
-.flaticon-swings:before { content: "\f11f"; }
-.flaticon-trees:before { content: "\f120"; }
-.flaticon-two-pines:before { content: "\f121"; }
-.flaticon-wild-deer:before { content: "\f122"; }
-.flaticon-wind-rose-compass:before { content: "\f123"; }
+.flaticon-animals:before { content: "\f100"; }
+.flaticon-bicycle-rider:before { content: "\f101"; }
+.flaticon-butterfly-catcher:before { content: "\f102"; }
+.flaticon-camper-caravan:before { content: "\f103"; }
+.flaticon-climbing:before { content: "\f104"; }
+.flaticon-climbing-sport:before { content: "\f105"; }
+.flaticon-climbing-with-rope:before { content: "\f106"; }
+.flaticon-closed-barbacue:before { content: "\f107"; }
+.flaticon-digital-camera:before { content: "\f108"; }
+.flaticon-dog:before { content: "\f109"; }
+.flaticon-fishing-man:before { content: "\f10a"; }
+.flaticon-food-on-branch:before { content: "\f10b"; }
+.flaticon-hiking:before { content: "\f10c"; }
+.flaticon-horse-riding:before { content: "\f10d"; }
+.flaticon-jumping-to-the-water:before { content: "\f10e"; }
+.flaticon-kayak:before { content: "\f10f"; }
+.flaticon-man-flying-a-kite:before { content: "\f110"; }
+.flaticon-man-in-canoe:before { content: "\f111"; }
+.flaticon-man-on-a-boat:before { content: "\f112"; }
+.flaticon-man-swimming:before { content: "\f113"; }
+.flaticon-mountain-cycling:before { content: "\f114"; }
+.flaticon-mountain-cycling-cyclist-silhouette:before { content: "\f115"; }
+.flaticon-night-camping:before { content: "\f116"; }
+.flaticon-outdoors-map:before { content: "\f117"; }
+.flaticon-picnic-desk:before { content: "\f118"; }
+.flaticon-quad-bike:before { content: "\f119"; }
+.flaticon-running-man:before { content: "\f11a"; }
+.flaticon-sailing-boat-sailing:before { content: "\f11b"; }
+.flaticon-ski-lift:before { content: "\f11c"; }
+.flaticon-snowed-mountains:before { content: "\f11d"; }
+.flaticon-snowflake:before { content: "\f11e"; }
+.flaticon-spyglass:before { content: "\f11f"; }
+.flaticon-sun-and-lake:before { content: "\f120"; }
+.flaticon-sunny-park:before { content: "\f121"; }
+.flaticon-swings:before { content: "\f122"; }
+.flaticon-trees:before { content: "\f123"; }
+.flaticon-two-pines:before { content: "\f124"; }
+.flaticon-wild-deer:before { content: "\f125"; }
+.flaticon-wind-rose-compass:before { content: "\f126"; }

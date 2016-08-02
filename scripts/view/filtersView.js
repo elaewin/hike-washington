@@ -18,10 +18,10 @@
   filtersView.loadActivityFilters = function() {
     $('div.filters').append('<div class="activity" data-category="activity"></div>');
     $('div.activity').append('<h2>Activity</h2>');
-    var distancesClass = ['hiking-green.svg', 'hiking-yellow.svg', 'hiking-orange.svg', 'hiking-red.svg'];
+    var distancesClass = ['flaticon-bicycle-rider', 'flaticon-night-camping', 'flaticon-snowflake'];
     $('div.activity').append('<ul></ul>');
     distancesClass.forEach(function(element){
-      $('div[data-category="activity"] ul').append('<li><img class="filterIcons" src="vendor/assets/' + element + '"></li>');
+      $('div[data-category="activity"] ul').append('<li class="' + element + '"></li>');
     });
   };
 
