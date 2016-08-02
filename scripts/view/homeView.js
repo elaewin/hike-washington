@@ -1,11 +1,18 @@
 (function(module) {
 
   var homeView = {};
+  homeView.zipCode = 0;
 
-  homeView.loadHome = function() {
+  // add event listener on form to initate redirect
 
   redirect = function() {
-    page.redirect('/filters');
+    homeView.zipCode = $('#autocomplete').val();
+    if (homeView.zipCode.length === 5) {
+      modelHikes.getLatLng(homeView.zipCode);
+      page.redirect('/filters');
+    } else {
+      console.log('Not a valid zip code');
+    }
   };
 
   modelHikes.loadAPIData();
