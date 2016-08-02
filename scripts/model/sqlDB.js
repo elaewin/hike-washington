@@ -3,7 +3,7 @@
 
   sqlDB.displayHikes = []; //array used to render hikes to the DOM
 
-  sqlDB.createTable = function(callback) {
+  sqlDB.createTable = function() {
     sqlDB.deleteEverything();
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS allHikesDB (' +
@@ -15,7 +15,6 @@
       'lat FLOAT, ' +
       'directions VARCHAR (255));'
     );
-    callback();
   };
 
   sqlDB.insertRecord = function() {

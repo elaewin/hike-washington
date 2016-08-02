@@ -13,8 +13,9 @@
   };
 
   sqlDistances.populateDistancesDB = function() {
+    console.log('Populate is happening');
     sqlDistances.deleteEverything();
-    var allLatLon = sqlDistances.latLonQuery();
+    // var allLatLon = sqlDistances.latLonQuery();
     setTimeout(
       latLonQueryArray.forEach(function(element) {
         var lat1 = element['lat'];
@@ -38,6 +39,8 @@
     webDB.execute('SELECT lon, lat, name FROM allHikesDB ORDER BY id DESC;',
     function(rows) {
       latLonQueryArray = rows;
+      console.log('Query Finished');
+      sqlDistances.populateDistancesDB();
     });
   };
 

@@ -12,6 +12,7 @@
   };
 
   modelHikes.callTrailAPI = function() {
+    console.log('trail api running');
     $.ajax({
       url: 'https://trailapi-trailapi.p.mashape.com/?limit=800&q[state_cont]=Washington',
       method: 'GET',
@@ -46,7 +47,7 @@
         });
       }
     }).done(function(){
-      sqlDB.createTable(sqlDB.insertRecord);
+      modelHikes.getLatLng();
     });
   };
 
@@ -56,14 +57,15 @@
     }
     var authKey = googleAPIKey;
     $.ajax({
-      url: 'http://maps.googleapis.com/maps/api/geocode/json?address=' + zipCode + '?key=' + authKey,
+      url: 'http://maps.googleapis.com/maps/api/geocode/json?address=' + 98133 + '?key=' + authKey,
       method: 'POST',
       success: function(data){
         var results = data.results;
         var geoResult = results[0];
         modelHikes.zipResults.push(geoResult.geometry.location.lat);
         modelHikes.zipResults.push(geoResult.geometry.location.lng);
-        return [geoResult.geometry.location.lat, geoResult.geometry.location.lng];
+        // return [geoResult.geometry.location.lat, geoResult.geometry.location.lng];
+        homeView.Run();
       }
     });
   };

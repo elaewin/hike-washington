@@ -18,5 +18,15 @@
 
   modelHikes.loadAPIData();
 
+  homeView.Run = function() {
+    async.series([
+      sqlDB.createTable(),
+      sqlDB.insertRecord(),
+      sqlDistances.createTable(),
+      sqlDistances.latLonQuery(),
+    ]);
+  };
+
+
   module.homeView = homeView;
 })(window);
