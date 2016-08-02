@@ -25,15 +25,12 @@
 }
 
 #filters li {
-  display: inline;
+  display: inline-block;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
   padding: 1.25rem 1.75rem;
-  }
-
-
-
-
+  margin-left: 1.75rem;
+  cursor: pointer;
 }
 
 img.filterIcons{
@@ -43,4 +40,9 @@ img.filterIcons{
 }
 
 .filters li{
+
+}
+
+#filters .active {
+  background-color: red;
 }

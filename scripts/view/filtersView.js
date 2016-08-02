@@ -36,12 +36,17 @@
     });
   };
 
-    // $('section').append('<form><form>');
-    // $('form').append('<fieldset></fieldset>');
-    // $('fieldset').append('<input type="checkbox">longer than 5 miles<br>');
-    // $('form').append('<button id="button2" type="button">SEE RESULTS</button>');
-
-    // $('#button2').click(function(){filtersView.redirect(); return false;});
+  filtersView.handleSelections = function() {
+    $('li').on('click', function(event){
+      console.log('click');
+      var $selection = $(event.target);
+      if($selection.hasClass('active')){
+        $selection.removeClass('active');
+      } else {
+        $selection.addClass('active');
+      }
+    });
+  };
 
   filtersView.Run = function() {
     async.series([
@@ -63,6 +68,7 @@
     filtersView.loadDistanceFilters();
     filtersView.loadActivityFilters();
     filtersView.loadSceneryFilters();
+    filtersView.handleSelections();
   };
 
   module.filtersView = filtersView;
