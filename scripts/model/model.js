@@ -46,12 +46,14 @@
         });
       }
     }).done(function(){
-      console.log(modelHikes.hikesArray);
       sqlDB.createTable(sqlDB.insertRecord);
     });
   };
 
   modelHikes.getLatLng = function(zipCode) {
+    if(modelHikes.zipResults.length > 1) {
+      modelHikes.zipResults.length = 0;
+    }
     var authKey = googleAPIKey;
     $.ajax({
       url: 'http://maps.googleapis.com/maps/api/geocode/json?address=' + zipCode + '?key=' + authKey,
