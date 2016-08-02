@@ -1,11 +1,12 @@
 (function(module) {
 
   var homeView = {};
+  homeView.zipCode = 0;
 
   homeView.loadHome = function() {
     $('main').append('<section></section>');
     $('section').append('<form id="formData"></form>');
-    $('form').append('<input type="text" hikesArray="Enter ZIP">');
+    $('form').append('<input type="text" id="zipEntry" hikesArray="Enter ZIP">');
     $('form').append('<button id="button" type="button">GO HIKE</button>');
     $('#formData').submit(function(event) {
       event.preventDefault();
@@ -13,20 +14,16 @@
     $('#button').click(function(){redirect(); return false;});
   };
   redirect = function() {
-    page.redirect('/filters');
+    homeView.zipCode = $('#zipEntry').val();
+    if (homeView.zipCode.length === 5) {
+      modelHikes.getLatLng(homeView.zipCode);
+      page.redirect('/filters');
+    } else {
+      console.log('Not a valid zip code');
+    }
   };
 
   modelHikes.loadAPIData();
-
-  homeView.Run = function() {
-    async.series([
-      sqlDB.createTable(),
-      sqlDB.deleteEverything(),
-      sqlDB.insertRecord(),
-      sqlDistances.createTable(),
-      sqlDistances.latLonQuery(),
-    ]);
-  };
 
 
   module.homeView = homeView;

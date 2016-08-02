@@ -47,7 +47,7 @@
         });
       }
     }).done(function(){
-      modelHikes.getLatLng();
+      // modelHikes.getLatLng();
     });
   };
 
@@ -57,7 +57,7 @@
     }
     var authKey = googleAPIKey;
     $.ajax({
-      url: 'http://maps.googleapis.com/maps/api/geocode/json?address=' + 98133 + '?key=' + authKey,
+      url: 'http://maps.googleapis.com/maps/api/geocode/json?address=' + zipCode + '?key=' + authKey,
       method: 'POST',
       success: function(data){
         var results = data.results;
@@ -65,7 +65,7 @@
         modelHikes.zipResults.push(geoResult.geometry.location.lat);
         modelHikes.zipResults.push(geoResult.geometry.location.lng);
         // return [geoResult.geometry.location.lat, geoResult.geometry.location.lng];
-        homeView.Run();
+        filtersView.Run();
       }
     });
   };
