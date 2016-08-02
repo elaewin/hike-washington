@@ -11,28 +11,27 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/module.css">
+    <link rel="stylesheet" href="styles/module-search.css">
     <link rel="stylesheet" href="styles/module-filters.css">
-    <!-- Distance Template -->
-    <!-- <script id="filter-template" type="text/x-handlebars-template">
-      <div data-category="{{category}}">
-        <h2>{{category}}</h2>
-        <ul>-->
-          <!-- <li><img src="{{icons}}"></li> -->
-        <!-- </ul>
-      </div>
-    </script> -->
-    <!--  -->
   </head>
+  <header>
+    <h1 class="header-h1">Hike WA</h1>
+  </header>
   <body>
     <main>
-      <header>
-        <h1>Hike Washington</h1>
-        <!-- <form id="zipCode-input">
-          <input id="autocomplete" placeholder="Enter address">
-        </form> -->
-      </header>
-      <div class="filters">
-      </div>
+      <section id="search" class="page-content">
+        <h1>Hike WA</h1>
+        <p>We really should have some coherent explaination of what the heck the site is for, because otherwise people will just be confused by our lovely background and search box!</p>
+      <form id="zipCode-input">
+        <input id="autocomplete" placeholder="Enter your zipcode">
+        <!-- input must be 5 digits -->
+        <input type="submit" id="search-submit">
+      </form>
+      </section>
+      <section id="filters" class="page-content">
+      </section>
+      <section id="results" class="page-content">
+      </section>
     </main>
     <script src="vendor/scripts/async.js"></script>
     <script src="vendor/scripts/page.js"></script>

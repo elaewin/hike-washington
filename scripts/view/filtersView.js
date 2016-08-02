@@ -2,22 +2,23 @@
   var filtersView = {};
 
   filtersView.clearData = function() {
-    $('section').html('');
+    $('.page-content').hide();
+    $('#filters').fadeIn();
   };
 
   filtersView.loadDistanceFilters = function() {
-    $('div.filters').append('<div class="distance" data-category="distance"></div>');
-    $('div.distance').append('<h2>Distance</h2>');
+    $('#filters').append('<div id="distance" data-category="distance"></div>');
+    $('#distance').append('<h2>Distance</h2>');
     var distancesClass = ['green', 'yellow', 'orange', 'red'];
-    $('div.distance').append('<ul></ul>');
+    $('#distance').append('<ul></ul>');
     distancesClass.forEach(function(color){
-      $('div[data-category="distance"] ul').append('<li class="flaticon-hiking ' + color + '"></li>');
+      $('div[data-category="distance"] ul').append('<li class="flaticon-running-man ' + color + '"></li>');
     });
   };
 
   filtersView.loadActivityFilters = function() {
-    $('div.filters').append('<div class="activity" data-category="activity"></div>');
-    $('div.activity').append('<h2>Activity</h2>');
+    $('#filters').append('<div class="activity" data-category="activity"></div>');
+    $('div.activity').append('<h2>Other Activities</h2>');
     var distancesClass = ['flaticon-bicycle-rider', 'flaticon-night-camping', 'flaticon-snowflake'];
     $('div.activity').append('<ul></ul>');
     distancesClass.forEach(function(element){
@@ -26,12 +27,12 @@
   };
 
   filtersView.loadSceneryFilters = function() {
-    $('div.filters').append('<div class="scenery" data-category="scenery"></div>');
-    $('div.scenery').append('<h2>Scenery</h2>');
-    var distancesClass = ['hiking-green.svg', 'hiking-yellow.svg', 'hiking-orange.svg', 'hiking-red.svg'];
-    $('div.scenery').append('<ul></ul>');
-    distancesClass.forEach(function(element){
-      $('div[data-category="scenery"] ul').append('<li><img class="filterIcons" src="vendor/assets/' + element + '"></li>');
+    $('#filters').append('<div id="scenery" data-category="scenery"></div>');
+    $('#scenery').append('<h2>Scenery</h2>');
+    var distancesClass = ['green', 'yellow', 'orange', 'red'];
+    $('#scenery').append('<ul></ul>');
+    distancesClass.forEach(function(color){
+      $('div[data-category="scenery"] ul').append('<li class="flaticon-two-pines"></li>');
     });
   };
 

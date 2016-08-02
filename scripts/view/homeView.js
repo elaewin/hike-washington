@@ -3,18 +3,10 @@
   var homeView = {};
   homeView.zipCode = 0;
 
-  homeView.loadHome = function() {
-    $('main').append('<section></section>');
-    $('section').append('<form id="formData"></form>');
-    $('form').append('<input type="text" id="zipEntry" hikesArray="Enter ZIP">');
-    $('form').append('<button id="button" type="button">GO HIKE</button>');
-    $('#formData').submit(function(event) {
-      event.preventDefault();
-    });
-    $('#button').click(function(){redirect(); return false;});
-  };
+  // add event listener on form to initate redirect
+
   redirect = function() {
-    homeView.zipCode = $('#zipEntry').val();
+    homeView.zipCode = $('#autocomplete').val();
     if (homeView.zipCode.length === 5) {
       modelHikes.getLatLng(homeView.zipCode);
       page.redirect('/filters');
@@ -24,7 +16,6 @@
   };
 
   modelHikes.loadAPIData();
-
 
   module.homeView = homeView;
 })(window);
