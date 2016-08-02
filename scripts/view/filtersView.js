@@ -8,21 +8,17 @@
   filtersView.loadDistanceFilters = function() {
     $('div.filters').append('<div class="distance" data-category="distance"></div>');
     $('div.distance').append('<h2>Distance</h2>');
-    var distancesClass = ['green.svg', 'yellow.svg', 'orange.svg', 'red.svg'];
+    var distancesClass = ['green', 'yellow', 'orange', 'red'];
     $('div.distance').append('<ul></ul>');
-    distancesClass.forEach(function(element){
-      $('div[data-category="distance"] ul').append('<li><img class="filterIcons" src="vendor/assets/' + element + '"></li>');
+    distancesClass.forEach(function(color){
+      $('div[data-category="distance"] ul').append('<li class="flaticon-hiking ' + color + '"></li>');
     });
   };
 
   filtersView.loadActivityFilters = function() {
     $('div.filters').append('<div class="activity" data-category="activity"></div>');
     $('div.activity').append('<h2>Activity</h2>');
-<<<<<<< HEAD
-    var distancesClass = ['hiking.svg', 'bicycle-rider.svg', 'night-camping.svg'];
-=======
     var distancesClass = ['flaticon-bicycle-rider', 'flaticon-night-camping', 'flaticon-snowflake'];
->>>>>>> master
     $('div.activity').append('<ul></ul>');
     distancesClass.forEach(function(element){
       $('div[data-category="activity"] ul').append('<li class="' + element + '"></li>');
