@@ -12,18 +12,26 @@ main {
   margin-top: 3rem;
   border: 8px solid #efefef;
   padding: 5em 3em 5em 3em;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* TEXT STYLES */
 h1 {
+  font-size: 6em;
+}
+
+h2 {
+  margin-top: 2em;
   font-size: 4em;
   font-family: "Architects Daughter", cursive;
 }
 
-
-@media screen and (min-width: 760px) {
+@media only screen and (min-width: 760px) {
   main {
     margin-top: 4rem;
     border: 3px solid #efefef;
+  }
+  ul {
+    margin: 1.5em;
   }
 }
