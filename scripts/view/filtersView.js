@@ -1,5 +1,7 @@
 (function(module) {
   var filtersView = {};
+  filtersView.lengthRequest = '';
+
 
   filtersView.clearData = function() {
     $('.page-content').hide();
@@ -35,6 +37,21 @@
       $('div[data-category="scenery"] ul').append('<li class="flaticon-two-pines"></li>');
     });
   };
+
+  // filtersView.distanceSelection = function() {
+  //   if ($("input[value='easy']").is(":checked")) {
+  //     filtersView.lengthRequest = 'easy';
+  //   }
+  //   if ($("input[value='medium']").is(":checked")) {
+  //     filtersView.lengthRequest = 'medium';
+  //   }
+  //   if ($("input[value='hard']").is(":checked")) {
+  //     filtersView.lengthRequest = 'hard';
+  //   }
+  //   if ($("input[value='expert']").is(":checked")) {
+  //     filtersView.lengthRequest = 'expert';
+  //   }
+  // };
 
     // $('section').append('<form><form>');
     // $('form').append('<fieldset></fieldset>');
