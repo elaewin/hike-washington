@@ -3,7 +3,7 @@
 
   filtersView.clearData = function() {
     $('.page-content').hide();
-    $('#filters').fadeIn();
+    $('#filters-section').fadeIn();
   };
 
   filtersView.loadDistanceFilters = function() {
@@ -22,17 +22,17 @@
     var distancesClass = ['flaticon-bicycle-rider', 'flaticon-night-camping', 'flaticon-snowflake'];
     $('div.activity').append('<ul></ul>');
     distancesClass.forEach(function(element){
-      $('div[data-category="activity"] ul').append('<li class="' + element + '"></li>');
+      $('div[data-category="activity"] ul').append('<li class="' + element + ' black"></li>');
     });
   };
 
   filtersView.loadSceneryFilters = function() {
     $('#filters').append('<div id="scenery" data-category="scenery"></div>');
     $('#scenery').append('<h2>Scenery</h2>');
-    var distancesClass = ['green', 'yellow', 'orange', 'red'];
+    var distancesClass = ['black', 'black', 'black', 'black'];
     $('#scenery').append('<ul></ul>');
     distancesClass.forEach(function(color){
-      $('div[data-category="scenery"] ul').append('<li class="flaticon-two-pines"></li>');
+      $('div[data-category="scenery"] ul').append('<li class="flaticon-two-pines black"></li>');
     });
   };
 

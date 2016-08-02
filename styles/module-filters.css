@@ -14,7 +14,11 @@
   color: red;
 }
 
-#filters ul {
+.black {
+  color: black;
+}
+
+#filters-section ul {
   font-size: 5em;
   margin-top: 0.5em;
   margin-bottom: 1em;
@@ -24,7 +28,7 @@
   justify-content: space-around;
 }
 
-#filters li {
+#filters-section li {
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
@@ -44,5 +48,21 @@ img.filterIcons{
 }
 
 #filters .active {
-  background-color: red;
+  background-color: white;
+}
+
+#filters-submit {
+  letter-spacing: .2rem;
+  background-color: #ccc;
+  font-size: 2.5em;
+  font-family: 'Architects Daughter', cursive;
+  text-transform: uppercase;
+  padding: .3em .75em;
+  width: 400px;
+  border: none;
+  border-radius: 5px;
+}
+
+#filters-form fieldset {
+  margin-left: -3vh;
 }
