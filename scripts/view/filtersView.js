@@ -1,5 +1,6 @@
 (function(module) {
   var filtersView = {};
+  filtersView.lengthRequest = '';
 
   filtersView.clearData = function() {
     $('.page-content').hide();

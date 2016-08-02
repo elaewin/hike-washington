@@ -5,7 +5,7 @@ page('*', home);
 page();
 
 function home() {
-  homeView.loadHome();
+  homeView.render();
 }
 
 function filters() {
