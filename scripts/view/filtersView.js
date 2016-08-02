@@ -42,6 +42,16 @@
 
     // $('#button2').click(function(){filtersView.redirect(); return false;});
 
+  filtersView.Run = function() {
+    async.series([
+      sqlDB.createTable(),
+      sqlDB.deleteEverything(),
+      sqlDB.insertRecord(),
+      sqlDistances.createTable(),
+      sqlDistances.latLonQuery(),
+    ]);
+  };
+
   filtersView.redirect = function() {
     page.redirect('/results');
   };
