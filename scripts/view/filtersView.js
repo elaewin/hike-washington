@@ -2,7 +2,8 @@
   var filtersView = {};
   filtersView.lengthRequest = '';
 
-  var distanceChoice = [];
+  filtersView.distanceChoice = [];
+  filtersView.resultsArray = [];
 
   filtersView.clearData = function() {
     $('.page-content').hide();
@@ -53,8 +54,8 @@
       } else {
         $selection.addClass('active').siblings($selection).removeClass('active');
         distanceValues = $selection.attr('value');
-        distanceChoice = [parseInt(distanceValues.split(',')[0]), parseInt(distanceValues.split(',')[1])];
-        console.log(distanceChoice);
+        filtersView.distanceChoice = [parseInt(distanceValues.split(',')[0]), parseInt(distanceValues.split(',')[1])];
+        console.log(filtersView.distanceChoice);
       }
     });
   };
@@ -81,12 +82,7 @@
     });
   };
 
-  $('#filters-form').submit(function(event) {
-    event.preventDefault();
-    // call function to populate resultsDB here.
-  });
-
-  filtersView.createResultsTable = function() {
+  filtersView.createResultsDB = function() {
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS resultsDB (' +
       'id INTEGER PRIMARY KEY, ' +
@@ -95,17 +91,25 @@
       'length FLOAT, ' +
       'lon FLOAT, ' +
       'lat FLOAT, ' +
-      'directions VARCHAR (255)' +
-      'distanceFromUser FLOAT' +
-      'scenery VARCHAR' +
+      'directions VARCHAR (255),' +
+      'distanceFromUser FLOAT,' +
+      'scenery VARCHAR,' +
       'description TEXT);'
     );
   };
 
   filtersView.populateResultsDB = function() {
-    webDB.execute('SELECT * FROM allHikesDB WHERE distance BETWEEN ' +
-    distanceChoice[0] + ' AND ' + distanceChoice[1] + ';');
+    webDB.execute('SELECT * FROM allHikesDB WHERE length BETWEEN ' +
+    filtersView.distanceChoice[0] + ' AND ' + filtersView.distanceChoice[1] + ';',
+    function(rows) {
+      filtersView.resultsArray = rows;
+      console.log(filtersView.resultsArray);
+    });
   };
+
+  // filtersView.populateResultsDB = function() {
+  //   webDB.execute('INSERT INTO resultsDB ');
+  // };
 
   filtersView.Run = function() {
     async.series([
@@ -131,6 +135,14 @@
     filtersView.handleActivitySelections();
     filtersView.handleScenerySelections();
   };
+
+  $('#filters-form').submit(function(event) {
+    event.preventDefault();
+    async.series([
+      filtersView.createResultsDB(),
+      filtersView.populateResultsDB()
+    ]);
+  });
 
   module.filtersView = filtersView;
 })(window);
