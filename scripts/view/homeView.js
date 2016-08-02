@@ -21,6 +21,7 @@
   homeView.Run = function() {
     async.series([
       sqlDB.createTable(),
+      sqlDB.deleteEverything(),
       sqlDB.insertRecord(),
       sqlDistances.createTable(),
       sqlDistances.latLonQuery(),

@@ -4,7 +4,6 @@
   sqlDB.displayHikes = []; //array used to render hikes to the DOM
 
   sqlDB.createTable = function() {
-    sqlDB.deleteEverything();
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS allHikesDB (' +
       'id INTEGER PRIMARY KEY, ' +
@@ -15,6 +14,7 @@
       'lat FLOAT, ' +
       'directions VARCHAR (255));'
     );
+    // sqlDB.deleteEverything();
   };
 
   sqlDB.insertRecord = function() {
