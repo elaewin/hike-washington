@@ -46,7 +46,6 @@
         });
       }
     }).done(function(){
-      console.log(modelHikes.hikesArray);
       sqlDB.createTable(sqlDB.insertRecord);
     });
   };
