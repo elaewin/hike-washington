@@ -2,6 +2,8 @@
   var filtersView = {};
   filtersView.lengthRequest = '';
 
+  var distanceChoice = [];
+
   filtersView.clearData = function() {
     $('.page-content').hide();
     $('#filters-section').fadeIn();
@@ -10,10 +12,15 @@
   filtersView.loadDistanceFilters = function() {
     $('#filters').append('<div id="distance" data-category="distance"></div>');
     $('#distance').append('<h2>Distance</h2>');
-    var distancesClass = ['green', 'yellow', 'orange', 'red'];
+    var distancesClass = [
+      { color: 'green', 'miles': '0,3' },
+      { color: 'yellow', 'miles': '4,7' },
+      { 'color': 'orange', 'miles': '8,11' },
+      { 'color': 'red', 'miles': '12,800' }
+    ];
     $('#distance').append('<ul></ul>');
-    distancesClass.forEach(function(color){
-      $('div[data-category="distance"] ul').append('<li class="flaticon-running-man ' + color + '"></li>');
+    distancesClass.forEach(function(element){
+      $('div[data-category="distance"] ul').append('<li class="flaticon-running-man ' + element.color + '" value="' + element.miles + '"></li>');
     });
   };
 
@@ -45,12 +52,26 @@
         $selection.removeClass('active');
       } else {
         $selection.addClass('active').siblings($selection).removeClass('active');
+        distanceValues = $selection.attr('value');
+        distanceChoice = [parseInt(distanceValues.split(',')[0]), parseInt(distanceValues.split(',')[1])];
+        console.log(distanceChoice);
       }
     });
   };
 
   filtersView.handleActivitySelections = function() {
     $('#activity li').on('click', function(event){
+      var $selection = $(event.target);
+      if($selection.hasClass('active')){
+        $selection.removeClass('active');
+      } else {
+        $selection.addClass('active');
+      }
+    });
+  };
+
+  filtersView.handleScenerySelections = function() {
+    $('#scenery li').on('click', function(event){
       var $selection = $(event.target);
       if($selection.hasClass('active')){
         $selection.removeClass('active');
@@ -82,6 +103,7 @@
     filtersView.loadSceneryFilters();
     filtersView.handleDistanceSelections();
     filtersView.handleActivitySelections();
+    filtersView.handleScenerySelections();
   };
 
   module.filtersView = filtersView;

@@ -17,7 +17,9 @@
       <h2>{{nameOfPlace}}</h2>
       <p>{{descriptionOfPlace}}</p>
       <ul>
+        {{ make a template loop for these }}
         <li>{{activity}}</li>
+        {{ end loop here}}
       </ul>
       <p>{{length}}</p>
     </script>
@@ -44,16 +46,6 @@
         </form>
       </section>
       <section id="results" class="page-content">
-      </section>
-      <section id="filters-form">
-        <form>
-          <fieldset>
-            <input type="checkbox" name="length" value="easy">
-            <input type="checkbox" name="length" value="medium">
-            <input type="checkbox" name="length" value="hard">
-            <input type="checkbox" name="length" value="expert">
-          </fieldset>
-        </form>
       </section>
     </main>
     <script src="vendor/scripts/async.js"></script>
