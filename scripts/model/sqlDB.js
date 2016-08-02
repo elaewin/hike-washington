@@ -24,7 +24,9 @@
         [
           {
             'sql': 'INSERT INTO allHikesDB (name, activities, length, lon, lat, directions) VALUES (?, ?, ?, ?, ?, ?);',
-            'data': [element.name, element.activities.map(function(curr){return curr.activity;}), element.activities.map(function(curr){return curr.activityLength;}), element['location'].lon, element['location'].lat, element.directions]
+            'data': [element.name, element.activities.map(function(curr){return curr.activity;}), element.activities.filter(function(curr) {
+              return curr.activity === 'hiking';
+            }).map(function(curr){return curr.activityLength;}), element['location'].lon, element['location'].lat, element.directions]
           }
         ]
       );

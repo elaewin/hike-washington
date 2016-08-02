@@ -63,4 +63,4 @@ Session.vim
 
 # auto-generated tag files
 tags
-assets/authKey.js
+scripts/assets/authKey.js
