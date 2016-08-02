@@ -32,16 +32,9 @@ h1 {
 }
 
 h2 {
-  margin-top: 2em;
   font-size: 4em;
 }
 
 p {
   line-height: 1.2em;
-}
-
-@media only screen and (min-width: 760px) {
-  ul {
-    margin: 1.5em;
-  }
 }

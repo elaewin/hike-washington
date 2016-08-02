@@ -13,3 +13,34 @@
 .red {
   color: red;
 }
+
+#filters ul {
+  font-size: 5em;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+#filters li {
+  display: inline;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  padding: 1.25rem 1.75rem;
+  }
+
+
+
+
+}
+
+img.filterIcons{
+  height: 6em;
+  width: 6em;
+  margin: 1.25em;
+}
+
+.filters li{
+}
