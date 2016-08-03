@@ -1,5 +1,6 @@
 (function(module) {
   var resultsView = {};
+  var resultsCompiler = Handlebars.compile($('#results-template').text());
 
   resultsView.render = function() {
     $('main').html('');
@@ -13,6 +14,8 @@
         return $('<p>' + row.name + ' : ' + row.activities + ' : ' + row['length'] + '</p>');}));
     });
   };
+
+  
 
   module.resultsView = resultsView;
 })(window);
