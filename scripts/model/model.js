@@ -28,11 +28,8 @@
 
   modelHikes.callTrailAPI = function() {
     console.log('trail api running');
-    var trailsURL = '../data/hikes.json';
-    console.log(trailsURL);
     $.getJSON({
-      url: trailsURL,
-      method: 'GET',
+      url: 'data/hikes.json',
       success: function(data, message, xhr) {
         console.log(data);
         data.places.map(function(current) {
@@ -52,14 +49,15 @@
               return activityInfo;
             })
           };
-          modelHikes.hikesArray.push(place);
-          // place.activities.forEach(function(element) {
-          //   if(element['activity'] === 'hiking') {
-          //     modelHikes.hikesArray.push(place);
-          //   };
-          // });
+          place.activities.forEach(function(element) {
+            if(element['activity'] === 'hiking') {
+              modelHikes.hikesArray.push(place);
+            };
+          });
         });
       }
+    }).done(function(){
+      // modelHikes.getLatLng();
     });
   };
 
@@ -67,15 +65,16 @@
     if(modelHikes.zipResults.length > 1) {
       modelHikes.zipResults.length = 0;
     }
-    var googleURL = '/theGoogles/' + 'maps/api/geocode/json?address=' + zipCode;
+    var authKey = googleAPIKey;
     $.ajax({
-      url:  googleURL,
+      url: 'http://maps.googleapis.com/maps/api/geocode/json?address=' + zipCode + '?key=' + authKey,
       method: 'POST',
       success: function(data){
         var results = data.results;
         var geoResult = results[0];
         modelHikes.zipResults.push(geoResult.geometry.location.lat);
         modelHikes.zipResults.push(geoResult.geometry.location.lng);
+        // return [geoResult.geometry.location.lat, geoResult.geometry.location.lng];
         filtersView.Run();
       }
     });
