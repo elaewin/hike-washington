@@ -4402,12 +4402,34 @@
 		"parent_id": null,
 		"unique_id": 22027,
 		"directions": "From Yakima Avenue head west through downtown. Turn right at Summit view Avenue and continue driving for 10.9 miles to Cowiche Mill Road. Turn left and proceed 2.5 miles, passing the nursery on the right, and turn left into the fence slot marked with CCC signs.&lt;br /&gt;&lt;br /&gt;http://goo.gl/maps/7NnvO",
-		"lat": 0.0,
-		"lon": 0.0,
+		"lat": 46.6597651,
+		"lon": -120.7571157,
 		"description": null,
 		"date_created": null,
 		"children": [],
-		"activities": []
+		"activities": [{
+      "name": "Snow Mountain Ranch Trails",
+      "unique_id": null,
+      "place_id": 27009,
+      "activity_type_id": 14,
+      "activity_type_name": "hiking",
+      "url": null,
+      "attribs": {
+        "\"length\"": "\"2\"",
+        "\"nightride\"": "null"
+      },
+      "description": "History is just one of many attractions at Snow Mountain Ranch. Hike the riparian areas for a chance to glimpse great horned owls, or focus your binoculars on the local pond for sightings of a variety of ducks. The lowland fields provide excellent hunting grounds for red-tailed hawks, sharp shinned hawks and northern harriers.<br />There is also a resident population of elk that wander in and out of ranch area. Deer and coyote signs are apparent on all trails. Hike to the top of Cowich Mountain for views westward of Mount Adams and Mount Rainier, and a large elk feeding station managed by WDFW. To the east Yakima is visible.<br />In winter, snowshoes are not usually required, but traction devices can come in handy when trails are icy.<br />Along the way, the views expand with every step, and much of the trail is lined with wildflowers: grass widows and desert-parsleys early in the season followed by balsamroot, lupine, phlox and fields of big-headed clover. You'll also pass two old bathtubs used as stock watering troughs when this was a working ranch. Once on the summit, kick back, bask in the sun and enjoy the panoramic views of the surrounding countryside. When it’s time to return, descend the way you came or make it a loop by descending on the east leg of the Cowiche Mountain Trail",
+      "length": 7.0,
+      "activity_type": {
+        "created_at": "2012-08-15T16:12:35Z",
+        "id": 14,
+        "name": "hiking",
+        "updated_at": "2012-08-15T16:12:35Z"
+      },
+      "thumbnail": null,
+      "rank": null,
+      "rating": 0.0
+    }]
 	}, {
 		"city": "Maple Valley, WA",
 		"state": "Washington",
@@ -5401,20 +5423,6 @@
 			"rating": 0.0
 		}]
 	}, {
-		"city": "Blaine",
-		"state": "Washington",
-		"country": "United States",
-		"name": "Birch Bay",
-		"parent_id": null,
-		"unique_id": 11029,
-		"directions": "None",
-		"lat": 0.0,
-		"lon": 0.0,
-		"description": null,
-		"date_created": null,
-		"children": [],
-		"activities": []
-	}, {
 		"city": "Spokane",
 		"state": "Washington",
 		"country": "United States",
@@ -5946,7 +5954,29 @@
 		"description": null,
 		"date_created": null,
 		"children": [],
-		"activities": []
+		"activities": [{
+      "name": "Steamboat Rock State Park",
+      "unique_id": null,
+      "place_id": 27009,
+      "activity_type_id": 14,
+      "activity_type_name": "hiking",
+      "url": null,
+      "attribs": {
+        "\"length\"": "\"2\"",
+        "\"nightride\"": "null"
+      },
+      "description": "Jutting 800 feet out of Banks Lake in Washington’s majestic coulee country, Steamboat Rock is the crown jewel of this area. The basalt butte has a rich history; first used by native people many years ago, and during the ice age, the Great Missoula Floods carved the canyons here, while the rock stood as an island in the raging river. Now, with the Columbia rolling out in its original course, Steamboat Rock lies high and dry, offering excellent 360-degree panoramas of the landscape surrounding it.",
+      "length": 6.0,
+      "activity_type": {
+        "created_at": "2012-08-15T16:12:35Z",
+        "id": 14,
+        "name": "hiking",
+        "updated_at": "2012-08-15T16:12:35Z"
+      },
+      "thumbnail": null,
+      "rank": null,
+      "rating": 0.0
+    }]
 	}, {
 		"city": "Cle Elum",
 		"state": "Washington",
@@ -6273,20 +6303,6 @@
 			"rank": null,
 			"rating": 0.0
 		}]
-	}, {
-		"city": "Leavenworth",
-		"state": "Washington",
-		"country": "United States",
-		"name": "Lichen It and Luvin It",
-		"parent_id": null,
-		"unique_id": 28283,
-		"directions": "Top of hogsback chair",
-		"lat": 0.0,
-		"lon": 0.0,
-		"description": null,
-		"date_created": null,
-		"children": [],
-		"activities": []
 	}, {
 		"city": "Evans",
 		"state": "Washington",
@@ -8062,7 +8078,52 @@
 		"description": null,
 		"date_created": null,
 		"children": [],
-		"activities": []
+		"activities": [{
+      "name": "",
+      "unique_id": null,
+      "place_id": 27009,
+      "activity_type_id": 14,
+      "activity_type_name": "hiking",
+      "url": null,
+      "attribs": {
+        "\"length\"": "\"2\"",
+        "\"nightride\"": "null"
+      },
+      "description": "This loop is described as one of the top snowshoe treks in the Columbia Highlands. Head north on the Kettle Crest National Scenic Trail across the southwestern flank of Columbia Mountain. The open summit, the high point for this adventure, holds views of the surrounding Kettle Range. Some previous snowshoe experience and winter survival skills recommended on this trail.",
+      "length": 7.5,
+      "activity_type": {
+        "created_at": "2012-08-15T16:12:35Z",
+        "id": 14,
+        "name": "hiking",
+        "updated_at": "2012-08-15T16:12:35Z"
+      },
+      "thumbnail": null,
+      "rank": null,
+      "rating": 0.0
+    },
+    {
+      "name": "",
+      "unique_id": null,
+      "place_id": 27009,
+      "activity_type_id": 14,
+      "activity_type_name": "snow sports",
+      "url": null,
+      "attribs": {
+        "\"length\"": "\"2\"",
+        "\"nightride\"": "null"
+      },
+      "description": "This loop is described as one of the top snowshoe treks in the Columbia Highlands. Head north on the Kettle Crest National Scenic Trail across the southwestern flank of Columbia Mountain. The open summit, the high point for this adventure, holds views of the surrounding Kettle Range. Some previous snowshoe experience and winter survival skills recommended on this trail.",
+      "length": 7.5,
+      "activity_type": {
+        "created_at": "2012-08-15T16:12:35Z",
+        "id": 14,
+        "name": "snow sports",
+        "updated_at": "2012-08-15T16:12:35Z"
+      },
+      "thumbnail": null,
+      "rank": null,
+      "rating": 0.0
+    }]
 	}, {
 		"city": "Kenmore",
 		"state": "Washington",
@@ -8076,7 +8137,29 @@
 		"description": "Saint Edward State Park is a 316-acre day-use park with 3,000 feet of freshwater shoreline on Lake Washington. Once a Catholic seminary, the park's rich history reflects in its grounds and architecture. Walks along the undeveloped lakeshore are peaceful and give the visitor many opportunities for nature study.",
 		"date_created": null,
 		"children": [],
-		"activities": []
+		"activities": [{
+      "name": "Saint Edward State Park",
+      "unique_id": null,
+      "place_id": 27009,
+      "activity_type_id": 14,
+      "activity_type_name": "hiking",
+      "url": null,
+      "attribs": {
+        "\"length\"": "\"2\"",
+        "\"nightride\"": "null"
+      },
+      "description": "Hike through a diverse century-old second-growth forest with a dense canopy to the undeveloped shoreline of Lake Washington. This historic 316-acre state park, nestled in the midst of the Seattle metropolitan area, has playground facilities for children, picnic areas, trails for mountain bikers, and fields for sports teams as well.<br />Perhaps the most fascinating activity is hiking from the hills 400 feet above Lake Washington down to the undeveloped shoreline under a dense canopy of Douglas fir, western red cedar, western hemlock, bigleaf maple, Pacific madrona, and cottonwood.<br />Wildflowers and ground cover include sword ferns, devil’s club, candy flower, thimbleberry, red currant, Robert Geranium, Oregon grape, and bleeding heart. Be cautious of the Pacific banana slugs and European black slugs that outnumber hikers on the trail during the spring, summer, and fall months.",
+      "length": 3.0,
+      "activity_type": {
+        "created_at": "2012-08-15T16:12:35Z",
+        "id": 14,
+        "name": "hiking",
+        "updated_at": "2012-08-15T16:12:35Z"
+      },
+      "thumbnail": null,
+      "rank": null,
+      "rating": 0.0
+    }]
 	}, {
 		"city": "Brinnon",
 		"state": "Washington",
@@ -9371,7 +9454,7 @@
       "unique_id": "4-3",
       "place_id": 13697,
       "activity_type_id": 7,
-      "activity_type_name": "caving",
+      "activity_type_name": "hiking",
       "url": "http://www.tripleblaze.com/trail.php?c=251&i=3",
       "attribs": {
         "null": null
@@ -10183,7 +10266,7 @@
       "unique_id": "4-164",
       "place_id": 15879,
       "activity_type_id": 7,
-      "activity_type_name": "caving",
+      "activity_type_name": "hiking",
       "url": "http://www.tripleblaze.com/trail.php?c=251&i=164",
       "attribs": {
         "null": null
@@ -10193,27 +10276,13 @@
       "activity_type": {
         "created_at": "2012-08-15T17:32:53Z",
         "id": 7,
-        "name": "caving",
+        "name": "hiking",
         "updated_at": "2012-08-15T17:32:53Z"
       },
       "thumbnail": null,
       "rank": null,
       "rating": 0.0
     }]
-	}, {
-		"city": "Leavenworth",
-		"state": "Washington",
-		"country": "United States",
-		"name": "Rock Crusher",
-		"parent_id": null,
-		"unique_id": 28280,
-		"directions": "Top of hogsback chair",
-		"lat": 0.0,
-		"lon": 0.0,
-		"description": null,
-		"date_created": null,
-		"children": [],
-		"activities": []
 	}, {
 		"city": "Arlington",
 		"state": "Washington",
@@ -10463,12 +10532,56 @@
 		"parent_id": null,
 		"unique_id": 28466,
 		"directions": "Access #1-From Kettle Falls follow U.S. Highway 395 north 22 miles. Turn west on Boulder Creek Road 61 and follow for 2 miles. Turn left on South Boulder Road 6110 and travel 13 miles to junction of Albian Hill Road 2030. Turn right on road 2030 and follow for 0.7 miles to road 2030-910.  &lt;br /&gt;&lt;br /&gt;Access #2- From Kettle Falls follow U.S. Highway 395 to State route 20. Continue on State route 20 for 22 miles. Turn north on Albian Hill Road 2030 and travel 22.1 miles to road #2030-910.",
-		"lat": 0.0,
-		"lon": 0.0,
+		"lat": 48.6042725,
+		"lon": -118.061729,
 		"description": null,
 		"date_created": null,
 		"children": [],
-		"activities": []
+		"activities": [{
+      "name": "",
+      "unique_id": null,
+      "place_id": 27009,
+      "activity_type_id": 14,
+      "activity_type_name": "hiking",
+      "url": null,
+      "attribs": {
+        "\"length\"": "\"2\"",
+        "\"nightride\"": "null"
+      },
+      "description": "Stick Pin trail provides access to the Kettle Crest (North) National Recreation Trail #13. Good vistas reward traveler near trail's end. Horseback Riding.",
+      "length": 2.6,
+      "activity_type": {
+        "created_at": "2012-08-15T16:12:35Z",
+        "id": 14,
+        "name": "hiking",
+        "updated_at": "2012-08-15T16:12:35Z"
+      },
+      "thumbnail": null,
+      "rank": null,
+      "rating": 0.0
+    }, {
+      "name": "",
+      "unique_id": null,
+      "place_id": 27009,
+      "activity_type_id": 14,
+      "activity_type_name": "camping",
+      "url": null,
+      "attribs": {
+        "\"length\"": "\"2\"",
+        "\"nightride\"": "null"
+      },
+      "description": "",
+      "length": 0.0,
+      "activity_type": {
+        "created_at": "2012-08-15T16:12:35Z",
+        "id": 14,
+        "name": "hiking",
+        "updated_at": "2012-08-15T16:12:35Z"
+      },
+      "thumbnail": null,
+      "rank": null,
+      "rating": 0.0
+    }]
 	}, {
 		"city": "Metaline Falls",
 		"state": "Washington",
@@ -12221,20 +12334,6 @@
 			"rating": 0.0
 		}]
 	}, {
-		"city": "Leavenworth",
-		"state": "Washington",
-		"country": "United States",
-		"name": "PBR Powered By Rudolph",
-		"parent_id": null,
-		"unique_id": 28281,
-		"directions": "Top of hogsback chair",
-		"lat": 0.0,
-		"lon": 0.0,
-		"description": null,
-		"date_created": null,
-		"children": [],
-		"activities": []
-	}, {
 		"city": "Baker Lake",
 		"state": "Washington",
 		"country": "United States",
@@ -13940,20 +14039,6 @@
 			"rating": 0.0
 		}]
 	}, {
-		"city": "Leavenworth",
-		"state": "Washington",
-		"country": "United States",
-		"name": "Slingshot Wookie",
-		"parent_id": null,
-		"unique_id": 28282,
-		"directions": "Top of hogsback chair",
-		"lat": 0.0,
-		"lon": 0.0,
-		"description": null,
-		"date_created": null,
-		"children": [],
-		"activities": []
-	}, {
 		"city": "Stanwood",
 		"state": "Washington",
 		"country": "United States",
@@ -14096,20 +14181,6 @@
 			"rank": null,
 			"rating": 3.0
 		}]
-	}, {
-		"city": "Leavenworth",
-		"state": "Washington",
-		"country": "United States",
-		"name": "Golden Spike and Morooka",
-		"parent_id": null,
-		"unique_id": 28284,
-		"directions": "Top of hogsback chair",
-		"lat": 0.0,
-		"lon": 0.0,
-		"description": null,
-		"date_created": null,
-		"children": [],
-		"activities": []
 	}, {
 		"city": "Everett",
 		"state": "Washington",
@@ -18557,20 +18628,6 @@
 			"rating": 0.0
 		}]
 	}, {
-		"city": "Greenwater",
-		"state": "Washington",
-		"country": "United States",
-		"name": "Ranger Creek",
-		"parent_id": null,
-		"unique_id": 4006,
-		"directions": "East on Hwy 410 from Enumcla, turn south onto road 7160 Buck Creek Road. Trun left into the parking lot just across the bridge at the top of the Skookum Flats Trail",
-		"lat": 0.0,
-		"lon": 0.0,
-		"description": null,
-		"date_created": null,
-		"children": [],
-		"activities": []
-	}, {
 		"city": "Cle Elum",
 		"state": "Washington",
 		"country": "United States",
@@ -18774,7 +18831,29 @@
 		"description": "Bridle Trails State Park, a 482-acre day-use park, is well-known for its horse trails and equestrian shows. The forested park is on the northeast edge of the Seattle metropolitan area.",
 		"date_created": null,
 		"children": [],
-		"activities": []
+		"activities": [{
+      "name": "Bridle Trails State Park",
+      "unique_id": null,
+      "place_id": 27009,
+      "activity_type_id": 14,
+      "activity_type_name": "hiking",
+      "url": null,
+      "attribs": {
+        "\"length\"": "\"2\"",
+        "\"nightride\"": "null"
+      },
+      "description": "Bridle Trails State Park is located between Kirkland and Bellevue, Washington, with its main entrance in Kirkland. The park is 482 forested acres with 28 miles of equestrian/pedestrian trails.There are three marked trail loops of varying distance, from 1 to 3.5 miles long.",
+      "length": 1.7,
+      "activity_type": {
+        "created_at": "2012-08-15T16:12:35Z",
+        "id": 14,
+        "name": "hiking",
+        "updated_at": "2012-08-15T16:12:35Z"
+      },
+      "thumbnail": null,
+      "rank": null,
+      "rating": 0.0
+    }]
 	}, {
 		"city": "Gig Harbor",
 		"state": "Washington",
@@ -19042,7 +19121,29 @@
 		"description": null,
 		"date_created": null,
 		"children": [],
-		"activities": []
+		"activities": [{
+      "name": "Kettle Crest: Sherman Peak Loop",
+      "unique_id": null,
+      "place_id": 27009,
+      "activity_type_id": 14,
+      "activity_type_name": "hiking",
+      "url": null,
+      "attribs": {
+        "\"length\"": "\"2\"",
+        "\"nightride\"": "null"
+      },
+      "description": "The southern section of the 43-mile Kettle Crest National Recreation Trail begins on the White Mountain Trailhead and extends to Sherman Pass, passing by White Mountain, Barnaby Butte, Bald Mountain, Snow Peak, and Sherman Peak, and ambling through snags left from a 1988 forest fire.<br />The trail is complemented with a segment that forms the delightful 5.3-mile loop trip around Sherman Peak. Wildlife is abundant, including deer, coyotes, grouse, black bears, and songbirds, with signs of the elusive lynx. Listen for the shrill whistle of the varied thrush in the timber and the squeaks of pikas in the talus slopes. The Washington Department of Fish and Wildlife manages this region as a trophy mule deer area, which means it has a high ratio of mature bucks with antlers - four points or better on each side.",
+      "length": 5.0,
+      "activity_type": {
+        "created_at": "2012-08-15T16:12:35Z",
+        "id": 14,
+        "name": "hiking",
+        "updated_at": "2012-08-15T16:12:35Z"
+      },
+      "thumbnail": null,
+      "rank": null,
+      "rating": 0.0
+    }]
 	}, {
 		"city": null,
 		"state": "Washington",
@@ -19812,7 +19913,29 @@
 		"description": "Fort Simcoe State Park is a 200-acre, day-use heritage park in south central Washington on the Yakama Indian Nation Reservation. The park is primarily an interpretive effort, telling the story of mid-19th century army life and providing insights into the lifeways of local Native American culture. Located in the foothills of the Cascade Mountains in an old oak grove watered by natural springs, Fort Simcoe was an 1850's-era military installation established to keep peace between the settlers and the Indians. Due to its unique historic significance, the park was placed on the National Register of Historic Places in June, 1974. Before the fort era, the site was an Indian campground where many trails crossed.",
 		"date_created": null,
 		"children": [],
-		"activities": []
+		"activities": [{
+      "name": "Fort Simcoe Historical State Park",
+      "unique_id": null,
+      "place_id": 27009,
+      "activity_type_id": 14,
+      "activity_type_name": "hiking",
+      "url": null,
+      "attribs": {
+        "\"length\"": "\"2\"",
+        "\"nightride\"": "null"
+      },
+      "description": "Fort Simcoe Historical State Park is a 200-acre, day-use heritage park in south central Washington on the Yakama Indian Nation Reservation. The park is primarily an interpretive effort, telling the story of mid-19th century army life and providing insights into the life ways of local Native American culture. Located in the foothills of the Cascade Mountains in an old oak grove watered by natural springs, Fort Simcoe was an 1850s-era military installation established to keep peace between the settlers and the Indians.<br />Due to its unique historic significance, the park was placed on the National Register of Historic Places in June 1974. Before the fort era, the site was an Indian campground where many trails crossed. The park features rich interpretive opportunities, which explore mid-19th century life and the clash of cultures that took place when settlers and Indians vied for the same territory.<br />Fort Simcoe Historical State Park is one of the largest gathering areas in the Northwest of the Lewis's woodpecker.",
+      "length": 0.8,
+      "activity_type": {
+        "created_at": "2012-08-15T16:12:35Z",
+        "id": 14,
+        "name": "hiking",
+        "updated_at": "2012-08-15T16:12:35Z"
+      },
+      "thumbnail": null,
+      "rank": null,
+      "rating": 0.0
+    }]
 	}, {
 		"city": "Kettle Falls",
 		"state": "Washington",
@@ -24590,7 +24713,7 @@
 				"\"length\"": "\"1\""
 			},
 			"description": "Birch Bay State Park has an active summer interpretive program, a 1/2 mile Terrell Marsh Interpretive Trail and four interpretive signs throughout the park.",
-			"length": 1.0,
+			"length": 1.5,
 			"activity_type": {
 				"created_at": "2012-08-15T16:12:21Z",
 				"id": 2,
@@ -27658,8 +27781,8 @@
 		"parent_id": null,
 		"unique_id": 13844,
 		"directions": null,
-		"lat": 0.0,
-		"lon": 0.0,
+		"lat": 45.9611742,
+		"lon": -121.6321545,
 		"description": null,
 		"date_created": null,
 		"children": [],
@@ -27690,7 +27813,7 @@
       "unique_id": "4-152",
       "place_id": 13844,
       "activity_type_id": 7,
-      "activity_type_name": "caving",
+      "activity_type_name": "hiking",
       "url": "http://www.tripleblaze.com/trail.php?c=251&i=152",
       "attribs": {
         "null": null

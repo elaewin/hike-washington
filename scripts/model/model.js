@@ -50,12 +50,11 @@
               return activityInfo;
             })
           };
-          // place.activities.forEach(function(element) {
-          //   if(element['activity'] === 'hiking') {
-          //     modelHikes.hikesArray.push(place);
-          //   };
-          // });
-          modelHikes.hikesArray.push(place);
+          place.activities.forEach(function(element) {
+            if(element['activity'] === 'hiking') {
+              modelHikes.hikesArray.push(place);
+            };
+          });
         });
       }
     });

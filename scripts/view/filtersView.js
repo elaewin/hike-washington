@@ -147,7 +147,7 @@
   filtersView.Run = function() {
     async.series([
       sqlDB.createTable(),
-      // sqlDB.deleteEverything(),
+      sqlDB.deleteEverything(),
       sqlDB.insertRecord(),
       sqlDistances.createTable(),
       sqlDB.updateScenery(),
