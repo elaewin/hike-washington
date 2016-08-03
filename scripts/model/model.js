@@ -45,6 +45,7 @@
               lat: current.lat,
               lon: current.lon
             },
+            description: current.description,
             activities: current.activities.map(function(element) {
               var activityInfo = {
                 activity: element.activity_type_name,
