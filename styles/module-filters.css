@@ -1,9 +1,9 @@
 .green {
-  color: green;
+  color: #669933;
 }
 
 .yellow {
-  color: yellow;
+  color: #d3d347;
 }
 
 .orange {
@@ -11,11 +11,23 @@
 }
 
 .red {
-  color: red;
+  color: #a01505;
+}
+
+.purple {
+  color: #5f2871;
+}
+
+.ltblue {
+  color: #29526d;
 }
 
 .black {
-  color: black;
+  color: #000;
+}
+
+.brown {
+  color: #734416;
 }
 
 #filters-section ul {
