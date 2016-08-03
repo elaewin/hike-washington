@@ -28,11 +28,11 @@
 
   modelHikes.callTrailAPI = function() {
     console.log('trail api running');
-    var trailsURL = '/trailsAPI';
+    var trailsURL = '../data/hikes.json';
     console.log(trailsURL);
-    $.ajax({
+    $.getJSON({
       url: trailsURL,
-      type: 'GET',
+      method: 'GET',
       success: function(data, message, xhr) {
         console.log(data);
         data.places.map(function(current) {
@@ -52,11 +52,12 @@
               return activityInfo;
             })
           };
-          place.activities.forEach(function(element) {
-            if(element['activity'] === 'hiking') {
-              modelHikes.hikesArray.push(place);
-            };
-          });
+          modelHikes.hikesArray.push(place);
+          // place.activities.forEach(function(element) {
+          //   if(element['activity'] === 'hiking') {
+          //     modelHikes.hikesArray.push(place);
+          //   };
+          // });
         });
       }
     });
