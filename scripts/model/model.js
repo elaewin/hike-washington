@@ -29,7 +29,7 @@
   modelHikes.callTrailAPI = function() {
     console.log('trail api running');
     $.getJSON({
-      url: 'data/hikes.json',
+      url: '../data/hikes.json',
       success: function(data, message, xhr) {
         console.log(data);
         data.places.map(function(current) {
@@ -49,15 +49,14 @@
               return activityInfo;
             })
           };
-          place.activities.forEach(function(element) {
-            if(element['activity'] === 'hiking') {
-              modelHikes.hikesArray.push(place);
-            };
-          });
+          // place.activities.forEach(function(element) {
+          //   if(element['activity'] === 'hiking') {
+          //     modelHikes.hikesArray.push(place);
+          //   };
+          // });
+          modelHikes.hikesArray.push(place);
         });
       }
-    }).done(function(){
-      // modelHikes.getLatLng();
     });
   };
 
@@ -74,7 +73,6 @@
         var geoResult = results[0];
         modelHikes.zipResults.push(geoResult.geometry.location.lat);
         modelHikes.zipResults.push(geoResult.geometry.location.lng);
-        // return [geoResult.geometry.location.lat, geoResult.geometry.location.lng];
         filtersView.Run();
       }
     });

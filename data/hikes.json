@@ -1,5 +1,6 @@
 {
-	"places": [{
+	"places": [
+    {
 		"city": "Nine Mile Falls",
 		"state": "Washington",
 		"country": "United States",
@@ -4356,7 +4357,8 @@
 			"thumbnail": null,
 			"rank": null,
 			"rating": 4.33
-		}, {
+    }]
+	}, {
 		"city": "Cle Elum",
 		"state": "Washington",
 		"country": "United States",
@@ -14580,7 +14582,8 @@
 			"thumbnail": null,
 			"rank": null,
 			"rating": 0.0
-		}, {
+    }]
+	}, {
 		"city": "Cle Elum",
 		"state": "Washington",
 		"country": "United States",
