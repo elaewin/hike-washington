@@ -29,10 +29,10 @@
   filtersView.loadActivityFilters = function() {
     $('#filters').append('<div id="activity" data-category="activity"></div>');
     $('div#activity').append('<h2>Other Activities</h2>');
-    var distancesClass = ['flaticon-bicycle-rider', 'flaticon-night-camping', 'flaticon-snowflake'];
+    var distancesClass = [['flaticon-bicycle-rider','biking'], ['flaticon-night-camping', 'camping'], ['flaticon-snowflake', 'snow']];
     $('div#activity').append('<ul></ul>');
     distancesClass.forEach(function(element){
-      $('div[data-category="activity"] ul').append('<li class="' + element + ' black"></li>');
+      $('div[data-category="activity"] ul').append('<li class="' + element[0] + ' black other-activity" value="' + element[1] + '"></li>');
     });
   };
 
@@ -111,6 +111,7 @@
     });
   };
 
+  //populate results based on distance
   filtersView.populateResultsDB = function() {
     filtersView.resultsArray.forEach(function(resultsObj) {
       webDB.execute(
@@ -124,6 +125,22 @@
           page.redirect('/results');
         }
       );
+    });
+  };
+
+  //update results based on actvitiy, scenery, etc
+  filtersView.updateResultsDB = function() {
+    filtersView.findActiveActivities();
+    filtersView.activityChoice.forEach(function(current){
+      webDB.execute('DELETE FROM resultsDB WHERE activities NOT LIKE "%' + current + '%"');
+    });
+  };
+
+  //find activites that have been clicked
+  filtersView.findActiveActivities = function() {
+    $('.other-activity.active').each(function(){
+      console.log($(this));
+      filtersView.activityChoice.push($(this).attr('value'));
     });
   };
 
