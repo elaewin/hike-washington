@@ -1,6 +1,8 @@
 (function(module) {
   var resultsView = {};
 
+  var resultCount = 0;
+
   function Hike (opts) {
     Object.keys(opts).forEach(function(e, index, keys) {
       this[e] = opts[e];
@@ -15,27 +17,34 @@
       resultsView.resultsArray = rows.map(function(row) {
         return new Hike(row);
       });
-    })
+    });
   };
 
-  resultsView.renderResults = function() {
+  resultsView.renderResults = function(element) {
     var resultsCompiler = Handlebars.compile($('#results-template').text());
-    //
+    var actArray = row.activities.split(',');
+    // var sceneArray = row.scenery.split(',');
+    var result = resultsCompiler(
+      {
+        name: nameOfPlace,
+        hikeDescription: description,
+        activitesSelected: actArray,
+        // scenerySelected: sceneArray,
+        length: lengthOfHike,
+        distance: distanceFromUser
+      }
+    );
+    $('#results').append(result);
   };
-        var actArray = row.activities.split(',');
-        // var sceneArray = row.scenery.split(',');
-        return template(
-          {
-            name: nameOfPlace,
-            hikeDescription: description,
-            activitesSelected: actArray,
-            // scenerySelected: sceneArray,
-            length: lengthOfHike,
-            distance: distanceFromUser
-          }
-        );
-      });
+
+  resultsView.showThreeResults = function() {
+    var arrayOfThree = [
+      resultsView.resultsArray[resultCount], resultsView.resultsArray[resultCount + 1], resultsView.resultsArray[resultCount + 2]
+    ];
+    arrayOfThree.forEach(function(hike) {
+      resultsView.renderResults(hike);
     });
+    resultCount += 3;
   };
 
   resultsView.Run = function() {
