@@ -13,8 +13,13 @@
       'lon FLOAT, ' +
       'lat FLOAT, ' +
       'directions TEXT, ' +
+      'scenery TEXT,' +
       'areaDescription TEXT, ' +
-      'hikeDescription TEXT);'
+      'hikeDescription TEXT, ' +
+      'sceneryWildlife VARCHAR(255), ' +
+      'sceneryForrest VARCHAR(255), ' +
+      'sceneryWater VARCHAR(255), ' +
+      'sceneryMountain VARCHAR(255));'
     );
     // sqlDB.deleteEverything();
   };
@@ -36,6 +41,16 @@
       );
     });
   };
+
+  sqlDB.updateScenery = function() {
+    sceneryTerms.forEach(function(ele) {
+      webDB.execute('UPDATE allHikesDB SET scenery' + ele.key + ' ="' + ele.key + '" WHERE areaDescription LIKE "%' + ele.value + '%" OR hikeDescription LIKE "%' + ele.value + '";');
+    });
+  };
+
+  // sqlDB.concatScenery = function () {
+  //   webDB.execute('UPDATE allHikesDB SET scenery = CONCAT(sceneryWildlife, " ", sceneryForrest, " ", sceneryWater, " ", sceneryMountain);');
+  // };
 
 //populates the array that we want to render to the browser (doug)
   // sqlDB.toHTML = function(num, callback) {

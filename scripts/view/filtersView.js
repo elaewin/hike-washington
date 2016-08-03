@@ -3,6 +3,7 @@
   filtersView.lengthRequest = '';
 
   filtersView.distanceChoice = [];
+  filtersView.activityChoice = [];
   filtersView.resultsArray = [];
 
   filtersView.clearData = function() {
@@ -38,10 +39,10 @@
   filtersView.loadSceneryFilters = function() {
     $('#filters').append('<div id="scenery" data-category="scenery"></div>');
     $('#scenery').append('<h2>Scenery</h2>');
-    var distancesClass = ['black', 'black', 'black', 'black'];
+    var distancesClass = ['wild-deer', 'two-pines', 'sun-and-lake', 'snowed-mountains'];
     $('#scenery').append('<ul></ul>');
-    distancesClass.forEach(function(color){
-      $('div[data-category="scenery"] ul').append('<li class="flaticon-two-pines black"></li>');
+    distancesClass.forEach(function(icon){
+      $('div[data-category="scenery"] ul').append('<li class="flaticon-' + icon + ' black"></li>');
     });
   };
 
@@ -94,7 +95,8 @@
       'directions VARCHAR (255),' +
       'distanceFromUser FLOAT,' +
       'scenery VARCHAR,' +
-      'description TEXT);'
+      'hikeDescription TEXT,' +
+      'areaDescription TEXT);'
     );
   };
 
@@ -114,10 +116,13 @@
       webDB.execute(
         [
           {
-            'sql': 'INSERT INTO resultsDB (name, activities, length, lon, lat, directions, distanceFromUser, scenery, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);',
-            'data': [resultsObj.name, resultsObj.activities, resultsObj.length, resultsObj.lon, resultsObj.lat, resultsObj.directions, resultsObj.distance, 'scenery goes here!', 'description goes here!']
+            'sql': 'INSERT INTO resultsDB (name, activities, length, lon, lat, directions, distanceFromUser, scenery, hikeDescription, areaDescription) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+            'data': [resultsObj.name, resultsObj.activities, resultsObj.length, resultsObj.lon, resultsObj.lat, resultsObj.directions, resultsObj.distance, 'scenery goes here!', resultsObj.hikeDescription, resultsObj.areaDescription]
           }
-        ]
+        ],
+        function() {
+          page.redirect('/results');
+        }
       );
     });
   };
@@ -128,12 +133,9 @@
       // sqlDB.deleteEverything(),
       sqlDB.insertRecord(),
       sqlDistances.createTable(),
-      sqlDistances.latLonQuery(),
+      sqlDB.updateScenery(),
+      sqlDistances.latLonQuery()
     ]);
-  };
-
-  filtersView.redirect = function() {
-    page.redirect('/results');
   };
 
   filtersView.render = function() {
