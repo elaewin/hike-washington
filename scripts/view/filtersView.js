@@ -130,20 +130,18 @@
 
   //update results based on actvitiy, scenery, etc
   filtersView.updateResultsDB = function() {
-    webDB.execute('DELETE FROM resultsDB WHERE activities NOT LIKE "%camping%"');
+    filtersView.findActiveActivities();
+    filtersView.activityChoice.forEach(function(current){
+      webDB.execute('DELETE FROM resultsDB WHERE activities NOT LIKE "%' + current + '%"');
+    });
   };
 
+  //find activites that have been clicked
   filtersView.findActiveActivities = function() {
     $('.other-activity.active').each(function(){
       console.log($(this));
       filtersView.activityChoice.push($(this).attr('value'));
     });
-
-
-    // ('#activity li.active').attr('value'), function() {
-    //   filtersView.activityChoice.push($(this));
-    //   console.log(filtersView.activityChoice);
-    // };
   };
 
   filtersView.Run = function() {
