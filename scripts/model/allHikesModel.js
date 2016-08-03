@@ -30,7 +30,7 @@
       webDB.execute(
         [
           {
-            'sql': 'INSERT INTO allHikesDB (name, activities, length, lon, lat, directions, areaDecription, hikeDescription) VALUES (?, ?, ?, ?, ?, ?, ?, ?);',
+            'sql': 'INSERT INTO allHikesDB (name, activities, length, lon, lat, directions, areaDescription, hikeDescription) VALUES (?, ?, ?, ?, ?, ?, ?, ?);',
             'data': [element.name, element.activities.map(function(curr){return curr.activity;}), element.activities.filter(function(curr) {
               return curr.activity === 'hiking';
             }).map(function(curr){return curr.activityLength;}), element['location'].lon, element['location'].lat, element.directions, element.description, element.activities.filter(function(curr) {

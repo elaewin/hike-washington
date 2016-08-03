@@ -1,8 +1,10 @@
 (function(module) {
   var resultsModel = {};
+  resultsModel.resultsArray = [];
 
 // create a table to store filter results
-  resultsModel.createResultsDB = function() {
+  resultsModel.createResultsDB = function(next) {
+    console.log('create Results running');
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS resultsDB (' +
       'id INTEGER PRIMARY KEY, ' +
@@ -15,19 +17,21 @@
       'distanceFromUser FLOAT,' +
       'scenery VARCHAR,' +
       'hikeDescription TEXT,' +
-      'areaDescription TEXT);'
+      'areaDescription TEXT);',
+      function() {
+        next();
+      }
     );
   };
 
 // the creates an array to be populated on results table
   resultsModel.joinAllHikesAndDistance = function() {
-    webDB.execute('SELECT * FROM allHikesDB ' +
-    'INNER JOIN distanceDB ON allHikesDB.name=distanceDB.name ' +
-    'WHERE allHikesDB.length BETWEEN ' +
-    filtersView.distanceChoice[0] + ' AND ' + filtersView.distanceChoice[1] + ';',
+    webDB.execute('SELECT * FROM allHikesDB INNER JOIN distanceDB ON allHikesDB.name=distanceDB.name WHERE allHikesDB.length BETWEEN 4 AND 7;',
+    // filtersView.distanceChoice[0] + ' AND ' + filtersView.distanceChoice[1] + ';',
     function(rows) {
-      resultsView.resultsArray = rows;
-      filtersView.populateResultsDB();
+      console.log('rows has', rows);
+      resultsModel.resultsArray = rows;
+      resultsModel.populateResultsDB();
     });
   };
 
@@ -39,7 +43,10 @@
             'sql': 'INSERT INTO resultsDB (name, activities, length, lon, lat, directions, distanceFromUser, scenery, hikeDescription, areaDescription) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
             'data': [resultsObj.name, resultsObj.activities, resultsObj.length, resultsObj.lon, resultsObj.lat, resultsObj.directions, resultsObj.distance, 'scenery goes here!', resultsObj.hikeDescription, resultsObj.areaDescription]
           }
-        ]
+        ],
+         function() {
+           resultsModel.updateResultsDB();
+         }
       );
     });
   };
