@@ -16,4 +16,7 @@
   margin-left: .5em;
   border: none;
   border-radius: 5px;
+  font-family: 'Architects Daughter', cursive;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
 }
