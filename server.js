@@ -6,7 +6,7 @@ var express = require('express'),
   app = express();
 
 var proxyTrailsAPI = function(request, response) {
-  console.log(request);
+  console.log(request.headers);
   (
     requestProxy({
       url: 'https://trailapi-trailapi.p.mashape.com/' + '?limit=800&q[state_cont]=Washington' + '&mashape-key=' + process.env.MASHAPE_API_KEY + '&accept=text/plain'

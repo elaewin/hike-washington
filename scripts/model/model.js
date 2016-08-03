@@ -32,7 +32,7 @@
     console.log(trailsURL);
     $.ajax({
       url: trailsURL,
-      method: 'GET',
+      type: 'GET',
       success: function(data, message, xhr) {
         console.log(data);
         data.places.map(function(current) {
