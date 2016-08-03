@@ -1,21 +1,29 @@
 (function(module) {
   var resultsView = {};
+  resultsView.resultsArray = [];
+
   var resultsCompiler = Handlebars.compile($('#results-template').text());
+
+  resultsView.Run = function() {
+    async.series([
+      allHikesModel.createTable(),
+      // allHikesModel.deleteEverything(),
+      allHikesModel.insertRecord(),
+      distancesModel.createTable(),
+      resultsModel.updateScenery(),
+      distancesModel.latLonQuery()
+    ]);
+    async.series([
+      resultsModel.createResultsDB(),
+      resultsModel.joinAllHikesAndDistance(),
+      resultsModel.updateResultsDB()
+    ]);
+  };
 
   resultsView.render = function() {
     $('main').html('');
     $('main').append('<section>Results</section>');
-    sqlDB.toHTML(5,resultsView.generateList);
   };
-
-  resultsView.generateList = function() {
-    sqlDB.displayHikes.forEach(function(rows){
-      $('section').append(rows.map(function(row) {
-        return $('<p>' + row.name + ' : ' + row.activities + ' : ' + row['length'] + '</p>');}));
-    });
-  };
-
-  
 
   module.resultsView = resultsView;
 })(window);

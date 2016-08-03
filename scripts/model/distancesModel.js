@@ -1,10 +1,10 @@
 (function(module) {
-  var sqlDistances = {};
+  var distancesModel = {};
   var latLonQueryArray = [];
 
   //sqlDB.displayHikes = []; //array used to render hikes to the DOM
 
-  sqlDistances.createTable = function() {
+  distancesModel.createTable = function() {
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS distanceDB (' +
       'id INTEGER PRIMARY KEY, ' +
@@ -12,10 +12,10 @@
     );
   };
 
-  sqlDistances.populateDistancesDB = function() {
+  distancesModel.populateDistancesDB = function() {
     console.log('Populate is happening');
-    sqlDistances.deleteEverything();
-    // var allLatLon = sqlDistances.latLonQuery();
+    distancesModel.deleteEverything();
+    // var allLatLon = distancesModel.latLonQuery();
     setTimeout(
       latLonQueryArray.forEach(function(element) {
         var lat1 = element['lat'];
@@ -35,16 +35,16 @@
       }), 2000);
   };
 
-  sqlDistances.latLonQuery = function() {
+  distancesModel.latLonQuery = function() {
     webDB.execute('SELECT lon, lat, name FROM allHikesDB ORDER BY id DESC;',
     function(rows) {
       latLonQueryArray = rows;
       console.log('Query Finished');
-      sqlDistances.populateDistancesDB();
+      distancesModel.populateDistancesDB();
     });
   };
 
-  sqlDistances.deleteEverything = function(){
+  distancesModel.deleteEverything = function(){
     webDB.execute(
       [
         {
@@ -54,5 +54,5 @@
     );
   };
 
-  module.sqlDistances = sqlDistances;
+  module.distancesModel = distancesModel;
 })(window);

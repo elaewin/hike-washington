@@ -62,8 +62,6 @@
           });
         });
       }
-    }).done(function(){
-      // modelHikes.getLatLng();
     });
   };
 
@@ -81,7 +79,6 @@
         modelHikes.zipResults.push(geoResult.geometry.location.lat);
         modelHikes.zipResults.push(geoResult.geometry.location.lng);
         // return [geoResult.geometry.location.lat, geoResult.geometry.location.lng];
-        filtersView.Run();
       }
     });
   };
