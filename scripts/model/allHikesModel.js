@@ -1,9 +1,9 @@
 (function(module) {
-  var sqlDB = {};
+  var allHikesModel = {};
 
-  sqlDB.displayHikes = []; //array used to render hikes to the DOM
+  allHikesModel.displayHikes = []; //array used to render hikes to the DOM
 
-  sqlDB.createTable = function() {
+  allHikesModel.createTable = function() {
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS allHikesDB (' +
       'id INTEGER PRIMARY KEY, ' +
@@ -12,7 +12,7 @@
       'length FLOAT, ' +
       'lon FLOAT, ' +
       'lat FLOAT, ' +
-      'directions TEXT, ' +
+      'directions VARCHAR (255), ' +
       'scenery TEXT,' +
       'areaDescription TEXT, ' +
       'hikeDescription TEXT, ' +
@@ -21,10 +21,10 @@
       'sceneryWater VARCHAR(255), ' +
       'sceneryMountain VARCHAR(255));'
     );
-    // sqlDB.deleteEverything();
+    // allHikesModel.deleteEverything();
   };
 
-  sqlDB.insertRecord = function() {
+  allHikesModel.insertRecord = function() {
 
     modelHikes.hikesArray.forEach( function(element) {
       webDB.execute(
@@ -42,25 +42,7 @@
     });
   };
 
-  sqlDB.updateScenery = function() {
-    sceneryTerms.forEach(function(ele) {
-      webDB.execute('UPDATE allHikesDB SET scenery' + ele.key + ' ="' + ele.key + '" WHERE areaDescription LIKE "%' + ele.value + '%" OR hikeDescription LIKE "%' + ele.value + '";');
-    });
-  };
-
-  // sqlDB.concatScenery = function () {
-  //   webDB.execute('UPDATE allHikesDB SET scenery = CONCAT(sceneryWildlife, " ", sceneryForrest, " ", sceneryWater, " ", sceneryMountain);');
-  // };
-
-//populates the array that we want to render to the browser (doug)
-  // sqlDB.toHTML = function(num, callback) {
-  //   webDB.execute('SELECT * FROM allHikesDB WHERE length >' + num, function(rows) {
-  //     sqlDB.displayHikes.push(rows);
-  //   });
-  //   callback();
-  // };
-
-  sqlDB.deleteEverything = function(){
+  allHikesModel.deleteEverything = function(){
     webDB.execute(
       [
         {
@@ -70,5 +52,5 @@
     );
   };
 
-  module.sqlDB = sqlDB;
+  module.allHikesModel = allHikesModel;
 })(window);
