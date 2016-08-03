@@ -12,7 +12,9 @@
       'length FLOAT, ' +
       'lon FLOAT, ' +
       'lat FLOAT, ' +
-      'directions VARCHAR (255));'
+      'directions TEXT, ' +
+      'areaDescription TEXT, ' +
+      'hikeDescription TEXT);'
     );
     // sqlDB.deleteEverything();
   };
@@ -23,10 +25,12 @@
       webDB.execute(
         [
           {
-            'sql': 'INSERT INTO allHikesDB (name, activities, length, lon, lat, directions) VALUES (?, ?, ?, ?, ?, ?);',
+            'sql': 'INSERT INTO allHikesDB (name, activities, length, lon, lat, directions, areaDescription, hikeDescription) VALUES (?, ?, ?, ?, ?, ?, ?, ?);',
             'data': [element.name, element.activities.map(function(curr){return curr.activity;}), element.activities.filter(function(curr) {
               return curr.activity === 'hiking';
-            }).map(function(curr){return curr.activityLength;}), element['location'].lon, element['location'].lat, element.directions]
+            }).map(function(curr){return curr.activityLength;}), element['location'].lon, element['location'].lat, element.directions, element.description, element.activities.filter(function(curr) {
+              return curr.activity === 'hiking';
+            }).map(function(curr){return curr.activityDesc;})]
           }
         ]
       );
@@ -34,12 +38,12 @@
   };
 
 //populates the array that we want to render to the browser (doug)
-  sqlDB.toHTML = function(num, callback) {
-    webDB.execute('SELECT * FROM allHikesDB WHERE length >' + num, function(rows) {
-      sqlDB.displayHikes.push(rows);
-    });
-    callback();
-  };
+  // sqlDB.toHTML = function(num, callback) {
+  //   webDB.execute('SELECT * FROM allHikesDB WHERE length >' + num, function(rows) {
+  //     sqlDB.displayHikes.push(rows);
+  //   });
+  //   callback();
+  // };
 
   sqlDB.deleteEverything = function(){
     webDB.execute(
