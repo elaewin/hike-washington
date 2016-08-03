@@ -21,7 +21,6 @@
       'sceneryWater VARCHAR(255), ' +
       'sceneryMountain VARCHAR(255));'
     );
-    // allHikesModel.deleteEverything();
   };
 
   allHikesModel.insertRecord = function() {
