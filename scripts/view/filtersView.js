@@ -15,14 +15,14 @@
     $('#filters').append('<div id="distance" data-category="distance"></div>');
     $('#distance').append('<h2>Distance</h2>');
     var distancesClass = [
-      { 'color': 'green', 'miles': '0,3' }, //add alt text here
-      { 'color': 'yellow', 'miles': '4,7' },
-      { 'color': 'orange', 'miles': '8,11' },
-      { 'color': 'red', 'miles': '12,800' }
+      { 'color': 'green', 'miles': '0,3', 'alt': 'Short hike; less than 3 miles long.' }, //add alt text here
+      { 'color': 'yellow', 'miles': '4,7', 'alt': 'Medium length hike; between 3 and 7 miles long.' },
+      { 'color': 'orange', 'miles': '8,11', 'alt': 'Long hike; between 7 and 11 miles long.' },
+      { 'color': 'red', 'miles': '12,800', 'alt': 'Very long/overnight hike; more than 11 miles long.' }
     ];
     $('#distance').append('<ul></ul>');
     distancesClass.forEach(function(element){
-      $('div[data-category="distance"] ul').append('<li class="flaticon-running-man ' + element.color + '" value="' + element.miles + '"></li>'); //add alt + distancesClass
+      $('div[data-category="distance"] ul').append('<li class="flaticon-running-man ' + element.color + '" value="' + element.miles + '" alt="' + element.alt + '"></li>'); //add alt + distancesClass
     });
   };
 
