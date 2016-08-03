@@ -28,13 +28,8 @@
 
   modelHikes.callTrailAPI = function() {
     console.log('trail api running');
-    $.ajax({
-      url: 'https://trailapi-trailapi.p.mashape.com/?limit=800&q[state_cont]=Washington',
-      method: 'GET',
-      headers: {
-        'X-Mashape-Key': MashapeAPIKey,
-        'Accept': 'text/plain'
-      },
+    $.getJSON({
+      url: '../data/hikes.json',
       success: function(data, message, xhr) {
         console.log(data);
         data.places.map(function(current) {
@@ -78,7 +73,7 @@
         var geoResult = results[0];
         modelHikes.zipResults.push(geoResult.geometry.location.lat);
         modelHikes.zipResults.push(geoResult.geometry.location.lng);
-        // return [geoResult.geometry.location.lat, geoResult.geometry.location.lng];
+        filtersView.Run();
       }
     });
   };

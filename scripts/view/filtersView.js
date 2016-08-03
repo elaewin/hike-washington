@@ -89,6 +89,7 @@
     });
   };
 
+
   filtersView.render = function() {
     filtersView.clearData();
     filtersView.loadDistanceFilters();

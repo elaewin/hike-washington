@@ -26,8 +26,8 @@
 
 // the creates an array to be populated on results table
   resultsModel.joinAllHikesAndDistance = function() {
-    webDB.execute('SELECT * FROM allHikesDB INNER JOIN distanceDB ON allHikesDB.name=distanceDB.name WHERE allHikesDB.length BETWEEN 4 AND 7;',
-    // filtersView.distanceChoice[0] + ' AND ' + filtersView.distanceChoice[1] + ';',
+    webDB.execute('SELECT * FROM allHikesDB INNER JOIN distanceDB ON allHikesDB.name=distanceDB.name WHERE allHikesDB.length BETWEEN ' +
+    filtersView.distanceChoice[0] + ' AND ' + filtersView.distanceChoice[1] + ';',
     function(rows) {
       console.log('rows has', rows);
       resultsModel.resultsArray = rows;
