@@ -5,19 +5,6 @@ var express = require('express'),
   port = process.env.PORT || 3000,
   app = express();
 
-var proxyTrailsAPI = function(request, response) {
-  console.log(request.headers);
-  (
-    requestProxy({
-      url: 'https://trailapi-trailapi.p.mashape.com/' + '?limit=800&q[state_cont]=Washington' + '&mashape-key=' + process.env.MASHAPE_API_KEY + '&accept=text/plain'
-      // headers: {
-      //   'mashape-key': process.env.MASHAPE_API_KEY,
-      //   'Accept': 'text/plain'
-      // }
-    })
-  )(request, response);
-};
-
 var proxyGoogleAPI = function(request, response) {
   console.log('routing Google API request for', request.params[0]);
   (
@@ -29,8 +16,6 @@ var proxyGoogleAPI = function(request, response) {
     })
   )(request, response);
 };
-
-app.get('/trailsAPI', proxyTrailsAPI);
 
 app.post('/theGoogles/*', proxyGoogleAPI);
 
