@@ -3,27 +3,6 @@
 
   resultsView.resultCount = 0;
 
-  function Hike (opts) {
-    Object.keys(opts).forEach(function(e, index, keys) {
-      this[e] = opts[e];
-    },this);
-  };
-
-  resultsView.resultsArray = [];
-
-  resultsView.getHikeResults = function () {
-    console.log('resultsView.getHikeResults is running.');
-    webDB.execute('SELECT * FROM resultsDB ORDER BY distanceFromUser ASC;',
-    function(rows) {
-      resultsView.resultsArray = rows.map(function(row) {
-        console.log(row);
-        return new Hike(row);
-      });
-      console.log('results array', resultsView.resultsArray);
-      resultsView.showThreeResults();
-    });
-  };
-
   resultsView.renderResults = function(objToRender) {
     console.log('resultsView.renderResults is running.');
     var resultsCompiler = Handlebars.compile($('#results-template').text());
@@ -52,19 +31,19 @@
     // resultsView.resultCount += 3;
   };
 
-  resultsView.callback = function() {
-    console.log('results view async series callback reached.');
-  };
-
-  resultsView.Run = function() {
-    console.log('resultsView.Run is running.');
-    resultsModel.updateResultsDB(); // move getHikes as "callback"
-  };
-
-  resultsView.render = function() {
-    console.log('resultsView.render is running.');
-    resultsView.Run();
-  };
+  // resultsView.callback = function() {
+  //   console.log('results view async series callback reached.');
+  // };
+  //
+  // resultsView.Run = function() {
+  //   console.log('resultsView.Run is running.');
+  //   resultsModel.updateResultsDB(); // move getHikes as "callback"
+  // };
+  //
+  // resultsView.render = function() {
+  //   console.log('resultsView.render is running.');
+  //   resultsView.Run();
+  // };
 
   module.resultsView = resultsView;
 })(window);

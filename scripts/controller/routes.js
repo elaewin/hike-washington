@@ -3,7 +3,7 @@ page('/',
   homeController.index);
 
 page('/filters', filters);
-page('/results', results);
+page('/results', resultsController.render);
 
 page('/about', aboutModel.getData);
 
