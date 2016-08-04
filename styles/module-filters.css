@@ -66,3 +66,26 @@ img.filterIcons{
 #filters-form fieldset {
   margin-left: -3vh;
 }
+
+@media only screen and (min-width: 760px) {
+  ul {
+    font-size: 3.5em;
+    margin-top: 1em;
+    margin-bottom: 1.25em;
+  }
+
+
+#filters-submit {
+    letter-spacing: .3rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 2em;
+    font-family: 'Architects Daughter', cursive;
+    text-transform: uppercase;
+    padding: .3em .75em;
+    width: 350px;
+    border: none;
+    border-radius: 5px;
+    color: #efefef;
+    cursor: pointer;
+  }
+}
