@@ -37,6 +37,11 @@
       src="https://www.google.com/maps/embed/v1/place?key=googleAPIKey&center" allowfullscreen>
     </iframe> -->
     </script>
+    <script id="about-template" type="text/x-handlebars-template">
+      <img src="{{bioPic}}">
+      <h3>{{name}}</h3>
+      <p>{{{body}}}</p>
+    </script>
   </head>
   <header>
     <h1 class="header-h1">Hike WA</h1>
@@ -61,6 +66,8 @@
       </section>
       <section id="results" class="page-content">
       </section>
+      <section id="about" class="page-content">
+      </section>
     </main>
     <script src="vendor/scripts/async.js"></script>
     <script src="vendor/scripts/page.js"></script>
@@ -82,5 +89,10 @@
     <script src="scripts/view/resultsView.js"></script>
     <!--Controller Files  -->
     <script src="scripts/controller/routes.js"></script>
+    <script src="scripts/controller/homeController.js"></script>
+    <script src="scripts/controller/filterController.js"></script>
+    <script src="scripts/controller/resultsController.js"></script>
+    <script src="scripts/controller/aboutController.js"></script>
+
   </body>
 </html>

@@ -5,11 +5,12 @@ page('/',
 page('/filters', filters);
 page('/results', results);
 page('*', home);
+page('/about', aboutController.reveal);
 page();
 
-function home() {
-  homeView.render();
-}
+// function home() {
+//   homeView.render();
+// }
 
 function filters() {
   filtersView.render();

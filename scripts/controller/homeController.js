@@ -17,4 +17,13 @@
     ], homeView.callback());
   };
 
+  homeController.render = function() {
+    $('.page-content').hide();
+    $('#search').fadeIn();
+    homeView.zipCode = 0;
+    $('#zipCode-input').submit(function(event) {
+      event.preventDefault();
+    });
+
+
 })(window);

@@ -2,13 +2,13 @@
 
   var homeView = {};
 
-  homeView.render = function() {
-    $('.page-content').hide();
-    $('#search').fadeIn();
-    homeView.zipCode = 0;
-    $('#zipCode-input').submit(function(event) {
-      event.preventDefault();
-    });
+  // homeView.render = function() {
+  //   $('.page-content').hide();
+  //   $('#search').fadeIn();
+  //   homeView.zipCode = 0;
+  //   $('#zipCode-input').submit(function(event) {
+  //     event.preventDefault();
+  //   });
 
     homeView.redirect = function() {
       homeView.zipCode = $('#autocomplete').val();
