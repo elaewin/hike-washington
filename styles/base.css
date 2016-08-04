@@ -14,7 +14,7 @@ main {
  margin-top: 3rem;
  border: 8px solid #efefef ;
  padding: 5em 3em 5em 3em;
- background: rgba(0, 0, 0, 0.3);
+ background: rgba(0, 0, 0, 0.8);
 }
 
 
@@ -32,6 +32,10 @@ img {
 
 h1, h2, h3, h4, a {
  font-family: "Architects Daughter", cursive;
+}
+
+a {
+  font-size: .75em;
 }
 
 h1 {

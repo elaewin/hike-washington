@@ -23,6 +23,10 @@
  cursor: pointer;
 }
 
+#filters-submit:hover {
+  background-color: #444;
+}
+
 @media only screen and (min-width: 760px) {
  #autocomplete {
      padding: .25em;

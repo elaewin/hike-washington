@@ -11,9 +11,9 @@
 .footer-links {
   display: flex;
   justify-content: space-between;
-  font-size: 20px;
-  margin-left: 15em;
-  margin-right: 15em;
+  font-size: 1.5em;
+  margin-left: 5em;
+  margin-right: 7em;
 }
 
 a:link, a:visited {
@@ -26,25 +26,17 @@ a:hover {
   color: #669933;
 }
 
-li a {
-  display: inline-block;
-  /*background-color: rgba(0, 0, 0, 0.8);*/
-  border-radius: 5px;
-  padding: .75em;
-}
-
 #footer {
   background-color: rgba(0, 0, 0, 0.8);
-}
-
-#filters-submit, #search-submit {
-  cursor: pointer;
-}
-
-#filters-submit:hover, #search-submit:hover {
-  background-color: #444;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 1em;
 }
 
 @media only screen and (min-width: 760px) {
 
+  #footer {
+    padding: 0;
+  }
 }

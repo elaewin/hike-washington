@@ -61,6 +61,11 @@ img.filterIcons{
  width: 400px;
  border: none;
  border-radius: 5px;
+ cursor: pointer;
+}
+
+#filters-submit:hover {
+  background-color: #444;
 }
 
 #filters-form fieldset {
