@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="styles/module-search.css">
     <link rel="stylesheet" href="styles/module-filters.css">
     <script id="results-template" type="text/x-handlebars-template">
-      <h2>{{nameOfPlace}}</h2>
-      <p>{{description}}</p>
+      <h3>{{nameOfPlace}}</h3>
+      <p>{{{description}}}</p>
       {{#if activitiesSelected}}
       <ul class="activities-results">
         {{#each activitiesSelected}}
@@ -30,8 +30,8 @@
         {{/each}}
       </ul>
       {{/if}}
-      <p>Length of the hike: {{lengthOfHike}}</p>
-      <p>Distance of the hike from your Zip Code: {{distance}}.</p>
+      <p>Length of the hike: {{lengthOfHike}} miles.</p>
+      <p>Distance of the hike from your Zip Code: {{distance}} miles.</p>
       <!--google map-->
       <!-- <iframe id="googleMap"
       width="400"

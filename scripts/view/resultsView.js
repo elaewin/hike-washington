@@ -26,16 +26,12 @@
   resultsView.renderResults = function(objToRender) {
     console.log('resultsView.renderResults is running.');
     var resultsCompiler = Handlebars.compile($('#results-template').text());
-    this.nameOfPlace = name;
-    // var result =
-    //   {
-    //     'nameOfPlace': this.name,
-    //     'description': this.hikeDescription,
-    //     // activitesSelected: 'objToRender.activities.split(',')',
-    //     // scenerySelected: objToRender.scenery.split(','),
-    //     'lengthOfHike': 'objToRender.length',
-    //     'distanceFromUser': 'objToRender.distance'
-    //   };
+    this.nameOfPlace = objToRender.name;
+    this.description = objToRender.hikeDescription;
+    this.activitesSelected = objToRender.activities.split(',');
+    this.scenerySelected; objToRender.scenery.split(',');
+    this.lengthOfHike = objToRender.length;
+    this.distance = objToRender.distanceFromUser.toFixed(1);
     var renderedResult = resultsCompiler(this);
     $('#results').append(renderedResult);
   };
