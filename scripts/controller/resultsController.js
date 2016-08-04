@@ -9,8 +9,7 @@
       webDB.execute('DELETE FROM resultsDB WHERE activities NOT LIKE "%' + current + '%"',
       function () {
         resultsModel.getHikeResults();
-      }
-    );
+      });
     });
   };
 
