@@ -14,15 +14,25 @@
     <link rel="stylesheet" href="styles/module.css">
     <link rel="stylesheet" href="styles/module-search.css">
     <link rel="stylesheet" href="styles/module-filters.css">
-    <script id="search-results" type="text/x-handlebars-template">
+    <script id="results-template" type="text/x-handlebars-template">
       <h2>{{nameOfPlace}}</h2>
-      <p>{{descriptionOfPlace}}</p>
-      <ul>
-        {{ make a template loop for these }}
-        <li>{{activity}}</li>
-        {{ end loop here}}
+      <p>{{description}}</p>
+      {{#if activitiesSelected}}
+      <ul class="activities-results">
+        {{#each activitesSelected}}
+        <li>{{this}}</li>
+        {{/each}}
       </ul>
-      <p>{{length}}</p>
+      {{/if}}
+      {{#if scenerySelected}}
+      <ul class="scenery-results">
+        {{#each scenerySelected}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
+      <p>Length of hike: {{lengthOfHike}} miles.</p>
+      <p>Distance of the hike from your Zip Code: {{distance}} miles.</p>
     </script>
   </head>
   <header>
@@ -47,21 +57,6 @@
         </form>
       </section>
       <section id="results" class="page-content">
-        <script id="results-template" type="text/x-handlebars-template">
-          <h2>{{name}}</h2>
-          <ul>
-            <li>{{length}}</li>
-            <li>{{activities}}</li>
-            <li>{{scenery}}</li>
-          </ul>
-          <!--google map-->
-          <iframe id="googleMap"
-          width="400"
-          height="250"
-          frameborder="0" style="border:0"
-          src="https://www.google.com/maps/embed/v1/place?key=googleAPIKey&center" allowfullscreen>
-        </iframe>
-        </script>
       </section>
     </main>
     <script src="vendor/scripts/async.js"></script>
