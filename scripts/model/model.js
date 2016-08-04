@@ -5,24 +5,50 @@
   modelHikes.zipResults = [];
 
   modelHikes.loadAPIData = function() {
-    if(!localStorage.visited) {
-      console.log('callTrailAPI called');
-      modelHikes.callTrailAPI();
-      localStorage.setItem('visited', true);
-    }
-    else {
-      modelHikes.checkForData();
-      localStorage.setItem('visited', true);
-    }
+    modelHikes.checkForData();
+    // if(!localStorage.visited) {
+    //   console.log('callTrailAPI called');
+      // modelHikes.callTrailAPI();
+      // localStorage.setItem('visited', true);
+    // }
+    // else {
+    //   modelHikes.checkForData();
+    //   localStorage.setItem('visited', true);
+    // }
   };
 
   modelHikes.checkForData = function() {
     webDB.execute('SELECT * FROM allHikesDB;',
     function(rows) {
-      allRowsCheck = rows;
-      // console.log(allRowsCheck);
-      if(allRowsCheck.length === 0) {
+      if(rows.length > 0) {
+        console.log('drop allHikesDB');
+        webDB.execute('DROP TABLE allHikesDB;',
+        function() {
+          modelHikes.callTrailAPI();
+        }
+        );
+      } else {
         modelHikes.callTrailAPI();
+      }
+    });
+  };
+
+  modelHikes.checkDistanceForData = function() {
+    webDB.execute('SELECT * FROM distanceDB;',
+    function(rows) {
+      if(rows.length > 0) {
+        console.log('drop distanceDB');
+        webDB.execute('DROP TABLE distanceDB;');
+      }
+    });
+  };
+
+  modelHikes.checkResultsForData = function() {
+    webDB.execute('SELECT * FROM resultsDB;',
+    function(rows) {
+      if(rows.length > 0) {
+        console.log('drop resultsDB');
+        webDB.execute('DROP TABLE resultsDB;');
       }
     });
   };

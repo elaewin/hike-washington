@@ -19,8 +19,9 @@
         console.log(row);
         return new Hike(row);
       });
+      console.log('results array', resultsView.resultsArray);
+      resultsView.showThreeResults();
     });
-    console.log('results array', resultsView.resultsArray);
   };
 
   resultsView.renderResults = function(objToRender) {
@@ -34,6 +35,7 @@
     this.distance = objToRender.distanceFromUser.toFixed(1);
     var renderedResult = resultsCompiler(this);
     $('#results').append(renderedResult);
+    // resultsView.showThreeResults();
   };
 
   resultsView.showThreeResults = function() {
@@ -54,11 +56,7 @@
 
   resultsView.Run = function() {
     console.log('resultsView.Run is running.');
-    async.series([
-      resultsModel.updateResultsDB(),
-      resultsView.getHikeResults(),
-      resultsView.showThreeResults()
-    ], resultsView.callback());
+    resultsModel.updateResultsDB(); // move getHikes as "callback"
   };
 
   resultsView.render = function() {
