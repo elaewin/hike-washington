@@ -31,9 +31,11 @@
     this.description = objToRender.hikeDescription;
     this.activitesSelected = objToRender.activities.split(',');
     this.scenerySelected; objToRender.scenery.split(',');
+    console.log('activities:', this.activitesSelected);
     this.lengthOfHike = objToRender.length;
     this.distance = Math.round(objToRender.distanceFromUser);
     var renderedResult = resultsCompiler(this);
+    console.log(renderedResult);
     $('#results').append(renderedResult);
     // resultsView.showThreeResults();
   };
