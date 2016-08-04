@@ -24,14 +24,14 @@
       console.log('callback has been reached');
     };
 
-    homeView.Run = function() {
-      async.series([
-        allHikesModel.createTable(),
-        allHikesModel.insertRecord(),
-        distancesModel.createTable(),
-        resultsModel.createResultsDB()
-      ], homeView.callback());
-    };
+    // homeView.Run = function() {
+    //   async.series([
+    //     allHikesModel.createTable(),
+    //     allHikesModel.insertRecord(),
+    //     distancesModel.createTable(),
+    //     resultsModel.createResultsDB()
+    //   ], homeView.callback());
+    // };
 
     $('#search-submit').on('click', homeView.redirect);
 
