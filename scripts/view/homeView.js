@@ -11,11 +11,15 @@
     });
 
     homeView.redirect = function() {
+      var zipEntered = /\d\d\d\d\d/;
       homeView.zipCode = $('#autocomplete').val();
-      if (homeView.zipCode.length === 5) {
+      if (homeView.zipCode.match(zipEntered)) {
         modelHikes.getLatLng(homeView.zipCode);
-        console.log('Redirect working'); //add error validation (non INTEGER)
+        console.log('Redirect working');
       } else {
+        $('#autocomplete').css({'border-color': 'red'});
+        $('#autocomplete').val('');
+        $('#autocomplete').attr('placeholder', 'That\'s not a zipcode..');
         console.log('Not a valid zip code');
       }
     };
