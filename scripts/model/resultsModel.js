@@ -4,7 +4,7 @@
 
 // create a table to store filter results
   resultsModel.createResultsDB = function() {
-    console.log('create Results running');
+    console.log('create ResultsDB running');
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS resultsDB (' +
       'id INTEGER PRIMARY KEY, ' +

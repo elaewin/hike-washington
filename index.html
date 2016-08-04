@@ -13,19 +13,19 @@
     <link rel="stylesheet" href="styles/module.css">
     <link rel="stylesheet" href="styles/module-search.css">
     <link rel="stylesheet" href="styles/module-filters.css">
-    <script id="search-results" type="text/x-handlebars-template">
+    <script id="results-template" type="text/x-handlebars-template">
       <h2>{{nameOfPlace}}</h2>
       <p>{{description}}</p>
-      {{if activitiesSelected}}
+      {{#if activitiesSelected}}
       <ul class="activities-results">
-        {{each activitiesSelected}}
+        {{#each activitiesSelected}}
         <li>{{this}}</li>
         {{/each}}
       </ul>
       {{/if}}
-      {{if scenerySelected}}
+      {{#if scenerySelected}}
       <ul class="scenery-results">
-        {{each scenerySelected}}
+        {{#each scenerySelected}}
         <li>{{this}}</li>
         {{/each}}
       </ul>

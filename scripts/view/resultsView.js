@@ -23,22 +23,21 @@
     console.log('results array', resultsView.resultsArray);
   };
 
-  resultsView.renderResults = function() {
+  resultsView.renderResults = function(objToRender) {
     console.log('resultsView.renderResults is running.');
     var resultsCompiler = Handlebars.compile($('#results-template').text());
-    // var sceneArray = row.scenery.split(',');
-    var result = resultsCompiler(
-      {
-        nameOfPlace: name,
-        // description: hikeDescription,
-        // activitesSelected: activities.split(','),
-        // // scenerySelected: sceneArray,
-        // lengthOfHike: length,
-        // distanceFromUser: distance
-      }
-    );
-    console.log('rendered result is:', result);
-    $('#results').append('<p>something is appending!</p>');
+    this.nameOfPlace = name;
+    // var result =
+    //   {
+    //     'nameOfPlace': this.name,
+    //     'description': this.hikeDescription,
+    //     // activitesSelected: 'objToRender.activities.split(',')',
+    //     // scenerySelected: objToRender.scenery.split(','),
+    //     'lengthOfHike': 'objToRender.length',
+    //     'distanceFromUser': 'objToRender.distance'
+    //   };
+    var renderedResult = resultsCompiler(this);
+    $('#results').append(renderedResult);
   };
 
   resultsView.showThreeResults = function() {
@@ -53,13 +52,17 @@
     // resultsView.resultCount += 3;
   };
 
+  resultsView.callback = function() {
+    console.log('results view async series callback reached.');
+  };
+
   resultsView.Run = function() {
     console.log('resultsView.Run is running.');
     async.series([
       resultsModel.updateResultsDB(),
       resultsView.getHikeResults(),
       resultsView.showThreeResults()
-    ]);
+    ], resultsView.callback());
   };
 
   resultsView.render = function() {
