@@ -2,6 +2,11 @@
   display: none;
 }
 
+.biopic {
+  width: 200px;
+  height: 200px;
+}
+
 @media only screen and (min-width: 760px) {
 
 }
