@@ -42,10 +42,7 @@
             'sql': 'INSERT INTO resultsDB (name, activities, length, lon, lat, directions, distanceFromUser, scenery, hikeDescription, areaDescription) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
             'data': [resultsObj.name, resultsObj.activities, resultsObj.length, resultsObj.lon, resultsObj.lat, resultsObj.directions, resultsObj.distance, 'scenery goes here!', resultsObj.hikeDescription, resultsObj.areaDescription]
           }
-        ],
-         function() {
-           resultsModel.updateResultsDB();
-         }
+        ]
       );
     });
   };
@@ -54,7 +51,11 @@
   resultsModel.updateResultsDB = function() {
     filtersView.findActiveActivities();
     filtersView.activityChoice.forEach(function(current){
-      webDB.execute('DELETE FROM resultsDB WHERE activities NOT LIKE "%' + current + '%"');
+      webDB.execute('DELETE FROM resultsDB WHERE activities NOT LIKE "%' + current + '%"',
+      function () {
+        resultsView.getHikeResults();
+      }
+    );
     });
   };
 
