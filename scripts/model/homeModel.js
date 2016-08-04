@@ -1,39 +1,39 @@
 (function(module) {
-  var modelHikes = {};
+  var homeModel = {};
 // Make variable names more self-explainatory!
-  modelHikes.hikesArray = []; //array used to store Hikes as objects
-  modelHikes.zipResults = [];
+  homeModel.hikesArray = []; //array used to store Hikes as objects
+  homeModel.zipResults = [];
 
-  modelHikes.loadAPIData = function() {
-    modelHikes.checkForData();
+  homeModel.loadAPIData = function() {
+    homeModel.checkForData();
     // if(!localStorage.visited) {
     //   console.log('callTrailAPI called');
-      // modelHikes.callTrailAPI();
+      // homeModel.callTrailAPI();
       // localStorage.setItem('visited', true);
     // }
     // else {
-    //   modelHikes.checkForData();
+    //   homeModel.checkForData();
     //   localStorage.setItem('visited', true);
     // }
   };
 
-  modelHikes.checkForData = function() {
+  homeModel.checkForData = function() {
     webDB.execute('SELECT * FROM allHikesDB;',
     function(rows) {
       if(rows.length > 0) {
         console.log('drop allHikesDB');
         webDB.execute('DROP TABLE allHikesDB;',
         function() {
-          modelHikes.callTrailAPI();
+          homeModel.callTrailAPI();
         }
         );
       } else {
-        modelHikes.callTrailAPI();
+        homeModel.callTrailAPI();
       }
     });
   };
 
-  modelHikes.checkDistanceForData = function() {
+  homeModel.checkDistanceForData = function() {
     webDB.execute('SELECT * FROM distanceDB;',
     function(rows) {
       if(rows.length > 0) {
@@ -43,7 +43,7 @@
     });
   };
 
-  modelHikes.checkResultsForData = function() {
+  homeModel.checkResultsForData = function() {
     webDB.execute('SELECT * FROM resultsDB;',
     function(rows) {
       if(rows.length > 0) {
@@ -53,7 +53,7 @@
     });
   };
 
-  modelHikes.callTrailAPI = function() {
+  homeModel.callTrailAPI = function() {
     console.log('trail api running');
     $.getJSON({
       url: '../data/hikes.json',
@@ -79,7 +79,7 @@
           };
           place.activities.forEach(function(element) {
             if(element['activity'] === 'hiking') {
-              modelHikes.hikesArray.push(place);
+              homeModel.hikesArray.push(place);
             };
           });
         });
@@ -90,9 +90,9 @@
     });
   };
 
-  modelHikes.getLatLng = function(zipCode) {
-    if(modelHikes.zipResults.length > 1) {
-      modelHikes.zipResults.length = 0;
+  homeModel.getLatLng = function(zipCode) {
+    if(homeModel.zipResults.length > 1) {
+      homeModel.zipResults.length = 0;
     }
     var googleURL = '/theGoogles/' + 'maps/api/geocode/json?address=' + zipCode;
     $.ajax({
@@ -101,11 +101,11 @@
       success: function(data){
         var results = data.results;
         var geoResult = results[0];
-        modelHikes.zipResults.push(geoResult.geometry.location.lat);
-        modelHikes.zipResults.push(geoResult.geometry.location.lng);
+        homeModel.zipResults.push(geoResult.geometry.location.lat);
+        homeModel.zipResults.push(geoResult.geometry.location.lng);
       }
     }).done(distancesModel.latLonQuery, console.log('latLonQuery done.'), page.redirect('/filters'));
   };
 
-  module.modelHikes = modelHikes;
+  module.homeModel = homeModel;
 })(window);

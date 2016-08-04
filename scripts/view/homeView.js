@@ -10,19 +10,19 @@
   //     event.preventDefault();
   //   });
 
-    homeView.redirect = function() {
-      homeView.zipCode = $('#autocomplete').val();
-      if (homeView.zipCode.length === 5) {
-        modelHikes.getLatLng(homeView.zipCode);
-        console.log('Redirect working'); //add error validation (non INTEGER)
-      } else {
-        console.log('Not a valid zip code');
-      }
-    };
+  homeView.redirect = function() {
+    homeView.zipCode = $('#autocomplete').val();
+    if (homeView.zipCode.length === 5) {
+      homeModel.getLatLng(homeView.zipCode);
+      console.log('Redirect working'); //add error validation (non INTEGER)
+    } else {
+      console.log('Not a valid zip code');
+    }
+  };
 
-    homeView.callback = function() {
-      console.log('callback has been reached');
-    };
+  homeView.callback = function() {
+    console.log('callback has been reached');
+  };
 
     // homeView.Run = function() {
     //   async.series([
@@ -33,13 +33,11 @@
     //   ], homeView.callback());
     // };
 
-    $('#search-submit').on('click', homeView.redirect);
+  $('#search-submit').on('click', homeView.redirect);
 
-    // modelHikes.checkDistanceForData();
-    // modelHikes.checkResultsForData();
-    // modelHikes.loadAPIData(); //happen on page load
+    // homeModel.checkDistanceForData();
+    // homeModel.checkResultsForData();
+    // homeModel.loadAPIData(); //happen on page load
     // homeView.Run();  // on page load
-
-  };
   module.homeView = homeView;
 })(window);

@@ -3,9 +3,9 @@
   var homeController = {};
 
   homeController.loadData = function() {
-    modelHikes.checkDistanceForData();
-    modelHikes.checkResultsForData();
-    modelHikes.loadAPIData(); //happen on page load
+    homeModel.checkDistanceForData();
+    homeModel.checkResultsForData();
+    homeModel.loadAPIData(); //happen on page load
   };
 
   homeController.index = function() {
@@ -24,6 +24,8 @@
     $('#zipCode-input').submit(function(event) {
       event.preventDefault();
     });
+  };
 
+  module.homeController = homeController;
 
 })(window);

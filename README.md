@@ -22,7 +22,7 @@ Hike Washington CodeFellows 301 Final Project
 * If you see a variable name, etc., that is not self-explanatory, ask about it!
 
 ###Steps to renter to Browser:   (doug 7/31)
-modelHikes.callTrailAPI();  // wait for console log to return
+homeModel.callTrailAPI();  // wait for console log to return
 sqlDB.toHTML() // wait like 5 seconds
 viewHikes.generateList()
 

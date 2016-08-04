@@ -25,7 +25,7 @@
 
   allHikesModel.insertRecord = function() {
 
-    modelHikes.hikesArray.forEach( function(element) {
+    homeModel.hikesArray.forEach( function(element) {
       webDB.execute(
         [
           {

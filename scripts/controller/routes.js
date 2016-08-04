@@ -1,10 +1,7 @@
-page('/',
-  homeController.loadData,
-  homeController.index);
+page('/', homeController.loadData, homeController.index);
 
 page('/filters', filters);
 page('/results', results);
-page('*', home);
 page('/about', aboutController.reveal);
 page();
 
