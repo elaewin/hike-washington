@@ -20,7 +20,7 @@
     ];
     $('#distance').append('<ul></ul>');
     distancesClass.forEach(function(element){
-      $('div[data-category="distance"] ul').append('<li class="flaticon-running-man ' + element.color + '" value="' + element.miles + '"></li>'); //add alt + distancesClass
+      $('div[data-category="distance"] ul').append('<li class="flaticon-hiking ' + element.color + '" value="' + element.miles + '"></li>'); //add alt + distancesClass
     });
   };
 
@@ -56,6 +56,7 @@
         filtersView.distanceChoice = [parseInt(distanceValues.split(',')[0]), parseInt(distanceValues.split(',')[1])];
         console.log(filtersView.distanceChoice);
       }
+      resultsModel.joinAllHikesAndDistance();
     });
   };
 
@@ -84,11 +85,10 @@
   //find activites that have been clicked
   filtersView.findActiveActivities = function() {
     $('.other-activity.active').each(function(){
-      console.log($(this));
+      // console.log($(this));
       filtersView.activityChoice.push($(this).attr('value'));
     });
   };
-
 
   filtersView.render = function() {
     filtersView.clearData();
@@ -102,9 +102,7 @@
 
   filtersView.Run = function() {
     async.series([
-      distancesModel.createTable(),
       resultsModel.updateScenery(),
-      distancesModel.latLonQuery(),
       page.redirect('/results')
     ]);
   };

@@ -6,6 +6,7 @@
 
   modelHikes.loadAPIData = function() {
     if(!localStorage.visited) {
+      console.log('callTrailAPI called');
       modelHikes.callTrailAPI();
       localStorage.setItem('visited', true);
     }
@@ -19,7 +20,7 @@
     webDB.execute('SELECT * FROM allHikesDB;',
     function(rows) {
       allRowsCheck = rows;
-      console.log(allRowsCheck);
+      // console.log(allRowsCheck);
       if(allRowsCheck.length === 0) {
         modelHikes.callTrailAPI();
       }
@@ -31,7 +32,7 @@
     $.getJSON({
       url: '../data/hikes.json',
       success: function(data, message, xhr) {
-        // console.log(data);
+        console.log('callTrailAPI returning:', data);
         data.places.map(function(current) {
           var place = {
             name: current.name,
@@ -57,6 +58,9 @@
           });
         });
       }
+    }).done(function() {
+      console.log('callTrailAPI is done.');
+      homeView.Run();
     });
   };
 
@@ -73,9 +77,8 @@
         var geoResult = results[0];
         modelHikes.zipResults.push(geoResult.geometry.location.lat);
         modelHikes.zipResults.push(geoResult.geometry.location.lng);
-        page.redirect('/filters');
       }
-    });
+    }).done(distancesModel.latLonQuery, console.log('latLonQuery done.'), page.redirect('/filters'));
   };
 
   module.modelHikes = modelHikes;
