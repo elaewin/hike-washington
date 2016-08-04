@@ -94,9 +94,9 @@
     if(modelHikes.zipResults.length > 1) {
       modelHikes.zipResults.length = 0;
     }
-    var authKey = googleAPIKey;
+    var googleURL = '/theGoogles/' + 'maps/api/geocode/json?address=' + zipCode;
     $.ajax({
-      url: 'http://maps.googleapis.com/maps/api/geocode/json?address=' + zipCode + '?key=' + authKey,
+      url:  googleURL,
       method: 'POST',
       success: function(data){
         var results = data.results;
