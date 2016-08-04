@@ -52,19 +52,19 @@
     // resultsView.resultCount += 3;
   };
 
-  resultsView.callback = function() {
-    console.log('results view async series callback reached.');
-  };
-
-  resultsView.Run = function() {
-    console.log('resultsView.Run is running.');
-    resultsModel.updateResultsDB(); // move getHikes as "callback"
-  };
-
-  resultsView.render = function() {
-    console.log('resultsView.render is running.');
-    resultsView.Run();
-  };
+  // resultsView.callback = function() {
+  //   console.log('results view async series callback reached.');
+  // };
+  //
+  // resultsView.Run = function() {
+  //   console.log('resultsView.Run is running.');
+  //   resultsModel.updateResultsDB(); // move getHikes as "callback"
+  // };
+  //
+  // resultsView.render = function() {
+  //   console.log('resultsView.render is running.');
+  //   resultsView.Run();
+  // };
 
   module.resultsView = resultsView;
 })(window);
