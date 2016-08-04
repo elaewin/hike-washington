@@ -14,23 +14,21 @@
     <link rel="stylesheet" href="styles/module-filters.css">
     <script id="results-template" type="text/x-handlebars-template">
       <h3>{{nameOfPlace}}</h3>
-      <p>{{{description}}}</p>
-      {{#if activitiesSelected}}
+      <h4>Activities:</h4>
       <ul class="activities-results">
         {{#each activitiesSelected}}
-        <li>{{this}}</li>
+        <li>{{activitiesSelected}}</li>
         {{/each}}
       </ul>
-      {{/if}}
-      {{#if scenerySelected}}
+      <h4>Scenery:</h4>
       <ul class="scenery-results">
         {{#each scenerySelected}}
         <li>{{this}}</li>
         {{/each}}
       </ul>
-      {{/if}}
       <p>Length of the hike: {{lengthOfHike}} miles.</p>
       <p>Distance of the hike from your Zip Code: {{distance}} miles.</p>
+      <p>Description: {{{description}}}</p>
       <!--google map-->
       <!-- <iframe id="googleMap"
       width="400"
