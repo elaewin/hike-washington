@@ -16,9 +16,11 @@
     webDB.execute('SELECT * FROM resultsDB ORDER BY distanceFromUser ASC;',
     function(rows) {
       resultsView.resultsArray = rows.map(function(row) {
+        console.log(row);
         return new Hike(row);
       });
     });
+    console.log('results array', resultsView.resultsArray);
   };
 
   resultsView.renderResults = function() {
@@ -36,7 +38,7 @@
       }
     );
     console.log('rendered result is:', result);
-    $('#results').append(result);
+    $('#results').append('<p>something is appending!</p>');
   };
 
   resultsView.showThreeResults = function() {

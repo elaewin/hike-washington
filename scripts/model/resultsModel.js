@@ -34,6 +34,7 @@
   };
 
   resultsModel.populateResultsDB = function() {
+    webDB.execute('DELETE FROM resultsDB;');
     resultsModel.resultsArray.forEach(function(resultsObj) {
       webDB.execute(
         [
