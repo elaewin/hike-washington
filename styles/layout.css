@@ -2,6 +2,43 @@
   display: none;
 }
 
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-left: 15em;
+  margin-right: 15em;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: #efefef;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #669933;
+}
+
+li a {
+  display: inline-block;
+  /*background-color: rgba(0, 0, 0, 0.8);*/
+  border-radius: 5px;
+  padding: .75em;
+}
+
+#footer {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#filters-submit, #search-submit {
+  cursor: pointer;
+}
+
+#filters-submit:hover, #search-submit:hover {
+  background-color: #444;
+}
+
 @media only screen and (min-width: 760px) {
 
 }
