@@ -29,7 +29,7 @@
     var resultsCompiler = Handlebars.compile($('#results-template').text());
     this.nameOfPlace = objToRender.name;
     this.description = objToRender.hikeDescription;
-    this.activitesSelected = objToRender.activities.split(',');
+    this.activitiesSelected = objToRender.activities.split(',');
     this.scenerySelected; objToRender.scenery.split(',');
     console.log('activities:', this.activitesSelected);
     this.lengthOfHike = objToRender.length;
