@@ -102,9 +102,6 @@
 
   filtersView.Run = function() {
     async.series([
-      allHikesModel.createTable(),
-      // allHikesModel.deleteEverything(),
-      allHikesModel.insertRecord(),
       distancesModel.createTable(),
       resultsModel.updateScenery(),
       distancesModel.latLonQuery(),
@@ -118,7 +115,6 @@
 
   $('#filters-submit').on('click', function (event){
     filtersView.Run();
-    // page.redirect('/results');
   });
 
   module.filtersView = filtersView;

@@ -2,7 +2,7 @@
 
   var homeView = {};
 
-  modelHikes.loadAPIData(); //happen on page load
+  // modelHikes.loadAPIData(); //happen on page load
 
   homeView.render = function() {
     $('.page-content').hide();
@@ -23,7 +23,17 @@
       }
     };
 
+    homeView.Run = function() {
+      async.series([
+        modelHikes.loadAPIData(),
+        allHikesModel.createTable(),
+        allHikesModel.insertRecord()
+      ]);
+    };
+
     $('#search-submit').on('click', homeView.redirect);
+
+    homeView.Run();  // on page load
 
   };
   module.homeView = homeView;

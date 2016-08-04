@@ -13,5 +13,8 @@ function filters() {
 }
 
 function results() {
+  $('.page-content').hide();
+  resultsView.resultCount = 0;
   resultsView.render();
+  $('#results').fadeIn();
 }
