@@ -102,27 +102,19 @@
 
   filtersView.Run = function() {
     async.series([
-      allHikesModel.createTable(),
-      // allHikesModel.deleteEverything(),
-      allHikesModel.insertRecord(),
       distancesModel.createTable(),
       resultsModel.updateScenery(),
       distancesModel.latLonQuery(),
+      page.redirect('/results')
     ]);
   };
 
   $('#filters-form').submit(function(event) {
     event.preventDefault();
-    filtersView.Run();
-    page.redirect('/results');
   });
 
   $('#filters-submit').on('click', function (event){
-    page.redirect('/results');
-    $('.page-content').hide();
-    resultsView.resultCount = 0;
-    resultsView.render();
-    $('#results').fadeIn();
+    filtersView.Run();
   });
 
   module.filtersView = filtersView;

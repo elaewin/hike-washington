@@ -31,7 +31,7 @@
     $.getJSON({
       url: '../data/hikes.json',
       success: function(data, message, xhr) {
-        console.log(data);
+        // console.log(data);
         data.places.map(function(current) {
           var place = {
             name: current.name,
@@ -73,7 +73,7 @@
         var geoResult = results[0];
         modelHikes.zipResults.push(geoResult.geometry.location.lat);
         modelHikes.zipResults.push(geoResult.geometry.location.lng);
-        filtersView.Run();
+        page.redirect('/filters');
       }
     });
   };
