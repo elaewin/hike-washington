@@ -108,17 +108,17 @@
       distancesModel.createTable(),
       resultsModel.updateScenery(),
       distancesModel.latLonQuery(),
+      page.redirect('/results')
     ]);
   };
 
   $('#filters-form').submit(function(event) {
     event.preventDefault();
-    filtersView.Run();
-    page.redirect('/results');
   });
 
   $('#filters-submit').on('click', function (event){
-    page.redirect('/results');
+    filtersView.Run();
+    // page.redirect('/results');
   });
 
   module.filtersView = filtersView;

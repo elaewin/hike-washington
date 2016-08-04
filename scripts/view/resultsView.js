@@ -6,8 +6,8 @@
   resultsView.Run = function() {
     async.series([
       resultsModel.createResultsDB(resultsModel.joinAllHikesAndDistance),
-      // resultsModel.joinAllHikesAndDistance(),
-      // resultsModel.updateResultsDB()
+        // resultsModel.joinAllHikesAndDistance(),
+      resultsModel.updateResultsDB()
     ]);
   };
 

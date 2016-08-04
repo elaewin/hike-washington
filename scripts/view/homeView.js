@@ -16,7 +16,7 @@
       homeView.zipCode = $('#autocomplete').val();
       if (homeView.zipCode.length === 5) {
         modelHikes.getLatLng(homeView.zipCode);
-        page.redirect('/filters');
+        // page.redirect('/filters');
         console.log('Redirect working'); //add error validation (non INTEGER)
       } else {
         console.log('Not a valid zip code');
