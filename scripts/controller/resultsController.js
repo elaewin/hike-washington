@@ -2,16 +2,17 @@
 
   var resultsController = {};
 
-  resultsController.Run = function() {
-    console.log('resultsController.Run is running.');
-    resultsController.updateResultsDB();
-  };
-
-  resultsController.render = function() {
-    console.log('resultsController.render is running.');
-    resultsController.Run();
+  //update results based on actvitiy, scenery, etc
+  resultsModel.updateResultsDB = function() {
+    filtersView.findActiveActivities();
+    filtersView.activityChoice.forEach(function(current){
+      webDB.execute('DELETE FROM resultsDB WHERE activities NOT LIKE "%' + current + '%"',
+      function () {
+        resultsModel.getHikeResults();
+      }
+    );
+    });
   };
 
   module.resultsController = resultsController;
-
 })(window);

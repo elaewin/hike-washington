@@ -10,40 +10,36 @@
     this.description = objToRender.hikeDescription;
     this.activitiesSelected = objToRender.activities.split(',');
     this.scenerySelected; objToRender.scenery.split(',');
-    console.log('activities:', this.activitesSelected);
     this.lengthOfHike = objToRender.length;
     this.distance = Math.round(objToRender.distanceFromUser);
     var renderedResult = resultsCompiler(this);
-    console.log(renderedResult);
     $('#results').append(renderedResult);
-    // resultsView.showThreeResults();
   };
 
   resultsView.showThreeResults = function() {
+    $('.page-content').hide();
     console.log('resultsView.showThreeResults is running.');
-    console.log('resultsView.resultsArray:', resultsView.resultsArray);
+    console.log('resultsModel.resultsArray:', resultsModel.resultsArray);
+    if(resultsModel.resultsArray.length === 0) {
+      resultsView.noResults();
+    } else if(resultsModel.resultsArray.length < 3) {
+        resultsModel.resultsArray.forEach(function(hike) {
+          resultsView.renderResults(hike);
+        });
+    } else {
     var arrayOfThree = [
-      resultsView.resultsArray[0], resultsView.resultsArray[1], resultsView.resultsArray[2]
+      resultsModel.resultsArray[0], resultsModel.resultsArray[1], resultsModel.resultsArray[2]
     ];
     arrayOfThree.forEach(function(hike) {
       resultsView.renderResults(hike);
     });
     // resultsView.resultCount += 3;
+    $('#results').fadeIn();
   };
 
-  // resultsView.callback = function() {
-  //   console.log('results view async series callback reached.');
-  // };
-  //
-  // resultsView.Run = function() {
-  //   console.log('resultsView.Run is running.');
-  //   resultsModel.updateResultsDB(); // move getHikes as "callback"
-  // };
-  //
-  // resultsView.render = function() {
-  //   console.log('resultsView.render is running.');
-  //   resultsView.Run();
-  // };
+  resultsView.noResults = function() {
+    $('#results').append('<h4>Sorry! No hike match the criteria you\'ve selected.</h4>');
+  };
 
   module.resultsView = resultsView;
 })(window);

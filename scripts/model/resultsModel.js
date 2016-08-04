@@ -1,14 +1,14 @@
 (function(module) {
   var resultsModel = {};
+
   resultsModel.resultsArray = [];
+  resultsModel.joinedArray = [];
 
   function Hike (opts) {
     Object.keys(opts).forEach(function(e, index, keys) {
       this[e] = opts[e];
     },this);
   };
-  //
-  // resultsView.resultsArray = [];
 
   resultsModel.getHikeResults = function () {
     console.log('resultsView.getHikeResults is running.');
@@ -19,9 +19,10 @@
         return new Hike(row);
       });
       console.log('results array', resultsModel.resultsArray);
-      resultsView.showThreeResults();
+      resultsView.showThreeResults(); // here to deal with async issues
     });
   };
+
 // create a table to store filter results
   resultsModel.createResultsDB = function() {
     console.log('create ResultsDB running');
@@ -47,7 +48,7 @@
     webDB.execute('SELECT * FROM allHikesDB INNER JOIN distanceDB ON allHikesDB.name=distanceDB.name WHERE allHikesDB.length BETWEEN ' +
     filtersView.distanceChoice[0] + ' AND ' + filtersView.distanceChoice[1] + ';',
     function(rows) {
-      resultsModel.resultsArray = rows;
+      resultsModel.joinedArray = rows;
       console.log('resultsDB about to be populated');
       resultsModel.populateResultsDB();
     });
@@ -55,7 +56,7 @@
 
   resultsModel.populateResultsDB = function() {
     webDB.execute('DELETE FROM resultsDB;');
-    resultsModel.resultsArray.forEach(function(resultsObj) {
+    resultsModel.joinedArray.forEach(function(resultsObj) {
       webDB.execute(
         [
           {
@@ -64,24 +65,6 @@
           }
         ]
       );
-    });
-  };
-
-  //update results based on actvitiy, scenery, etc
-  resultsModel.updateResultsDB = function() {
-    filtersView.findActiveActivities();
-    filtersView.activityChoice.forEach(function(current){
-      webDB.execute('DELETE FROM resultsDB WHERE activities NOT LIKE "%' + current + '%"',
-      function () {
-        resultsView.getHikeResults();
-      }
-    );
-    });
-  };
-
-  resultsModel.updateScenery = function() {
-    sceneryTerms.forEach(function(ele) {
-      webDB.execute('UPDATE allHikesDB SET scenery' + ele.key + ' ="' + ele.key + '" WHERE areaDescription LIKE "%' + ele.value + '%" OR hikeDescription LIKE "%' + ele.value + '";');
     });
   };
 
