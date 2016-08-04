@@ -35,10 +35,10 @@
 
     $('#search-submit').on('click', homeView.redirect);
 
-    modelHikes.checkDistanceForData();
-    modelHikes.checkResultsForData();
-    modelHikes.loadAPIData(); //happen on page load
-    homeView.Run();  // on page load
+    // modelHikes.checkDistanceForData();
+    // modelHikes.checkResultsForData();
+    // modelHikes.loadAPIData(); //happen on page load
+    // homeView.Run();  // on page load
 
   };
   module.homeView = homeView;
