@@ -119,6 +119,10 @@
 
   $('#filters-submit').on('click', function (event){
     page.redirect('/results');
+    $('.page-content').hide();
+    resultsView.resultCount = 0;
+    resultsView.render();
+    $('#results').fadeIn();
   });
 
   module.filtersView = filtersView;

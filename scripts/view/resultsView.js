@@ -1,7 +1,7 @@
 (function(module) {
   var resultsView = {};
 
-  var resultCount = 0;
+  resultsView.resultCount = 0;
 
   function Hike (opts) {
     Object.keys(opts).forEach(function(e, index, keys) {
@@ -11,7 +11,7 @@
 
   resultsView.resultsArray = [];
 
-  resultsView.loadHikeResults = function () {
+  resultsView.getHikeResults = function () {
     webDB.execute('SELECT * FROM resultsDB SORT BY distanceFromUser ASC',
     function(rows) {
       resultsView.resultsArray = rows.map(function(row) {
@@ -20,7 +20,7 @@
     });
   };
 
-  resultsView.renderResults = function(element) {
+  resultsView.renderResults = function() {
     var resultsCompiler = Handlebars.compile($('#results-template').text());
     var actArray = row.activities.split(',');
     // var sceneArray = row.scenery.split(',');
@@ -44,12 +44,14 @@
     arrayOfThree.forEach(function(hike) {
       resultsView.renderResults(hike);
     });
-    resultCount += 3;
+    resultsView.resultCount += 3;
   };
 
   resultsView.Run = function() {
     async.series([
       resultsModel.createResultsDB(resultsModel.joinAllHikesAndDistance),
+      resultsView.getHikeResults(),
+      resultsView.showThreeResults()
       // resultsModel.joinAllHikesAndDistance(),
       // resultsModel.updateResultsDB()
     ]);
@@ -57,8 +59,6 @@
 
   resultsView.render = function() {
     resultsView.Run();
-    $('main').html('');
-    $('main').append('<section>Results</section>');
   };
 
   module.resultsView = resultsView;
