@@ -19,8 +19,8 @@
     latLonQueryArray.forEach(function(element) {
       var lat1 = element['lat'];
       var lon1 = element['lon'];
-      var lat2 = modelHikes.zipResults[0];
-      var lon2 = modelHikes.zipResults[1];
+      var lat2 = homeModel.zipResults[0];
+      var lon2 = homeModel.zipResults[1];
       var newDistance = distanceCalc.getDistance(lat1, lon1, lat2, lon2);
       var name = element.name;
       webDB.execute(
