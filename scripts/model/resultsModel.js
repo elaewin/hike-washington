@@ -3,8 +3,8 @@
   resultsModel.resultsArray = [];
 
 // create a table to store filter results
-  resultsModel.createResultsDB = function(next) {
-    console.log('create Results running');
+  resultsModel.createResultsDB = function() {
+    console.log('create ResultsDB running');
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS resultsDB (' +
       'id INTEGER PRIMARY KEY, ' +
@@ -17,25 +17,24 @@
       'distanceFromUser FLOAT,' +
       'scenery VARCHAR,' +
       'hikeDescription TEXT,' +
-      'areaDescription TEXT);',
-      function() {
-        next();
-      }
+      'areaDescription TEXT);'
     );
   };
 
 // the creates an array to be populated on results table
   resultsModel.joinAllHikesAndDistance = function() {
+    console.log('joinAllHikesAndDistance running');
     webDB.execute('SELECT * FROM allHikesDB INNER JOIN distanceDB ON allHikesDB.name=distanceDB.name WHERE allHikesDB.length BETWEEN ' +
     filtersView.distanceChoice[0] + ' AND ' + filtersView.distanceChoice[1] + ';',
     function(rows) {
-      console.log('rows has', rows);
       resultsModel.resultsArray = rows;
+      console.log('resultsDB about to be populated');
       resultsModel.populateResultsDB();
     });
   };
 
   resultsModel.populateResultsDB = function() {
+    webDB.execute('DELETE FROM resultsDB;');
     resultsModel.resultsArray.forEach(function(resultsObj) {
       webDB.execute(
         [

@@ -5,6 +5,7 @@
   //sqlDB.displayHikes = []; //array used to render hikes to the DOM
 
   distancesModel.createTable = function() {
+    console.log('creating distances DB');
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS distanceDB (' +
       'id INTEGER PRIMARY KEY, ' +
@@ -13,9 +14,8 @@
   };
 
   distancesModel.populateDistancesDB = function() {
-    console.log('Populate is happening');
+    console.log('Populate distances db is happening');
     distancesModel.deleteEverything();
-    // var allLatLon = distancesModel.latLonQuery();
     latLonQueryArray.forEach(function(element) {
       var lat1 = element['lat'];
       var lon1 = element['lon'];
