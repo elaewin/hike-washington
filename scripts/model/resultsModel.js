@@ -2,6 +2,26 @@
   var resultsModel = {};
   resultsModel.resultsArray = [];
 
+  function Hike (opts) {
+    Object.keys(opts).forEach(function(e, index, keys) {
+      this[e] = opts[e];
+    },this);
+  };
+  //
+  // resultsView.resultsArray = [];
+
+  resultsModel.getHikeResults = function () {
+    console.log('resultsView.getHikeResults is running.');
+    webDB.execute('SELECT * FROM resultsDB ORDER BY distanceFromUser ASC;',
+    function(rows) {
+      resultsModel.resultsArray = rows.map(function(row) {
+        console.log(row);
+        return new Hike(row);
+      });
+      console.log('results array', resultsModel.resultsArray);
+      resultsView.showThreeResults();
+    });
+  };
 // create a table to store filter results
   resultsModel.createResultsDB = function() {
     console.log('create ResultsDB running');
@@ -48,22 +68,22 @@
   };
 
   //update results based on actvitiy, scenery, etc
-  // resultsModel.updateResultsDB = function() {
-  //   filtersView.findActiveActivities();
-  //   filtersView.activityChoice.forEach(function(current){
-  //     webDB.execute('DELETE FROM resultsDB WHERE activities NOT LIKE "%' + current + '%"',
-  //     function () {
-  //       resultsView.getHikeResults();
-  //     }
-  //   );
-  //   });
-  // };
-  //
-  // resultsModel.updateScenery = function() {
-  //   sceneryTerms.forEach(function(ele) {
-  //     webDB.execute('UPDATE allHikesDB SET scenery' + ele.key + ' ="' + ele.key + '" WHERE areaDescription LIKE "%' + ele.value + '%" OR hikeDescription LIKE "%' + ele.value + '";');
-  //   });
-  // };
+  resultsModel.updateResultsDB = function() {
+    filtersView.findActiveActivities();
+    filtersView.activityChoice.forEach(function(current){
+      webDB.execute('DELETE FROM resultsDB WHERE activities NOT LIKE "%' + current + '%"',
+      function () {
+        resultsView.getHikeResults();
+      }
+    );
+    });
+  };
+
+  resultsModel.updateScenery = function() {
+    sceneryTerms.forEach(function(ele) {
+      webDB.execute('UPDATE allHikesDB SET scenery' + ele.key + ' ="' + ele.key + '" WHERE areaDescription LIKE "%' + ele.value + '%" OR hikeDescription LIKE "%' + ele.value + '";');
+    });
+  };
 
   module.resultsModel = resultsModel;
 })(window);
