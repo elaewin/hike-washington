@@ -6,7 +6,7 @@
     var zipEntered = /\d\d\d\d\d/;
     homeView.zipCode = $('#autocomplete').val();
     if (homeView.zipCode.match(zipEntered)) {
-      modelHikes.getLatLng(homeView.zipCode);
+      homeModel.getLatLng(homeView.zipCode);
       console.log('Redirect working');
     } else {
       $('#autocomplete').css({'border-color': 'red'});
@@ -19,6 +19,10 @@
   homeView.callback = function() {
     console.log('callback has been reached');
   };
+
+  $('#zipCode-input').submit(function(event){
+    event.preventDefault();
+  });
 
   $('#search-submit').on('click', homeView.redirect);
 
