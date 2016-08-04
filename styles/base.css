@@ -14,13 +14,20 @@ main {
  margin-top: 3rem;
  border: 8px solid #efefef ;
  padding: 5em 3em 5em 3em;
- background: rgba(0, 0, 0, 0.8);
+ background: rgba(0, 0, 0, 0.4);
+}
+
+img {
+  width: 50px;
+  height: 50px;
 }
 
 
 @media only screen and (min-width: 760px) {
  main {
    margin-top: 5rem;
+   margin-bottom: 5rem;
+   overflow: hidden;
    border: 3px solid #efefef ;
 }
 

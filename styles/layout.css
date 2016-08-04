@@ -2,7 +2,6 @@
   display: none;
 }
 
-
 .biopic {
   width: 200px;
   height: 200px;
@@ -37,6 +36,12 @@ a:hover {
 @media only screen and (min-width: 760px) {
 
   #footer {
-    padding: 0;
+    padding-top: .75em;
+    padding-bottom: 1.25em;
+    position: static;
+  }
+
+  .footer-links {
+    overflow: hidden;
   }
 }
