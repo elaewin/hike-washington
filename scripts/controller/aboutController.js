@@ -4,13 +4,13 @@
 
   var aboutController = {};
 
-  aboutController.reveal = function(){
+  aboutController.generateBios = function() {
     $('.page-content').hide();
-    // if($('.main-nav div').hasClass('icon-cross')) {
-    //   $('.main-nav div').removeClass('icon-cross');
-    //   $('.main-nav ul').fadeOut();
-    // }
-    $('#about').fadeIn('slow').scrollTop();
+    aboutModel.allHumans.forEach(function(bioObj) {
+      var renderedBio = aboutView.renderAboutBio(bioObj);
+      $('#about').append(renderedBio);
+    });
+    $('#about').fadeIn();
   };
 
   module.aboutController = aboutController;

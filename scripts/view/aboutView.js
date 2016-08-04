@@ -2,13 +2,15 @@
 
   var aboutView = {};
 
-  aboutView.renderHumans = function(objToRender) {
+  aboutView.renderAboutBio = function(objToRender) {
+    console.log('renderAboutBio is running.');
     var templateCompiler = Handlebars.compile($('#about-template').text());
     this.name = objToRender.name;
     this.body = objToRender.body;
     this.bioPic = objToRender.bioPic;
     var renderedHuman = templateCompiler(this);
-    $('#about').append(renderedHuman);
+    return renderedHuman;
   };
 
+  module.aboutView = aboutView;
 })(window);

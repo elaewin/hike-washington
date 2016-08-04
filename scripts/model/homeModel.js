@@ -6,15 +6,6 @@
 
   homeModel.loadAPIData = function() {
     homeModel.checkForData();
-    // if(!localStorage.visited) {
-    //   console.log('callTrailAPI called');
-      // homeModel.callTrailAPI();
-      // localStorage.setItem('visited', true);
-    // }
-    // else {
-    //   homeModel.checkForData();
-    //   localStorage.setItem('visited', true);
-    // }
   };
 
   homeModel.checkForData = function() {

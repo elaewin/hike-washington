@@ -3,12 +3,14 @@
   var homeController = {};
 
   homeController.loadData = function() {
+    console.log('homeController.loadData running.');
     homeModel.checkDistanceForData();
     homeModel.checkResultsForData();
     homeModel.loadAPIData(); //happen on page load
   };
 
   homeController.index = function() {
+    console.log('homeController.index async nonsense running.');
     async.series([
       allHikesModel.createTable(),
       allHikesModel.insertRecord(),

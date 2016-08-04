@@ -1,13 +1,13 @@
-page('/', homeController.loadData, homeController.index);
+page('/',
+  homeController.loadData,
+  homeController.index);
 
 page('/filters', filters);
 page('/results', results);
-page('/about', aboutController.reveal);
-page();
 
-// function home() {
-//   homeView.render();
-// }
+page('/about', aboutModel.getData);
+
+page();
 
 function filters() {
   filtersView.render();
