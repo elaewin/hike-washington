@@ -10,7 +10,7 @@
 }
 
 #search-submit {
-  background-color: #ccc;
+  background-color: rgba(0, 0, 0, 0.8);
   font-size: 1.5em;
   padding: 1em;
   margin-left: .5em;
@@ -19,4 +19,26 @@
   font-family: 'Architects Daughter', cursive;
   text-transform: uppercase;
   letter-spacing: .2rem;
+  color: #efefef;
+}
+
+@media only screen and (min-width: 760px) {
+  #autocomplete {
+      padding: .25em;
+      font-size: 1em;
+      width: 200px;
+  }
+
+  #search-submit {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 1.25em;
+    margin-left: 0.5em;
+    padding: .25em;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Architects Daughter', cursive;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    color: #efefef;
+  }
 }

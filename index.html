@@ -15,30 +15,13 @@
     <link rel="stylesheet" href="styles/module-filters.css">
     <script id="search-results" type="text/x-handlebars-template">
       <h2>{{nameOfPlace}}</h2>
-      <p>{{description}}</p>
-      {{if activitiesSelected}}
-      <ul class="activities-results">
-        {{each activitiesSelected}}
-        <li>{{this}}</li>
-        {{/each}}
+      <p>{{descriptionOfPlace}}</p>
+      <ul>
+        {{ make a template loop for these }}
+        <li>{{activity}}</li>
+        {{ end loop here}}
       </ul>
-      {{/if}}
-      {{if scenerySelected}}
-      <ul class="scenery-results">
-        {{each scenerySelected}}
-        <li>{{this}}</li>
-        {{/each}}
-      </ul>
-      {{/if}}
-      <p>Length of the hike: {{lengthOfHike}}</p>
-      <p>Distance of the hike from your Zip Code: {{distance}}.</p>
-      <!--google map-->
-      <!-- <iframe id="googleMap"
-      width="400"
-      height="250"
-      frameborder="0" style="border:0"
-      src="https://www.google.com/maps/embed/v1/place?key=googleAPIKey&center" allowfullscreen>
-    </iframe> -->
+      <p>{{length}}</p>
     </script>
   </head>
   <header>
@@ -63,6 +46,21 @@
         </form>
       </section>
       <section id="results" class="page-content">
+        <script id="results-template" type="text/x-handlebars-template">
+          <h2>{{name}}</h2>
+          <ul>
+            <li>{{length}}</li>
+            <li>{{activities}}</li>
+            <li>{{scenery}}</li>
+          </ul>
+          <!--google map-->
+          <iframe id="googleMap"
+          width="400"
+          height="250"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=googleAPIKey&center" allowfullscreen>
+        </iframe>
+        </script>
       </section>
     </main>
     <script src="vendor/scripts/async.js"></script>
@@ -76,10 +74,10 @@
     <script src="data/sceneryList.js"></script>
     <!--Model Files  -->
     <script src="scripts/model/model.js"></script>
-    <script src="scripts/model/allHikesModel.js"></script>
-    <script src="scripts/model/distancesModel.js"></script>
-    <script src="scripts/model/resultsModel.js"></script>
+    <script src="scripts/model/sqlDB.js"></script>
+    <script src="scripts/model/sqlDistances.js"></script>
     <!--View Files -->
+    <script src="scripts/view/CreateFilterView.js"></script>
     <script src="scripts/view/homeView.js"></script>
     <script src="scripts/view/filtersView.js"></script>
     <script src="scripts/view/resultsView.js"></script>
