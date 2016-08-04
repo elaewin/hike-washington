@@ -3,7 +3,8 @@ page('/',
   homeController.index);
 
 page('/filters',
-  resultsModel.joinAllHikesAndDistance);
+  resultsModel.joinAllHikesAndDistance,
+  filterController.index);
 
 page('/results',
   resultsController.updateResultsDB);

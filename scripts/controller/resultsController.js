@@ -4,7 +4,7 @@
 
   //update results based on actvitiy, scenery, etc
   resultsModel.updateResultsDB = function() {
-    filtersView.findActiveActivities();
+    filterController.findActiveActivities();
     filtersView.activityChoice.forEach(function(current){
       webDB.execute('DELETE FROM resultsDB WHERE activities NOT LIKE "%' + current + '%"',
       function () {

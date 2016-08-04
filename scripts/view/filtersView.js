@@ -44,76 +44,12 @@
     });
   };
 
-  filtersView.handleDistanceSelections = function() {
-    $('#distance li').on('click', function(event) {
-      console.log('click');
-      var $selection = $(event.target);
-      if($selection.hasClass('active')) {
-        $selection.removeClass('active');
-      } else {
-        $selection.addClass('active').siblings($selection).removeClass('active');
-        distanceValues = $selection.attr('value');
-        filtersView.distanceChoice = [parseInt(distanceValues.split(',')[0]), parseInt(distanceValues.split(',')[1])];
-        console.log(filtersView.distanceChoice);
-      }
-      resultsModel.joinAllHikesAndDistance();
+  filtersView.submitEventListener = function () {
+    $('#filters-form').on('submit', function(event) {
+      event.preventDefault();
+      page.redirect('/results');
     });
   };
-
-  filtersView.handleActivitySelections = function() {
-    $('#activity li').on('click', function(event){
-      var $selection = $(event.target);
-      if($selection.hasClass('active')){
-        $selection.removeClass('active');
-      } else {
-        $selection.addClass('active');
-      }
-    });
-  };
-
-  filtersView.handleScenerySelections = function() {
-    $('#scenery li').on('click', function(event){
-      var $selection = $(event.target);
-      if($selection.hasClass('active')){
-        $selection.removeClass('active');
-      } else {
-        $selection.addClass('active');
-      }
-    });
-  };
-
-  //find activites that have been clicked
-  filtersView.findActiveActivities = function() {
-    $('.other-activity.active').each(function(){
-      // console.log($(this));
-      filtersView.activityChoice.push($(this).attr('value'));
-    });
-  };
-
-  filtersView.render = function() {
-    filtersView.clearData();
-    filtersView.loadDistanceFilters();
-    filtersView.loadActivityFilters();
-    filtersView.loadSceneryFilters();
-    filtersView.handleDistanceSelections();
-    filtersView.handleActivitySelections();
-    filtersView.handleScenerySelections();
-  };
-
-  filtersView.Run = function() {
-    async.series([
-      resultsModel.updateScenery(),
-      page.redirect('/results')
-    ]);
-  };
-
-  $('#filters-form').submit(function(event) {
-    event.preventDefault();
-  });
-
-  $('#filters-submit').on('click', function (event){
-    filtersView.Run();
-  });
 
   module.filtersView = filtersView;
 })(window);
