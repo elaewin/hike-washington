@@ -1,49 +1,50 @@
+
 #search p {
- font-size: 1.5em;
- margin: 2rem 0;
+font-size: 1.5em;
+margin: 2rem 0;
 }
 
 #autocomplete {
- padding: 1em;
- font-size: 1.5em;
- width: 400px;
+padding: 1em;
+font-size: 1.5em;
+width: 400px;
 }
 
 #search-submit {
- background-color: rgba(0, 0, 0, 0.8);
- font-size: 1.5em;
- padding: 1em;
- margin-left: .5em;
- border: none;
- border-radius: 5px;
- font-family: 'Architects Daughter', cursive;
- text-transform: uppercase;
- letter-spacing: .2rem;
- color: #efefef ;
- cursor: pointer;
+background-color: rgba(0, 0, 0, 0.8);
+font-size: 1.5em;
+padding: 1em;
+margin-left: .5em;
+border: none;
+border-radius: 5px;
+font-family: 'Architects Daughter', cursive;
+text-transform: uppercase;
+letter-spacing: .2rem;
+color: #efefef  ;
+cursor: pointer;
 }
 
 #search-submit:hover {
-  background-color: #444;
+ background-color: #444;
 }
 
 @media only screen and (min-width: 760px) {
- #autocomplete {
-     padding: .25em;
-     font-size: 1em;
-     width: 200px;
- }
+#autocomplete {
+    padding: .25em;
+    font-size: 1em;
+    width: 200px;
+}
 
- #search-submit {
-   background-color: rgba(0, 0, 0, 0.8);
-   font-size: 1.25em;
-   margin-left: 0.5em;
-   padding: .25em;
-   border: none;
-   border-radius: 5px;
-   font-family: 'Architects Daughter', cursive;
-   text-transform: uppercase;
-   letter-spacing: .2rem;
-   color: #efefef ;
- }
+#search-submit {
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 1.25em;
+  margin-left: 0.5em;
+  padding: .25em;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Architects Daughter', cursive;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  color: #efefef  ;
+}
 }
