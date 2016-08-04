@@ -32,7 +32,7 @@
     this.activitesSelected = objToRender.activities.split(',');
     this.scenerySelected; objToRender.scenery.split(',');
     this.lengthOfHike = objToRender.length;
-    this.distance = objToRender.distanceFromUser.toFixed(1);
+    this.distance = Math.round(objToRender.distanceFromUser);
     var renderedResult = resultsCompiler(this);
     $('#results').append(renderedResult);
     // resultsView.showThreeResults();
