@@ -18,13 +18,18 @@ body {
   background: url('../img/cascades.jpg') no-repeat fixed center;
 }
 
+
 main {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
   margin-top: 3rem;
   border-top: 3px solid #efefef;
   border-bottom: 3px solid #efefef;
+  padding: 5em 3em 5em 3em;
   background: rgba(0, 0, 0, 0.4);
 }
+
 
 #sections-container {
   width: 100%;
