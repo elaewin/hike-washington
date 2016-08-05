@@ -20,8 +20,6 @@ color: black;
 
 #filters-section ul {
 font-size: 5em;
-margin-top: 0.5em;
-margin-bottom: 1em;
 display: flex;
 flex-direction: row;
 flex-wrap: nowrap;
