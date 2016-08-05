@@ -6,6 +6,7 @@
  width: 200px;
  height: 200px;
  float: left;
+ margin-right: 1em;
 }
 
 .footer-links {
@@ -36,10 +37,6 @@ a:hover {
 }
 
 @media only screen and (min-width: 760px) {
-
-  #filters {
-        text-align: center;
-}
 
  #footer {
    padding-top: .75em;
