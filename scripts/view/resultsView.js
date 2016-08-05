@@ -23,6 +23,7 @@
     if(resultsModel.resultsArray.length === 0) {
       resultsView.noResults();
     } else if(resultsModel.resultsArray.length < 3) {
+      console.log('less than 3 results!');
       resultsModel.resultsArray.forEach(function(hike) {
         resultsView.renderResults(hike);
       });

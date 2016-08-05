@@ -1,7 +1,7 @@
 (function(module) {
 
   var filterController = {};
-  filterController.activityChoice = [];
+  filterController.activityChoice = ['hiking'];
   filterController.distanceChoice = [0,1];
 
   filterController.handleDistanceSelections = function() {
