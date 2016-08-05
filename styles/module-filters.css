@@ -45,7 +45,11 @@
 #filters-section h2 {
   font-size: 2.5em;
   margin-bottom: .25em;
-  margin-top: 1.25em;
+  margin-top: 0.25em;
+}
+
+#filters-section h4 {
+  line-height: 1.5;
 }
 
 #filters-section ul {
@@ -57,7 +61,7 @@
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
-  margin-left: 1rem;
+  /*margin-right: 1rem;*/
   margin-top: 1rem;
   padding: .3em .4em .4em .3em;
   cursor: pointer;
@@ -65,8 +69,8 @@
   height: 45px;
 }
 
-#filters-section li:first-child {
-  margin-left: 0;
+#filters-section li:last-child {
+  margin-right: 0;
 }
 
 img.filterIcons{
@@ -87,7 +91,6 @@ background-color: white;
     font-family: 'Architects Daughter', cursive;
     text-transform: uppercase;
     padding: .5em .75em;
-    width: 8em;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -114,7 +117,6 @@ background-color: white;
     font-family: 'Architects Daughter', cursive;
     text-transform: uppercase;
     padding: .3em .75em;
-    width: 350px;
     border: none;
     border-radius: 5px;
     color: #efefef  ;
@@ -123,7 +125,7 @@ background-color: white;
 
   #filters-section li {
     padding: .3em .4em .3em .3em;
-    margin-left: 0.3em;
+    margin-right: 0.3em;
     font-size: 2em;
     width: 85px;
     height: 100px;
