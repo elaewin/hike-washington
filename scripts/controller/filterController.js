@@ -2,6 +2,7 @@
 
   var filterController = {};
   filterController.activityChoice = [];
+  filterController.distanceChoice = [0,1];
 
   filterController.handleDistanceSelections = function() {
     $('#distance li').on('click', function(event) {
@@ -49,7 +50,7 @@
     });
   };
 
-  filtersView.index = function() {
+  filterController.index = function() {
     console.log('filter index is running');
     filtersView.clearData();
     filtersView.loadDistanceFilters();
@@ -59,6 +60,7 @@
     filterController.handleActivitySelections();
     filterController.handleScenerySelections();
     filtersView.submitEventListener();
+    resultsModel.joinAllHikesAndDistance();
   };
 
   module.filterController = filterController;

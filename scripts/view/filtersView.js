@@ -1,7 +1,6 @@
 (function(module) {
   var filtersView = {};
   filtersView.lengthRequest = '';
-  filtersView.distanceChoice = [];
 
   filtersView.clearData = function() {
     $('.page-content').hide();
