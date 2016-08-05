@@ -18,6 +18,7 @@
 
   resultsView.showThreeResults = function() {
     $('.page-content').hide();
+    $('#results').html('');
     console.log('resultsView.showThreeResults is running.');
     console.log('resultsModel.resultsArray:', resultsModel.resultsArray);
     if(resultsModel.resultsArray.length === 0) {
@@ -35,12 +36,15 @@
         resultsView.renderResults(hike);
       });
       // resultsView.resultCount += 3;
-      $('#results').fadeIn();
     };
+    $('#results').fadeIn();
   };
 
   resultsView.noResults = function() {
-    $('#results').append('<h4>Sorry! No hike match the criteria you\'ve selected.</h4>');
+    $('#results').append('<h4>Sorry! No hikes match the criteria you\'ve selected.</h4><h4>Please try again!</h4><button id="re-try">Back to Filters</button>');
+    $('button').on('click', function(){
+      page('/filters');
+    });
   };
 
   module.resultsView = resultsView;

@@ -18,7 +18,7 @@
       'areaDescription TEXT, ' +
       'hikeDescription TEXT, ' +
       'sceneryWildlife VARCHAR(255), ' +
-      'sceneryForrest VARCHAR(255), ' +
+      'sceneryForest VARCHAR(255), ' +
       'sceneryWater VARCHAR(255), ' +
       'sceneryMountain VARCHAR(255));'
     );
