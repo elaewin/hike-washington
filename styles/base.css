@@ -16,7 +16,7 @@ html {
 
 body {
   position: relative;
-  background: url('../img/cascades.jpg') no-repeat fixed center;
+  background: url('../img/cascades2.jpg') no-repeat fixed center;
 }
 
 main {
@@ -25,7 +25,7 @@ main {
   margin-bottom: .5em;
   border-top: 3px solid #efefef;
   border-bottom: 3px solid #efefef;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 #sections-container {
