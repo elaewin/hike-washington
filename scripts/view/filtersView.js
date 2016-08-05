@@ -25,7 +25,7 @@
   filtersView.loadActivityFilters = function() {
     $('#filters').append('<div id="activity" data-category="activity"></div>');
     $('div#activity').append('<h2>Other Activities</h2>');
-    var distancesClass = [['flaticon-bicycle-rider','biking'], ['flaticon-night-camping', 'camping'], ['flaticon-snowflake', 'snow']];
+    var distancesClass = [['flaticon-bicycle-rider','biking'], ['flaticon-night-camping', 'camping'], ['flaticon-walking-with-snowshoes', 'snow']];
     $('div#activity').append('<ul></ul>');
     distancesClass.forEach(function(element){
       $('div[data-category="activity"] ul').append('<li class="' + element[0] + ' ltblue other-activity" value="' + element[1] + '"></li>');
