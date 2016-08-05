@@ -1,23 +1,37 @@
+* {
+  /*outline: 1px dashed orange;*/
+}
+
+*::shadow {
+  display: none;
+}
+
 html {
   line-height: 1.2em;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  color: #efefef ;
+  font-family: 'Amiri', sans-serif;
+  color: #efefef;
+  width: 100%;
 }
 
 body {
+  position: relative;
   background: url('../img/cascades.jpg') no-repeat fixed center;
 }
 
 main {
-  width: 90%;
-  margin: 0 auto;
-  text-align: center;
+  width: 100%;
   margin-top: 3rem;
   border-top: 3px solid #efefef;
   border-bottom: 3px solid #efefef;
-  padding: 5em 3em 5em 3em;
   background: rgba(0, 0, 0, 0.4);
+}
+
+#sections-container {
+  width: 100%;
+  margin: 0 5%;
+  text-align: center;
+  padding-bottom: 5rem;
+  /*padding: 5em 3em 5em 3em;*/
 }
 
 h1, h2, h3, h4, a {
