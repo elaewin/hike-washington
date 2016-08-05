@@ -19,6 +19,7 @@
   resultsView.showThreeResults = function() {
     $('.page-content').hide();
     $('#results').html('');
+    $('#results').append('<h4>Here are the hikes that match your criteria, with the closest hikes to you first:</h4>');
     console.log('resultsView.showThreeResults is running.');
     console.log('resultsModel.resultsArray:', resultsModel.resultsArray);
     if(resultsModel.resultsArray.length === 0) {
@@ -31,18 +32,10 @@
     } else {
       resultsModel.resultsArray.forEach(function(hike) {
         resultsView.renderResults(hike);
-        // $('#results').
-        // $('#results').append('<a id="show-more">show more &rarr;</a>');
-        // $('#show-more').on('click', function(){
       });
       // resultsView.resultCount += 3;
-    }
-    // if(resultsModel.resultsArray > 4){
-      // $('#results').append('<a id="show-more">show more &rarr;</a>');
-      // $('#show-more').on('click', function(){
-      //   resultsModel.resultsArray.shift(2);
-      //   resultsView.showThreeResults();
-      // });
+    };
+    $('.header-h1').css('visibility', 'visible');
     $('#results').fadeIn();
   };
 

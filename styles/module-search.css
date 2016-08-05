@@ -14,15 +14,15 @@
 }
 
 #search-submit {
-  background-color: #444;
+  background-color: rgba(51, 77, 25, 0.8);
   font-size: .75em;
   padding: 1em;
   margin-left: .5em;
   margin-top: .5em;
-  border: none;
+  border: 1px solid #efefef;
   border-radius: 5px;
   font-family: 'Architects Daughter', cursive;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   letter-spacing: .2rem;
   color: #efefef;
   cursor: pointer;

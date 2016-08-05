@@ -4,6 +4,7 @@
 
   filtersView.clearData = function() {
     $('.page-content').hide();
+    $('.header-h1').css('visibility', 'visible');
     $('#filters').html('');
     $('#filters-section').fadeIn();
   };

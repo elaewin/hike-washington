@@ -88,13 +88,13 @@ background-color: white;
 
 #filters-submit {
     letter-spacing: .2rem;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(51, 77, 25, 0.8);
     color: #efefef;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-family: 'Architects Daughter', cursive;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     padding: .5em .75em;
-    border: none;
+    border: 1px solid #efefef;
     border-radius: 5px;
     cursor: pointer;
 }
