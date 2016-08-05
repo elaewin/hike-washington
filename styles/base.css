@@ -24,8 +24,7 @@ main {
   margin: 0 auto;
   text-align: center;
   margin-top: 3rem;
-  border-top: 3px solid #efefef;
-  border-bottom: 3px solid #efefef;
+  border: 3px solid #efefef;
   padding: 5em 3em 5em 3em;
   background: rgba(0, 0, 0, 0.4);
 }
