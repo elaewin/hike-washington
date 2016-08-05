@@ -9,7 +9,7 @@
     this.nameOfPlace = objToRender.name;
     this.description = objToRender.hikeDescription;
     this.activitiesSelected = objToRender.activities.split(',');
-    this.scenerySelected; objToRender.scenery.split(',');
+    this.scenerySelected = objToRender.scenery.split(',');
     this.lengthOfHike = objToRender.length;
     this.distance = Math.round(objToRender.distanceFromUser);
     var renderedResult = resultsCompiler(this);
@@ -30,10 +30,7 @@
         resultsView.renderResults(hike);
       });
     } else {
-      var arrayOfThree = [
-        resultsModel.resultsArray[0], resultsModel.resultsArray[1], resultsModel.resultsArray[2]
-      ];
-      arrayOfThree.forEach(function(hike) {
+      resultsModel.resultsArray.forEach(function(hike) {
         resultsView.renderResults(hike);
       });
       // resultsView.resultCount += 3;
