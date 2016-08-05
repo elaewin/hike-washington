@@ -43,7 +43,7 @@
     });
   };
 
-  distancesModel.deleteEverything = function(){
+  distancesModel.deleteEverything = function() {
     webDB.execute(
       [
         {

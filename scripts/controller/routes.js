@@ -12,7 +12,3 @@ page('/results',
 page('/about', aboutModel.getData);
 
 page();
-
-function filters() {
-  filtersView.render();
-}

@@ -77,7 +77,7 @@
       }
     }).done(function() {
       console.log('callTrailAPI is done.');
-      homeView.Run();
+      homeController.createTables();
     });
   };
 
@@ -98,11 +98,11 @@
     }).done(distancesModel.latLonQuery, console.log('latLonQuery done.'), page.redirect('/filters'));
   };
 
-    homeModel.updateScenery = function() {
-      sceneryTerms.forEach(function(ele) {
-        webDB.execute('UPDATE allHikesDB SET scenery' + ele.key + ' ="' + ele.key + '" WHERE areaDescription LIKE "%' + ele.value + '%" OR hikeDescription LIKE "%' + ele.value + '";');
-      });
-    };
+  homeModel.updateScenery = function() {
+    sceneryTerms.forEach(function(ele) {
+      webDB.execute('UPDATE allHikesDB SET scenery' + ele.key + ' ="' + ele.key + '" WHERE areaDescription LIKE "%' + ele.value + '%" OR hikeDescription LIKE "%' + ele.value + '";');
+    });
+  };
 
   module.homeModel = homeModel;
 })(window);

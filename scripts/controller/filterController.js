@@ -1,6 +1,7 @@
 (function(module) {
 
   var filterController = {};
+  filterController.activityChoice = [];
 
   filterController.handleDistanceSelections = function() {
     $('#distance li').on('click', function(event) {
@@ -49,6 +50,7 @@
   };
 
   filtersView.index = function() {
+    console.log('filter index is running');
     filtersView.clearData();
     filtersView.loadDistanceFilters();
     filtersView.loadActivityFilters();

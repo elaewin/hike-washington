@@ -2,7 +2,6 @@
   var filtersView = {};
   filtersView.lengthRequest = '';
   filtersView.distanceChoice = [];
-  filtersView.activityChoice = [];
 
   filtersView.clearData = function() {
     $('.page-content').hide();
@@ -44,9 +43,12 @@
     });
   };
 
-  filtersView.submitEventListener = function () {
-    $('#filters-form').on('submit', function(event) {
+  filtersView.submitEventListener = function() {
+    $('#filters-form').submit(function(event) {
       event.preventDefault();
+    });
+
+    $('#filters-submit').on('click', function() {
       page.redirect('/results');
     });
   };

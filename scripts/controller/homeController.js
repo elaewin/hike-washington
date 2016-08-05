@@ -4,21 +4,21 @@
 
   homeController.loadData = function() {
     console.log('homeController.loadData running.');
-    homeModel.checkDistanceForData();
-    homeModel.checkResultsForData();
     homeModel.loadAPIData(); //happen on page load
+    homeView.renderPage();
   };
 
-  homeController.index = function() {
+  homeController.createTables = function() {
     console.log('homeController.index async nonsense running.');
     async.series([
-      homeView.renderPage(),
       allHikesModel.createTable(),
       allHikesModel.insertRecord(),
       distancesModel.createTable(),
       resultsModel.createResultsDB(),
+      homeModel.checkDistanceForData(),
+      homeModel.checkResultsForData(),
       homeModel.updateScenery()
-    ], homeView.callback());
+    ], homeController.callback());
   };
 
   homeController.callback = function() {

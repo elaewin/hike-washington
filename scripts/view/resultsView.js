@@ -23,18 +23,19 @@
     if(resultsModel.resultsArray.length === 0) {
       resultsView.noResults();
     } else if(resultsModel.resultsArray.length < 3) {
-        resultsModel.resultsArray.forEach(function(hike) {
-          resultsView.renderResults(hike);
-        });
+      resultsModel.resultsArray.forEach(function(hike) {
+        resultsView.renderResults(hike);
+      });
     } else {
-    var arrayOfThree = [
-      resultsModel.resultsArray[0], resultsModel.resultsArray[1], resultsModel.resultsArray[2]
-    ];
-    arrayOfThree.forEach(function(hike) {
-      resultsView.renderResults(hike);
-    });
-    // resultsView.resultCount += 3;
-    $('#results').fadeIn();
+      var arrayOfThree = [
+        resultsModel.resultsArray[0], resultsModel.resultsArray[1], resultsModel.resultsArray[2]
+      ];
+      arrayOfThree.forEach(function(hike) {
+        resultsView.renderResults(hike);
+      });
+      // resultsView.resultCount += 3;
+      $('#results').fadeIn();
+    };
   };
 
   resultsView.noResults = function() {
