@@ -12,8 +12,8 @@
     webDB.execute('SELECT * FROM allHikesDB;',
     function(rows) {
       if(rows.length > 0) {
-        console.log('drop allHikesDB');
-        webDB.execute('DROP TABLE allHikesDB;',
+        console.log('deleting allHikesDB');
+        webDB.execute('DELETE FROM allHikesDB;',
         function() {
           homeModel.callTrailAPI();
         }
@@ -28,8 +28,8 @@
     webDB.execute('SELECT * FROM distanceDB;',
     function(rows) {
       if(rows.length > 0) {
-        console.log('drop distanceDB');
-        webDB.execute('DROP TABLE distanceDB;');
+        console.log('deleting from distanceDB');
+        webDB.execute('DELETE FROM distanceDB;');
       }
     });
   };
@@ -38,8 +38,8 @@
     webDB.execute('SELECT * FROM resultsDB;',
     function(rows) {
       if(rows.length > 0) {
-        console.log('drop resultsDB');
-        webDB.execute('DROP TABLE resultsDB;');
+        console.log('deleting from resultsDB');
+        webDB.execute('DELETE FROM resultsDB;');
       }
     });
   };
@@ -77,7 +77,7 @@
       }
     }).done(function() {
       console.log('callTrailAPI is done.');
-      homeView.Run();
+      homeController.createTables();
     });
   };
 
@@ -98,11 +98,11 @@
     }).done(distancesModel.latLonQuery, console.log('latLonQuery done.'), page.redirect('/filters'));
   };
 
-    homeModel.updateScenery = function() {
-      sceneryTerms.forEach(function(ele) {
-        webDB.execute('UPDATE allHikesDB SET scenery' + ele.key + ' ="' + ele.key + '" WHERE areaDescription LIKE "%' + ele.value + '%" OR hikeDescription LIKE "%' + ele.value + '";');
-      });
-    };
+  homeModel.updateScenery = function() {
+    sceneryTerms.forEach(function(ele) {
+      webDB.execute('UPDATE allHikesDB SET scenery' + ele.key + ' ="' + ele.key + '" WHERE areaDescription LIKE "%' + ele.value + '%" OR hikeDescription LIKE "%' + ele.value + '";');
+    });
+  };
 
   module.homeModel = homeModel;
 })(window);

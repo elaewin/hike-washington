@@ -4,6 +4,7 @@
   allHikesModel.displayHikes = []; //array used to render hikes to the DOM
 
   allHikesModel.createTable = function() {
+    console.log('allHikes table created');
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS allHikesDB (' +
       'id INTEGER PRIMARY KEY, ' +
@@ -24,7 +25,7 @@
   };
 
   allHikesModel.insertRecord = function() {
-
+    console.log('records being inserted into allHikes');
     homeModel.hikesArray.forEach( function(element) {
       webDB.execute(
         [
@@ -41,7 +42,8 @@
     });
   };
 
-  allHikesModel.deleteEverything = function(){
+  allHikesModel.deleteEverything = function() {
+    console.log('delete everything from allHikesDB');
     webDB.execute(
       [
         {

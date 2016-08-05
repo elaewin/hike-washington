@@ -6,15 +6,15 @@
     $('.page-content').hide();
     $('#search').fadeIn();
     homeView.zipCode = 0;
-    homeView.submitButtonListener();
   };
 
-  homeView.submitButtonListener = function() {
-    $('#zipCode-input').on('submit', function(event) {
-      event.preventDefault;
-      homeController.zipCodeValidator();
-    });
-  };
+  $('#zipCode-input').submit(function(event) {
+    event.preventDefault();
+  });
+
+  $('#search-submit').on('click', function() {
+    homeController.zipCodeValidator();
+  });
 
   module.homeView = homeView;
 })(window);

@@ -2,8 +2,7 @@ page('/',
   homeController.loadData,
   homeController.index);
 
-page('/filters',
-  resultsModel.joinAllHikesAndDistance);
+page('/filters', filterController.index);
 
 page('/results',
   resultsController.updateResultsDB);
@@ -11,7 +10,3 @@ page('/results',
 page('/about', aboutModel.getData);
 
 page();
-
-function filters() {
-  filtersView.render();
-}
