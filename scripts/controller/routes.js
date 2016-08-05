@@ -1,6 +1,4 @@
-page('/',
-  homeController.loadData,
-  homeController.index);
+page('/', homeController.loadData);
 
 page('/filters', filterController.index);
 

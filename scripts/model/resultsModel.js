@@ -1,9 +1,6 @@
 (function(module) {
   var resultsModel = {};
 
-  resultsModel.resultsArray = [];
-  resultsModel.joinedArray = [];
-
   function Hike (opts) {
     Object.keys(opts).forEach(function(e, index, keys) {
       this[e] = opts[e];
@@ -11,6 +8,7 @@
   };
 
   resultsModel.getHikeResults = function () {
+    resultsModel.resultsArray = [];
     console.log('resultsView.getHikeResults is running.');
     webDB.execute('SELECT * FROM resultsDB ORDER BY distanceFromUser ASC;',
     function(rows) {
@@ -44,6 +42,7 @@
 
 // the creates an array to be populated on results table
   resultsModel.joinAllHikesAndDistance = function() {
+    resultsModel.joinedArray = [];
     console.log('joinAllHikesAndDistance running');
     webDB.execute('SELECT * FROM allHikesDB INNER JOIN distanceDB ON allHikesDB.name=distanceDB.name WHERE allHikesDB.length BETWEEN ' +
     filterController.distanceChoice[0] + ' AND ' + filterController.distanceChoice[1] + ';',
@@ -61,7 +60,7 @@
         [
           {
             'sql': 'INSERT INTO resultsDB (name, activities, length, lon, lat, directions, distanceFromUser, scenery, hikeDescription, areaDescription) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
-            'data': [resultsObj.name, resultsObj.activities, resultsObj.length, resultsObj.lon, resultsObj.lat, resultsObj.directions, resultsObj.distance, [resultsObj.sceneryWildlife, resultsObj.sceneryWater, resultsObj.sceneryMountain, resultsObj.sceneryForrest], resultsObj.hikeDescription, resultsObj.areaDescription]
+            'data': [resultsObj.name, resultsObj.activities, resultsObj.length, resultsObj.lon, resultsObj.lat, resultsObj.directions, resultsObj.distance, [resultsObj.sceneryWildlife, resultsObj.sceneryWater, resultsObj.sceneryMountain, resultsObj.sceneryForest], resultsObj.hikeDescription, resultsObj.areaDescription]
           }
         ]
       );

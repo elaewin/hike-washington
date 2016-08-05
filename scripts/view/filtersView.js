@@ -4,6 +4,7 @@
 
   filtersView.clearData = function() {
     $('.page-content').hide();
+    $('#filters').html('');
     $('#filters-section').fadeIn();
   };
 
@@ -35,7 +36,7 @@
   filtersView.loadSceneryFilters = function() {
     $('#filters').append('<div id="scenery" data-category="scenery"></div>');
     $('#scenery').append('<h2>Scenery</h2>');
-    var distancesClass = [['flaticon-wild-deer', 'wildlife'], ['flaticon-two-pines', 'forrest'], ['flaticon-sun-and-lake', 'water'], ['flaticon-snowed-mountains', 'mountains']];
+    var distancesClass = [['flaticon-wild-deer', 'wildlife'], ['flaticon-two-pines', 'Forest'], ['flaticon-sun-and-lake', 'water'], ['flaticon-snowed-mountains', 'mountains']];
     $('#scenery').append('<ul></ul>');
 
     distancesClass.forEach(function(element){
@@ -49,7 +50,7 @@
     });
 
     $('#filters-submit').on('click', function() {
-      page.redirect('/results');
+      page('/results');
     });
   };
 
