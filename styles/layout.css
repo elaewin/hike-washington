@@ -3,7 +3,12 @@
 }
 
 .header-h1 {
- display: none;
+  visibility: hidden;
+  margin: 0.5rem;
+}
+
+.header-h1 a:link, .header-h1 a:visited, .header-h1 a:active {
+  /*color: #334d19;*/
 }
 
 .footer-links {

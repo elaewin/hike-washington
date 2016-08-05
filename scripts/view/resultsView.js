@@ -37,6 +37,7 @@
       });
       // resultsView.resultCount += 3;
     };
+    $('.header-h1').css('visibility', 'visible');
     $('#results').fadeIn();
   };
 

@@ -10,6 +10,7 @@
       var renderedBio = aboutView.renderAboutBio(bioObj);
       $('#about').append(renderedBio);
     });
+    $('.header-h1').css('visibility', 'visible');
     $('#about').fadeIn();
   };
 

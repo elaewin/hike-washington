@@ -4,6 +4,7 @@
 
   homeView.renderPage = function() {
     $('.page-content').hide();
+    $('.header-h1').css('visibility', 'hidden');
     $('#search').fadeIn();
     homeView.zipCode = 0;
   };
