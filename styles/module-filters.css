@@ -1,46 +1,48 @@
 .green {
- color: green;
+color: green;
 }
 
 .yellow {
- color: yellow;
+color: yellow;
 }
 
 .orange {
- color: orange;
+color: orange;
 }
 
 .red {
- color: red;
+color: red;
 }
 
 .black {
- color: black;
+color: black;
 }
 
 #filters-section ul {
- font-size: 5em;
- margin-top: 0.5em;
- margin-bottom: 1em;
- display: flex;
- flex-direction: row;
- flex-wrap: nowrap;
- justify-content: space-around;
+  font-size: 2.5em;
+  /*display: flex;*/
+  /*flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-left: 7em;
+  margin-right: 8em;*/
 }
 
 #filters-section li {
- display: inline-block;
- background-color: rgba(255, 255, 255, 0.4);
- border-radius: 50%;
- padding: 1.25rem 1.75rem;
- margin-left: 1.75rem;
- cursor: pointer;
+  display: inline;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  /* padding: .75em; */
+  margin-left: 1rem;
+  padding: 1rem;
+  cursor: pointer;
 }
 
+
 img.filterIcons{
- height: 6em;
- width: 6em;
- margin: 1.25em;
+height: 6em;
+width: 6em;
+margin: 1.25em;
 }
 
 .filters li{
@@ -48,44 +50,55 @@ img.filterIcons{
 }
 
 #filters .active {
- background-color: white;
+background-color: white;
 }
 
 #filters-submit {
- letter-spacing: .2rem;
- background-color: #ccc;
- font-size: 2.5em;
- font-family: 'Architects Daughter', cursive;
- text-transform: uppercase;
- padding: .3em .75em;
- width: 400px;
- border: none;
- border-radius: 5px;
+letter-spacing: .2rem;
+background-color: #ccc;
+font-size: 2.5em;
+font-family: 'Architects Daughter', cursive;
+text-transform: uppercase;
+padding: .3em .75em;
+width: 400px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+display: none;
 }
 
-#filters-form fieldset {
- margin-left: -3vh;
+#filters-submit:hover {
+ background-color: #444;
 }
 
 @media only screen and (min-width: 760px) {
- ul {
-   font-size: 3.5em;
-   margin-top: 1em;
-   margin-bottom: 1.25em;
- }
+ul {
+  font-size: 3.5em;
+  margin-top: 1em;
+  /*margin-bottom: 1.25em;*/
+}
 
 
 #filters-submit {
-   letter-spacing: .3rem;
-   background-color: rgba(0, 0, 0, 0.8);
-   font-size: 2em;
-   font-family: 'Architects Daughter', cursive;
-   text-transform: uppercase;
-   padding: .3em .75em;
-   width: 350px;
-   border: none;
-   border-radius: 5px;
-   color: #efefef ;
-   cursor: pointer;
- }
+  letter-spacing: .3rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 2em;
+  font-family: 'Architects Daughter', cursive;
+  text-transform: uppercase;
+  padding: .3em .75em;
+  width: 350px;
+  border: none;
+  border-radius: 5px;
+  color: #efefef  ;
+  cursor: pointer;
+}
+
+  #filters-section li {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    padding: 1.25rem 1.75rem;
+    margin-left: 1.75rem;
+    cursor: pointer;
+  }
 }

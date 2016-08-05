@@ -1,0 +1,23 @@
+#about {
+  clear: both;
+}
+
+
+#about h3 {
+  font-size: 2em;
+  text-align: left;
+}
+
+#about p {
+  text-align: left;
+  font-size: 1.5em;
+  font-family: "Amiri", serif;
+}
+
+#filters {
+  margin-left: -3vh;
+}
+
+#filters-section h1 {
+  margin-top: -1rem;
+}

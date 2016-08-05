@@ -1,50 +1,57 @@
 .header-h1 {
-  display: none;
+ display: none;
 }
 
-
 .biopic {
-  width: 200px;
-  height: 200px;
+ width: 200px;
+ height: 200px;
+ float: left;
+ margin-right: 1em;
 }
 
 .footer-links {
+  font-size: 1em;
+  list-style: none;
   display: flex;
   justify-content: space-between;
-  font-size: 20px;
-  margin-left: 15em;
-  margin-right: 15em;
+  margin-left: 4em;
+  margin-right: 5em;
 }
 
 a:link, a:visited {
-  text-decoration: none;
-  color: #efefef;
+  font-family:  "Architects Daughter", cursive;
+ text-decoration: none;
+ color: #efefef ;
 }
 
 a:hover {
-  cursor: pointer;
-  color: #669933;
-}
-
-li a {
-  display: inline-block;
-  /*background-color: rgba(0, 0, 0, 0.8);*/
-  border-radius: 5px;
-  padding: .75em;
+ cursor: pointer;
+ color: #669933 ;
 }
 
 #footer {
   background-color: rgba(0, 0, 0, 0.8);
-}
-
-#filters-submit, #search-submit {
-  cursor: pointer;
-}
-
-#filters-submit:hover, #search-submit:hover {
-  background-color: #444;
+  position: fixed;
+  width: 100%;
+  padding: 1em;
 }
 
 @media only screen and (min-width: 760px) {
+
+ #footer {
+   padding-top: .75em;
+   padding-bottom: 1.25em;
+   position: static;
+   bottom: 0;
+ }
+
+ .footer-links {
+   font-size: 2em;
+   list-style: none;
+   display: flex;
+   justify-content: space-between;
+   margin-left: 9em;
+   margin-right: 10em;
+ }
 
 }
