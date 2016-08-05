@@ -27,20 +27,14 @@ color: black;
 }
 
 #filters-section ul {
-  font-size: 2.5em;
-  /*display: flex;*/
-  /*flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  margin-left: 7em;
-  margin-right: 8em;*/
+    font-size: 2.5em;
+    margin-bottom: 1em;
 }
 
 #filters-section li {
   display: inline;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
-  /* padding: .75em; */
   margin-left: 1rem;
   padding: 1rem;
   cursor: pointer;
@@ -62,17 +56,18 @@ background-color: white;
 }
 
 #filters-submit {
-letter-spacing: .2rem;
-background-color: #ccc;
-font-size: 2.5em;
-font-family: 'Architects Daughter', cursive;
-text-transform: uppercase;
-padding: .3em .75em;
-width: 400px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-display: none;
+    letter-spacing: .2rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #efefef;
+    font-size: 1.5em;
+    font-family: 'Architects Daughter', cursive;
+    text-transform: uppercase;
+    padding: .5em .75em;
+    width: 8em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2em;
 }
 
 #filters-submit:hover {
@@ -83,7 +78,6 @@ display: none;
 ul {
   font-size: 3.5em;
   margin-top: 1em;
-  /*margin-bottom: 1.25em;*/
 }
 
 
