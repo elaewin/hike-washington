@@ -66,6 +66,21 @@ img {
  height: 25px;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+  background-color: rgba(153,153,153,.5);
+}
+
+::-webkit-scrollbar-thumb {
+  width: 8px;
+  background-color: #444;
+  border-radius: 10px;
+}
 
 @media only screen and (min-width: 760px) {
 main {
