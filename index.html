@@ -48,30 +48,34 @@
   <header>
     <h1 class="header-h1">Hike W<img src="img/tree.svg"</h1>
   </header>
+  <div class="clearfix"></div>
   <body>
     <main>
-      <section id="search" class="page-content">
-        <h1>Hike W<img src="img/tree.svg"></h1>
-        <p>Explore more and find new hikes near you in beautiful Washington.</p>
-        <p>Start by entering your zipcode.</p>
-      <form id="zipCode-input">
-        <input id="autocomplete" placeholder="Enter your zipcode">
-        <!-- input must be 5 digits -->
-        <input type="submit" id="search-submit">
-      </form>
-      </section>
-      <section id="filters-section" class="page-content">
-        <form id="filters-form">
-          <fieldset id="filters">
-          </fieldset>
-          <input type="submit" id="filters-submit">
+      <div id="sections-container">
+        <section id="search" class="page-content">
+          <h1>Hike W<img src="img/tree.svg"></h1>
+          <p>Explore more and find new hikes near you in beautiful Washington.</p>
+          <p>Start by entering your zipcode.</p>
+        <form id="zipCode-input">
+          <input id="autocomplete" placeholder="Enter your zipcode">
+          <!-- input must be 5 digits -->
+          <input type="submit" id="search-submit">
         </form>
-      </section>
-      <section id="results" class="page-content">
-      </section>
-      <section id="about" class="page-content">
-      </section>
+        </section>
+        <section id="filters-section" class="page-content">
+          <form id="filters-form">
+            <fieldset id="filters">
+            </fieldset>
+            <input type="submit" id="filters-submit">
+          </form>
+        </section>
+        <section id="results" class="page-content">
+        </section>
+        <section id="about" class="page-content">
+        </section>
+      </div>
     </main>
+    <div class="clearfix"></div>
     <footer id="footer">
       <div>
         <ul class="footer-links">

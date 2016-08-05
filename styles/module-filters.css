@@ -1,29 +1,51 @@
 .green {
-color: green;
+  color: #669933;
+}
+
+.dkgreen {
+  color: #344c1a;
 }
 
 .yellow {
-color: yellow;
+  color: #d3d347;
 }
 
 .orange {
-color: orange;
+  color: orange;
 }
 
 .red {
-color: red;
+  color: #a01505;
+}
+
+.purple {
+  color: #5f2871;
+}
+
+.ltblue {
+  color: #29526d;
 }
 
 .black {
-color: black;
+  color: #000;
 }
 
-#filters {
-  margin-left: -3vh;
+.brown {
+  color: #734416;
 }
+
+/*#filters {
+  margin-left: -3vh;
+}*/
 
 #filters-section h1 {
   margin-top: -1rem;
+}
+
+#filters-section h2 {
+  font-size: 2.5em;
+  margin-bottom: .25em;
+  margin-top: 1.25em;
 }
 
 #filters-section ul {
@@ -32,23 +54,25 @@ color: black;
 }
 
 #filters-section li {
-  display: inline;
-  background-color: rgba(255, 255, 255, 0.4);
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   margin-left: 1rem;
+  margin-top: 1rem;
   padding: 1rem;
   cursor: pointer;
+  width: 45px;
+  height: 45px;
 }
 
+#filters-section li:first-child {
+  margin-left: 0;
+}
 
 img.filterIcons{
 height: 6em;
 width: 6em;
 margin: 1.25em;
-}
-
-.filters li{
-
 }
 
 #filters .active {
@@ -67,7 +91,6 @@ background-color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 2em;
 }
 
 #filters-submit:hover {
@@ -75,32 +98,34 @@ background-color: white;
 }
 
 @media only screen and (min-width: 760px) {
-ul {
-  font-size: 3.5em;
-  margin-top: 1em;
-}
+  ul {
+    font-size: 3.5em;
+    margin-top: 1em;
+  }
 
+  #filters-section h2 {
+    font-size: 3.5em;
+  }
 
-#filters-submit {
-  letter-spacing: .3rem;
-  background-color: rgba(0, 0, 0, 0.8);
-  font-size: 2em;
-  font-family: 'Architects Daughter', cursive;
-  text-transform: uppercase;
-  padding: .3em .75em;
-  width: 350px;
-  border: none;
-  border-radius: 5px;
-  color: #efefef  ;
-  cursor: pointer;
-}
+  #filters-submit {
+    letter-spacing: .3rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 2em;
+    font-family: 'Architects Daughter', cursive;
+    text-transform: uppercase;
+    padding: .3em .75em;
+    width: 350px;
+    border: none;
+    border-radius: 5px;
+    color: #efefef  ;
+    cursor: pointer;
+  }
 
   #filters-section li {
-    display: inline-block;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    padding: 1.25rem 1.75rem;
-    margin-left: 1.75rem;
-    cursor: pointer;
+    padding: .3em .4em;
+    margin-left: 0.3em;
+    font-size: 2em;
+    width: 85px;
+    height: 100px;
   }
 }
