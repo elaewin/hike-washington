@@ -36,6 +36,10 @@ a:hover {
 
 @media only screen and (min-width: 760px) {
 
+  #filters {
+        text-align: center;
+}
+
  #footer {
    padding-top: .75em;
    padding-bottom: 1.25em;
