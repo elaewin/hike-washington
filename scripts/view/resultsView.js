@@ -9,7 +9,7 @@
     this.nameOfPlace = objToRender.name;
     this.description = objToRender.hikeDescription;
     this.activitiesSelected = objToRender.activities.split(',');
-    this.scenerySelected = objToRender.scenery.split(',');
+    this.scenerySelected = objToRender.scenery.split(',').filter(function(ele){return ele != '';});;
     this.lengthOfHike = objToRender.length;
     this.distance = Math.round(objToRender.distanceFromUser);
     var renderedResult = resultsCompiler(this);
