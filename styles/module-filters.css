@@ -19,21 +19,23 @@ color: black;
 }
 
 #filters-section ul {
-font-size: 5em;
-display: flex;
-flex-direction: row;
-flex-wrap: nowrap;
-justify-content: space-around;
+  font-size: 2.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
 }
 
 #filters-section li {
-display: inline-block;
-background-color: rgba(255, 255, 255, 0.4);
-border-radius: 50%;
-padding: 1.25rem 1.75rem;
-margin-left: 1.75rem;
-cursor: pointer;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  /* padding: .75em; */
+  margin-left: 1rem;
+  padding: 1rem;
+  cursor: pointer;
 }
+
 
 img.filterIcons{
 height: 6em;
@@ -92,4 +94,13 @@ ul {
   color: #efefef  ;
   cursor: pointer;
 }
+
+  #filters-section li {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    padding: 1.25rem 1.75rem;
+    margin-left: 1.75rem;
+    cursor: pointer;
+  }
 }
