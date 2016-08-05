@@ -28,9 +28,12 @@
         <li>{{this}}</li>
         {{/each}}
       </ul>
-      <p>Length of the hike: {{lengthOfHike}} miles.</p>
-      <p>Distance of the hike from your Zip Code: {{distance}} miles.</p>
-      <p>Description: {{{description}}}</p>
+      <h4>Length of hike:</h4>
+      <p>{{lengthOfHike}} miles.</p>
+      <h4>Distance from your Zip Code:</h4>
+      <p>{{distance}} miles.</p>
+      <h4>Description:</h4>
+      <p class="result-desc">{{{description}}}</p>
       <!--google map-->
       <!-- <iframe id="googleMap"
       width="400"
@@ -53,7 +56,7 @@
     <main>
       <div id="sections-container">
         <section id="search" class="page-content">
-          <h1>Hike W<img src="img/tree.svg"></h1>
+          <h1>Hike W<span class="flaticon-nature"></span></h1>
           <p>Explore more and find new hikes near you in beautiful Washington.</p>
           <p>Start by entering your zipcode.</p>
         <form id="zipCode-input">
@@ -80,7 +83,7 @@
       <div>
         <ul class="footer-links">
           <li><a href="http://www.discoverpass.wa.gov">Discover Pass</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="/about">About</a></li>
           <li><a href="http://www.trailapi.com/">Source</a></li>
         </ul>
       </div>

@@ -1,11 +1,61 @@
+#results {
+  text-align: left;
+}
+
+#results h3 {
+  font-size: 1.75em;
+  margin: 0.5em 0 0;
+  color: #669933;
+}
+
+#results h4 {
+  font-size: 1.25em;
+  margin: 0.5em 0 0.3em;
+}
+
 #results li {
   list-style-type: disc;
   list-style-position: inside;
 }
 
 #results p {
-  text-align: left;
-  font-size: 1.5em;
-  margin-bottom: 2em;
+  margin-bottom: .5em;
   line-height: 1.2em;
+}
+
+.result-desc {
+  padding-bottom: .75em;
+}
+
+@media only screen and (min-width: 760px) {
+
+  #results h3 {
+    font-size: 2.5em;
+    margin: 0.5em 0 0;
+  }
+
+  #results h4 {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+  }
+
+  #results ul {
+    margin-top: 0
+  }
+
+  #results li {
+    list-style-type: disc;
+    list-style-position: inside;
+    font-size: 1rem;
+  }
+
+  #results p {
+    font-size: 1.1em;
+    margin-bottom: .5em;
+    line-height: 1.2em;
+  }
+
+  .result-desc {
+    margin-bottom: .5em;
+  }
 }
