@@ -61,7 +61,7 @@
         [
           {
             'sql': 'INSERT INTO resultsDB (name, activities, length, lon, lat, directions, distanceFromUser, scenery, hikeDescription, areaDescription) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
-            'data': [resultsObj.name, resultsObj.activities, resultsObj.length, resultsObj.lon, resultsObj.lat, resultsObj.directions, resultsObj.distance, 'scenery goes here!', resultsObj.hikeDescription, resultsObj.areaDescription]
+            'data': [resultsObj.name, resultsObj.activities, resultsObj.length, resultsObj.lon, resultsObj.lat, resultsObj.directions, resultsObj.distance, [resultsObj.sceneryWildlife, resultsObj.sceneryWater, resultsObj.sceneryMountain, resultsObj.sceneryForrest], resultsObj.hikeDescription, resultsObj.areaDescription]
           }
         ]
       );

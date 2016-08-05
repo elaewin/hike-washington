@@ -35,10 +35,10 @@
   filtersView.loadSceneryFilters = function() {
     $('#filters').append('<div id="scenery" data-category="scenery"></div>');
     $('#scenery').append('<h2>Scenery</h2>');
-    var distancesClass = ['wild-deer', 'two-pines', 'sun-and-lake', 'snowed-mountains'];
+    var distancesClass = [['flaticon-wild-deer', 'wildlife'], ['flaticon-two-pines', 'forrest'], ['flaticon-sun-and-lake', 'water'], ['flaticon-snowed-mountains', 'mountains']];
     $('#scenery').append('<ul></ul>');
-    distancesClass.forEach(function(icon){
-      $('div[data-category="scenery"] ul').append('<li class="flaticon-' + icon + ' black"></li>');
+    distancesClass.forEach(function(element){
+      $('div[data-category="scenery"] ul').append('<li class="' + element[0] + ' black other-scenery" value="' + element[1] + '"></li>');
     });
   };
 
