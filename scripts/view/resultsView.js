@@ -19,6 +19,7 @@
   resultsView.showThreeResults = function() {
     $('.page-content').hide();
     $('#results').html('');
+    $('#results').append('<h4>Here are the hikes that match your criteria, with the closest hikes to you first:</h4>');
     console.log('resultsView.showThreeResults is running.');
     console.log('resultsModel.resultsArray:', resultsModel.resultsArray);
     if(resultsModel.resultsArray.length === 0) {
