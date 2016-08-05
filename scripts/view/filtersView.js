@@ -28,7 +28,7 @@
     var distancesClass = [['flaticon-bicycle-rider','biking'], ['flaticon-night-camping', 'camping'], ['flaticon-snowflake', 'snow']];
     $('div#activity').append('<ul></ul>');
     distancesClass.forEach(function(element){
-      $('div[data-category="activity"] ul').append('<li class="' + element[0] + ' black other-activity" value="' + element[1] + '"></li>');
+      $('div[data-category="activity"] ul').append('<li class="' + element[0] + ' ltblue other-activity" value="' + element[1] + '"></li>');
     });
   };
 
@@ -38,7 +38,7 @@
     var distancesClass = ['wild-deer', 'two-pines', 'sun-and-lake', 'snowed-mountains'];
     $('#scenery').append('<ul></ul>');
     distancesClass.forEach(function(icon){
-      $('div[data-category="scenery"] ul').append('<li class="flaticon-' + icon + ' black"></li>');
+      $('div[data-category="scenery"] ul').append('<li class="flaticon-' + icon + ' dkgreen"></li>');
     });
   };
 

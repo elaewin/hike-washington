@@ -1,21 +1,22 @@
+.clearfix {
+  clear: both;
+}
+
 .header-h1 {
  display: none;
 }
 
-.biopic {
- width: 200px;
- height: 200px;
- float: left;
- margin-right: 1em;
-}
-
 .footer-links {
-  font-size: 1em;
+  font-size: 1.5em;
   list-style: none;
   display: flex;
   justify-content: space-between;
-  margin-left: 4em;
-  margin-right: 5em;
+  width: 100%;
+  height: auto;
+}
+
+.footer-links li {
+  padding: 0.1rem;
 }
 
 a:link, a:visited {
@@ -32,26 +33,26 @@ a:hover {
 #footer {
   background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
+  bottom: 0;
   width: 100%;
   padding: 1em;
 }
 
+
+
 @media only screen and (min-width: 760px) {
 
- #footer {
-   padding-top: .75em;
-   padding-bottom: 1.25em;
-   position: static;
-   bottom: 0;
- }
+  #footer {
+    padding: .75em 0 1.25em;
+  }
 
- .footer-links {
-   font-size: 2em;
-   list-style: none;
-   display: flex;
-   justify-content: space-between;
-   margin-left: 9em;
-   margin-right: 10em;
+  .footer-links {
+    font-size: 2em;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
  }
 
 }
