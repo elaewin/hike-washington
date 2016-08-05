@@ -51,7 +51,7 @@
   };
 
   filterController.findActiveScenery = function() {
-    filterController.sceneryChoice = [''];
+    filterController.sceneryChoice = [];
     $('.other-scenery.active').each(function(){
       filterController.sceneryChoice.push($(this).attr('value'));
       console.log('cmon..');
