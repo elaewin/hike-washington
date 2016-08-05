@@ -2,13 +2,6 @@
  display: none;
 }
 
-.biopic {
- width: 200px;
- height: 200px;
- float: left;
- margin-right: 1em;
-}
-
 .footer-links {
   font-size: 1em;
   list-style: none;
