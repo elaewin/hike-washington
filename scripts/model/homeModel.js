@@ -95,12 +95,15 @@
         homeModel.zipResults.push(geoResult.geometry.location.lat);
         homeModel.zipResults.push(geoResult.geometry.location.lng);
       }
-    }).done(distancesModel.latLonQuery, console.log('latLonQuery done.'), page.redirect('/filters'));
+    }).done(function(){
+      distancesModel.latLonQuery();
+      page('/filters');
+    });
   };
 
   homeModel.updateScenery = function() {
     sceneryTerms.forEach(function(ele) {
-      webDB.execute('UPDATE allHikesDB SET scenery' + ele.key + ' ="' + ele.key + '" WHERE areaDescription LIKE "%' + ele.value + '%" OR hikeDescription LIKE "%' + ele.value + '";');
+      webDB.execute('UPDATE allHikesDB SET scenery' + ele.key + ' ="' + ele.key + '" WHERE areaDescription LIKE "%' + ele.value + '%" OR hikeDescription LIKE "%' + ele.value + '%" OR name LIKE "%' + ele.value + '%" OR directions LIKE "%' + ele.value + '%";');
     });
   };
 

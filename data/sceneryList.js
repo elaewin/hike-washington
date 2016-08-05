@@ -10,12 +10,14 @@ var sceneryTerms = [
   {key: 'Wildlife',
   value: 'bird'},
 
-  {key: 'Forrest',
+  {key: 'Forest',
   value: 'tree'},
-  {key: 'Forrest',
-  value: 'forrest'},
-  {key: 'Forrest',
+  {key: 'Forest',
+  value: 'forest'},
+  {key: 'Forest',
   value: 'pine'},
+  {key: 'Forest',
+  value: 'woods'},
 
   {key: 'Water',
   value: 'lake'},
@@ -27,6 +29,8 @@ var sceneryTerms = [
   value: 'shore'},
   {key: 'Water',
   value: 'stream'},
+  {key: 'Water',
+  value: 'beach'},
 
   {key: 'Mountain',
   value: 'mountain'},

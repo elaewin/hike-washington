@@ -4,6 +4,7 @@
 
   filtersView.clearData = function() {
     $('.page-content').hide();
+    $('#filters').html('');
     $('#filters-section').fadeIn();
   };
 
@@ -38,7 +39,7 @@
     $('#filters').append('<div id="scenery" data-category="scenery"></div>');
     $('#scenery').append('<h2>Scenery</h2>');
     $('#scenery').append('<p>Is there a particular kind of scenery you\'re looking for?</p>');
-    var distancesClass = [['flaticon-wild-deer', 'wildlife', 'Wildlife'], ['flaticon-two-pines', 'forrest', 'Forests'], ['flaticon-sun-and-lake', 'water', 'Lake, River, or Ocean'], ['flaticon-snowed-mountains', 'mountains', 'Mountains']];
+    var distancesClass = [['flaticon-wild-deer', 'wildlife', 'Wildlife'], ['flaticon-two-pines', 'forest', 'Forests'], ['flaticon-sun-and-lake', 'water', 'Lake, River, or Ocean'], ['flaticon-snowed-mountains', 'mountains', 'Mountains']];
     $('#scenery').append('<ul></ul>');
 
     distancesClass.forEach(function(element){
@@ -52,7 +53,7 @@
     });
 
     $('#filters-submit').on('click', function() {
-      page.redirect('/results');
+      page('/results');
     });
   };
 

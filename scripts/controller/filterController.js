@@ -1,9 +1,8 @@
 (function(module) {
 
   var filterController = {};
-  filterController.activityChoice = ['hiking'];
+
   filterController.distanceChoice = [0,1];
-  filterController.sceneryChoice = [''];
 
   filterController.handleDistanceSelections = function() {
     $('#distance li').on('click', function(event) {
@@ -45,13 +44,14 @@
 
   //find activites that have been clicked
   filterController.findActiveActivities = function() {
+    filterController.activityChoice = ['hiking'];
     $('.other-activity.active').each(function(){
-      // console.log($(this));
       filterController.activityChoice.push($(this).attr('value'));
     });
   };
 
   filterController.findActiveScenery = function() {
+    filterController.sceneryChoice = [''];
     $('.other-scenery.active').each(function(){
       filterController.sceneryChoice.push($(this).attr('value'));
       console.log('cmon..');
