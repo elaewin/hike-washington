@@ -29,14 +29,17 @@
         resultsView.renderResults(hike);
       });
     } else {
-      var arrayOfThree = [
-        resultsModel.resultsArray[0], resultsModel.resultsArray[1], resultsModel.resultsArray[2]
-      ];
-      arrayOfThree.forEach(function(hike) {
+      resultsModel.resultsArray.forEach(function(hike) {
         resultsView.renderResults(hike);
       });
       // resultsView.resultCount += 3;
-    };
+    }
+    // if(resultsModel.resultsArray > 4){
+      // $('#results').append('<a id="show-more">show more &rarr;</a>');
+      // $('#show-more').on('click', function(){
+      //   resultsModel.resultsArray.shift(2);
+      //   resultsView.showThreeResults();
+      // });
     $('#results').fadeIn();
   };
 
