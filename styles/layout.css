@@ -7,7 +7,7 @@
 }
 
 .footer-links {
-  font-size: 1.5em;
+  font-size: 1em;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -16,7 +16,7 @@
 }
 
 .footer-links li {
-  padding: 0.1rem;
+  padding: 0.6rem;
 }
 
 a:link, a:visited {
@@ -35,15 +35,22 @@ a:hover {
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 1em;
 }
 
+#footer-div {
+  width: 90%;
+}
 
+.footer-img {
+  width: 45px;
+  height: 45px;
+  color: #efefef;
+}
 
 @media only screen and (min-width: 760px) {
 
   #footer {
-    padding: .75em 0 1.25em;
+    /*padding: .75em 0 1.25em;*/
   }
 
   .footer-links {
@@ -53,6 +60,11 @@ a:hover {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
+    margin-top: 0
+ }
+
+ .footer-link li {
+   margin: 0;
  }
 
 }

@@ -1,5 +1,5 @@
 * {
-  outline: 1px dashed orange;
+  /*outline: 1px dashed orange;*/
 }
 
 *::shadow {
@@ -11,19 +11,21 @@ html {
   font-family: 'Amiri', sans-serif;
   color: #efefef;
   width: 100%;
+  font-size: 125%;
 }
 
 body {
   position: relative;
-  background: url('../img/cascades.jpg') no-repeat fixed center;
+  background: url('../img/cascades2.jpg') no-repeat fixed center;
 }
 
 main {
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
+  margin-bottom: .5em;
   border-top: 3px solid #efefef;
   border-bottom: 3px solid #efefef;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 #sections-container {
@@ -38,6 +40,7 @@ font-family: "Architects Daughter", cursive;
 
 h1 {
   font-size: 2em;
+  margin-top: 1em;
 }
 
 h2 {
@@ -63,7 +66,7 @@ img {
 
 @media only screen and (min-width: 760px) {
 main {
-  margin-top: 5rem;
+  margin-top: 4rem;
   margin-bottom: 5rem;
   overflow: hidden;
 }
@@ -78,11 +81,11 @@ a {
 }
 
 h1 {
-font-size: 4em;
+  font-size: 4em;
 }
 
 h2 {
-font-size: 3em;
+  font-size: 3em;
 }
 
 h3 {
@@ -91,8 +94,4 @@ h3 {
 
 h4 {
   font-size: 1.5em;
-}
-
-p {
-line-height: 1.2em;
 }
