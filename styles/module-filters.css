@@ -55,13 +55,16 @@
 #filters-section ul {
     font-size: 2.5em;
     margin-bottom: 1em;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 #filters-section li {
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
-  /*margin-right: 1rem;*/
+  /*margin-right: 0.5rem;*/
   margin-top: 1rem;
   padding: .3em .4em .4em .3em;
   cursor: pointer;
