@@ -4,7 +4,6 @@
   resultsView.resultCount = 0;
 
   resultsView.renderResults = function(objToRender) {
-    console.log('resultsView.renderResults is running.');
     var resultsCompiler = Handlebars.compile($('#results-template').text());
     this.nameOfPlace = objToRender.name;
     this.description = objToRender.hikeDescription;
@@ -20,12 +19,9 @@
     $('.page-content').hide();
     $('#results').html('');
     $('#results').append('<h4>Here are the hikes that match your criteria, with the closest hikes to you first:</h4>');
-    console.log('resultsView.showThreeResults is running.');
-    console.log('resultsModel.resultsArray:', resultsModel.resultsArray);
     if(resultsModel.resultsArray.length === 0) {
       resultsView.noResults();
     } else if(resultsModel.resultsArray.length < 3) {
-      console.log('less than 3 results!');
       resultsModel.resultsArray.forEach(function(hike) {
         resultsView.renderResults(hike);
       });
@@ -33,7 +29,6 @@
       resultsModel.resultsArray.forEach(function(hike) {
         resultsView.renderResults(hike);
       });
-      // resultsView.resultCount += 3;
     };
     $('.header-h1').css('visibility', 'visible');
     $('#results').fadeIn();

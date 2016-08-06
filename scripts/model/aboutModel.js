@@ -9,7 +9,6 @@
   aboutModel.allHumans = [];
 
   aboutModel.getData = function() {
-    console.log('aboutModel.getData is running.');
     $.getJSON({
       url: '../data/about.json',
       success: function(data, message, xhr) {

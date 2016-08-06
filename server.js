@@ -6,7 +6,6 @@ var express = require('express'),
   app = express();
 
 var proxyGoogleAPI = function(request, response) {
-  console.log('routing Google API request for', request.params[0]);
   (
     requestProxy({
       url: 'https://maps.googleapis.com/' + request.params[0],
@@ -22,7 +21,6 @@ app.post('/theGoogles/*', proxyGoogleAPI);
 app.use(express.static('./'));
 
 app.get('*', function(request, response) {
-  console.log('New request:', request.url);
   response.sendFile('index.html', { root: '.' });
 });
 

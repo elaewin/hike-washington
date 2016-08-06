@@ -9,21 +9,16 @@
 
   resultsModel.getHikeResults = function () {
     resultsModel.resultsArray = [];
-    console.log('resultsView.getHikeResults is running.');
     webDB.execute('SELECT * FROM resultsDB ORDER BY distanceFromUser ASC;',
     function(rows) {
       resultsModel.resultsArray = rows.map(function(row) {
-        console.log(row);
         return new Hike(row);
       });
-      console.log('results array', resultsModel.resultsArray);
-      resultsView.showThreeResults(); // here to deal with async issues
+      resultsView.showThreeResults();
     });
   };
 
-// create a table to store filter results
   resultsModel.createResultsDB = function() {
-    console.log('create ResultsDB running');
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS resultsDB (' +
       'id INTEGER PRIMARY KEY, ' +
@@ -40,15 +35,12 @@
     );
   };
 
-// the creates an array to be populated on results table
   resultsModel.joinAllHikesAndDistance = function() {
     resultsModel.joinedArray = [];
-    console.log('joinAllHikesAndDistance running');
     webDB.execute('SELECT * FROM allHikesDB INNER JOIN distanceDB ON allHikesDB.name=distanceDB.name WHERE allHikesDB.length BETWEEN ' +
     filterController.distanceChoice[0] + ' AND ' + filterController.distanceChoice[1] + ';',
     function(rows) {
       resultsModel.joinedArray = rows;
-      console.log('resultsDB about to be populated');
       resultsModel.populateResultsDB();
     });
   };

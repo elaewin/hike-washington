@@ -1,8 +1,7 @@
 (function(module) {
   var homeModel = {};
-// Make variable names more self-explainatory!
   homeModel.hikesArray = []; //array used to store Hikes as objects
-  homeModel.zipResults = [];
+  homeModel.zipResults = []; //results of lat/lon for zip from Google
 
   homeModel.loadAPIData = function() {
     homeModel.checkForData();
@@ -12,7 +11,6 @@
     webDB.execute('SELECT * FROM allHikesDB;',
     function(rows) {
       if(rows.length > 0) {
-        console.log('deleting allHikesDB');
         webDB.execute('DELETE FROM allHikesDB;',
         function() {
           homeModel.callTrailAPI();
@@ -28,7 +26,6 @@
     webDB.execute('SELECT * FROM distanceDB;',
     function(rows) {
       if(rows.length > 0) {
-        console.log('deleting from distanceDB');
         webDB.execute('DELETE FROM distanceDB;');
       }
     });
@@ -38,18 +35,15 @@
     webDB.execute('SELECT * FROM resultsDB;',
     function(rows) {
       if(rows.length > 0) {
-        console.log('deleting from resultsDB');
         webDB.execute('DELETE FROM resultsDB;');
       }
     });
   };
 
   homeModel.callTrailAPI = function() {
-    console.log('trail api running');
     $.getJSON({
       url: '../data/hikes.json',
       success: function(data, message, xhr) {
-        console.log('callTrailAPI returning:', data);
         data.places.map(function(current) {
           var place = {
             name: current.name,
@@ -76,7 +70,6 @@
         });
       }
     }).done(function() {
-      console.log('callTrailAPI is done.');
       homeController.createTables();
     });
   };
