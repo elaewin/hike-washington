@@ -3,15 +3,13 @@
   var homeController = {};
 
   homeController.loadData = function(ctx, next) {
-    console.log('homeController.loadData running.');
     allHikesModel.createTable(),
-    homeModel.loadAPIData(); //happen on page load
+    homeModel.loadAPIData();
     homeView.renderPage();
     next();
   };
 
   homeController.createTables = function() {
-    console.log('homeController.index async nonsense running.');
     async.series([
       allHikesModel.insertRecord(),
       distancesModel.createTable(),
@@ -31,12 +29,10 @@
     homeView.zipCode = $('#autocomplete').val();
     if (homeView.zipCode.match(zipEntered)) {
       homeModel.getLatLng(homeView.zipCode);
-      console.log('Redirect working');
     } else {
       $('#autocomplete').css({'border-color': 'red'});
       $('#autocomplete').val('');
       $('#autocomplete').attr('placeholder', 'That\'s not a zipcode..');
-      console.log('Not a valid zip code');
     }
   };
 

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="styles/module-filters.css">
     <link rel="stylesheet" href="styles/module-results.css">
     <link rel="stylesheet" href="styles/module-about.css">
+    <!-- Begin Handlebars templates -->
     <script id="results-template" type="text/x-handlebars-template">
       <h3>{{{nameOfPlace}}}</h3>
       <h4>Activities:</h4>
@@ -34,19 +35,13 @@
       <p>{{distance}} miles.</p>
       <h4>Description:</h4>
       <p class="result-desc">{{{description}}}</p>
-      <!--google map-->
-      <!-- <iframe id="googleMap"
-      width="400"
-      height="250"
-      frameborder="0" style="border:0"
-      src="https://www.google.com/maps/embed/v1/place?key=googleAPIKey&center" allowfullscreen>
-    </iframe> -->
     </script>
     <script id="about-template" type="text/x-handlebars-template">
       <img class="biopic" src="{{bioPic}}">
       <h3>{{name}}</h3>
       <p>{{{body}}}</p>
     </script>
+    <!-- End Handlebars -->
   </head>
   <header>
     <h1 class="header-h1"><a href="/">Hike W<span class="flaticon-nature"></span></a></h1>
@@ -61,7 +56,6 @@
           <p>Start by entering your zipcode.</p>
         <form id="zipCode-input">
           <input id="autocomplete" placeholder="Enter your zipcode">
-          <!-- input must be 5 digits -->
           <input type="submit" id="search-submit">
         </form>
         </section>
@@ -96,7 +90,6 @@
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/webdb.js"></script>
     <script src="vendor/assets/findDistance.js"></script>
-    <script src="scripts/assets/authKey.js"></script>
     <script src="data/sceneryList.js"></script>
     <!--Model Files  -->
     <script src="scripts/model/homeModel.js"></script>
@@ -115,6 +108,5 @@
     <script src="scripts/controller/resultsController.js"></script>
     <script src="scripts/controller/aboutController.js"></script>
     <script src="scripts/controller/routes.js"></script>
-
   </body>
 </html>
