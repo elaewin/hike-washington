@@ -3,7 +3,7 @@ Hike Washington CodeFellows 301 Final Project
 
 ### Credits:
 
-[Background image by Patrick Marre found on Unsplash.com](https://hd.unsplash.com/photo-1462375099737-8fe25885af75)
+[Background image by Patrick Marre](https://hd.unsplash.com/photo-1462375099737-8fe25885af75) found on [Unsplash.com](https://unsplash.com/), used under a [Creative Commons Zero license](https://unsplash.com/license).
 
 Fonts on the site are from [Google Fonts](https://fonts.google.com/).
 
