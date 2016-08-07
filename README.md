@@ -3,6 +3,8 @@ Hike Washington CodeFellows 301 Final Project
 
 ### Credits:
 
+[Background image by Patrick Marre found on Unsplash.com](https://hd.unsplash.com/photo-1462375099737-8fe25885af75)
+
 Fonts on the site are from [Google Fonts](https://fonts.google.com/).
 
 * Headers: [Architect's Daughter](https://fonts.google.com/specimen/Architects+Daughter?query=archite)
