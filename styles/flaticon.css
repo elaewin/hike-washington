@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 05/08/2016 07:36
+  	Creation date: 07/08/2016 04:05
   	*/
 
 @font-face {
@@ -38,24 +38,25 @@
 .flaticon-disabled:before { content: "\f108"; }
 .flaticon-dog:before { content: "\f109"; }
 .flaticon-fishing-man:before { content: "\f10a"; }
-.flaticon-hiker-silhouette-on-mountain:before { content: "\f10b"; }
-.flaticon-hiking:before { content: "\f10c"; }
-.flaticon-horse-riding:before { content: "\f10d"; }
-.flaticon-kayak:before { content: "\f10e"; }
-.flaticon-man-in-canoe:before { content: "\f10f"; }
-.flaticon-man-swimming:before { content: "\f110"; }
-.flaticon-nature:before { content: "\f111"; }
-.flaticon-nature-1:before { content: "\f112"; }
-.flaticon-night-camping:before { content: "\f113"; }
-.flaticon-outdoors-map:before { content: "\f114"; }
-.flaticon-poppy:before { content: "\f115"; }
-.flaticon-quad-bike:before { content: "\f116"; }
-.flaticon-running-man:before { content: "\f117"; }
-.flaticon-snowed-mountains:before { content: "\f118"; }
-.flaticon-snowflake:before { content: "\f119"; }
-.flaticon-spyglass:before { content: "\f11a"; }
-.flaticon-sun-and-lake:before { content: "\f11b"; }
-.flaticon-two-pines:before { content: "\f11c"; }
-.flaticon-walking-with-snowshoes:before { content: "\f11d"; }
-.flaticon-wild-deer:before { content: "\f11e"; }
-.flaticon-wind-rose-compass:before { content: "\f11f"; }
+.flaticon-github-logo:before { content: "\f10b"; }
+.flaticon-hiker-silhouette-on-mountain:before { content: "\f10c"; }
+.flaticon-hiking:before { content: "\f10d"; }
+.flaticon-horse-riding:before { content: "\f10e"; }
+.flaticon-kayak:before { content: "\f10f"; }
+.flaticon-man-in-canoe:before { content: "\f110"; }
+.flaticon-man-swimming:before { content: "\f111"; }
+.flaticon-nature:before { content: "\f112"; }
+.flaticon-nature-1:before { content: "\f113"; }
+.flaticon-night-camping:before { content: "\f114"; }
+.flaticon-outdoors-map:before { content: "\f115"; }
+.flaticon-poppy:before { content: "\f116"; }
+.flaticon-quad-bike:before { content: "\f117"; }
+.flaticon-running-man:before { content: "\f118"; }
+.flaticon-snowed-mountains:before { content: "\f119"; }
+.flaticon-snowflake:before { content: "\f11a"; }
+.flaticon-spyglass:before { content: "\f11b"; }
+.flaticon-sun-and-lake:before { content: "\f11c"; }
+.flaticon-two-pines:before { content: "\f11d"; }
+.flaticon-walking-with-snowshoes:before { content: "\f11e"; }
+.flaticon-wild-deer:before { content: "\f11f"; }
+.flaticon-wind-rose-compass:before { content: "\f120"; }
