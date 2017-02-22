@@ -18,13 +18,9 @@
   list-style-position: inside;
 }
 
-#results p {
+#result p {
   margin-bottom: 1em;
   line-height: 1.4em;
-}
-
-.result-desc {
-  padding-bottom: .75em;
 }
 
 @media only screen and (min-width: 760px) {
@@ -55,7 +51,4 @@
     line-height: 1.4em;
   }
 
-  .result-desc {
-    margin-bottom: .5em;
-  }
 }
