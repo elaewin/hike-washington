@@ -31,7 +31,8 @@
       });
     };
     $('.header-h1').css('visibility', 'visible');
-    $('#results').fadeIn();
+    $('body').scrollTop();
+    $('#results').fadeIn('slow');
   };
 
   resultsView.noResults = function() {

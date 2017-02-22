@@ -11,7 +11,7 @@
       $('#about').append(renderedBio);
     });
     $('.header-h1').css('visibility', 'visible');
-    $('#about').fadeIn();
+    $('#about').fadeIn('slow').scrollTop();
   };
 
   module.aboutController = aboutController;
