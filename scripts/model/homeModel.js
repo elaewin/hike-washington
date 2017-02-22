@@ -70,7 +70,7 @@
         });
       }
     }).done(function() {
-      homeController.createTables();
+      homeController.createTables(homeController.callback);
     });
   };
 

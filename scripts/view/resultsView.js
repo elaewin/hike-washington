@@ -33,6 +33,7 @@
     $('.header-h1').css('visibility', 'visible');
     $('body').scrollTop();
     $('#results').fadeIn('slow');
+    // $('</p><p>').replaceAll('br');
   };
 
   resultsView.noResults = function() {

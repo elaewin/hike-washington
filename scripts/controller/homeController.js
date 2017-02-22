@@ -9,7 +9,7 @@
     next();
   };
 
-  homeController.createTables = function() {
+  homeController.createTables = function(callback) {
     async.series([
       allHikesModel.insertRecord(),
       distancesModel.createTable(),
@@ -17,11 +17,11 @@
       homeModel.checkDistanceForData(),
       homeModel.checkResultsForData(),
       homeModel.updateScenery(),
-    ], homeController.callback());
+    ], callback());
   };
 
   homeController.callback = function() {
-    console.log('callback to keep async working properly.');
+    console.log('Callback to keep async working properly.');
   };
 
   homeController.zipCodeValidator = function() {

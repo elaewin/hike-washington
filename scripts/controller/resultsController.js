@@ -24,7 +24,6 @@
         }
       });
     });
-    // $('#results').fadeIn('slow').scrollTop();
   };
 
   module.resultsController = resultsController;
